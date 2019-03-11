@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<MIUI_Theme_Values>
+<color name="notification_title_text_color">#7fffffff</color>
+<color name="notification_title_text_red_color">#e590ff00</color>
+<color name="notification_title_divide_color">#19ffffff</color>
+</MIUI_Theme_Values>

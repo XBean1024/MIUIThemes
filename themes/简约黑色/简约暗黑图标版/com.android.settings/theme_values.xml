@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<MIUI_Theme_Values>
+<color name="orange">#ff11bd33</color>
+<color name="transparent_70_balck">#b2ffffff</color>
+<color name="transparent_60_balck">#990033ff</color>
+<color name="shadow">#ffffffff</color>
+<color name="black">#ffffffff</color>
+<color name="transparent_80_balck">#cc0033ff</color>
+ <color name="toggle_color">#ffffffff</color>
+<color name="transparent_40_balck">#ffff00ff</color>
+
+<color name="white">#00002362</color>     处理器背景
+<color name="relative_medium_aquamarin">#ff074bb1</color>    隐私密码顶栏
+ <color name="button_text_color_dialog_disabled_light">#ffffffff</color>
+<color name="choose_password_forget_text_color_light">#ffffffff</color>
+<color name="list_secondary_text_color_normal_light">#ccffffff</color>
+<color name="color_not_selected">#ffffffff</color>
+<color name="color_radio_button_text">#ffffffff</color>
+<color name="selector_bg">#ff00ccff</color>
+<color name="toggle_line_color">#ffffffff</color>
+
+<color name="basic_info_item_title_color">#ffffffff</color>
+<color name="basic_info_item_divider_color">#ccffffff</color>
+<color name="basic_info_item_summary_color">#ffffffff</color>
+
+
+<!--弹窗按钮确认取消-->
+<color name="choose_lock_button_text_color">#ffffffff</color>
+<!--弹窗按钮确认取消不可按状态-->
+<color name="choose_lock_button_enable_text_color">#66ffffff</color>
+<!--蓝牙提示-->
+<color name="bluetooth_dialog_text_color">#ffffffff</color>
+
+
+
+</MIUI_Theme_Values>

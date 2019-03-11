@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<MIUI_Theme_Values>
+<color name="text_color_tertiary">#ff000000</color>
+<color name="highlight_normal_light" package="miui">#fff16f0f</color>
+<color name="action_bar_tab_text_color_normal_light" package="miui">#ffffffff</color>
+<color name="background_light" package="android">#ffff5722</color>
+<string name="search_title_hint">搜sss索</string>
+<dimen name="secondary_text_size">13.0sp</dimen>
+<color name="white" package="miui">#ffd13838</color>
+<color name="list_menu_bg_color_light" package="miui">#80000000</color>
+<color name="background_divide">#ffd13838</color>
+<color name="white" package="android">#ffff5722</color>
+<color name="list_item_bg_color_light" package="miui">#80000000</color>
+<dimen name="search_bar_height">52.0dip</dimen>
+<color name="app_tag_more_text_color">#ffffffff</color>
+<color name="search_text1">#fff16f0f</color>
+<color name="black">#ffffffff</color>
+</MIUI_Theme_Values>

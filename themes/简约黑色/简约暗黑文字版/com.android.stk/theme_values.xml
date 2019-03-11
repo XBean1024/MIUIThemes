@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<MIUI_Theme_Values>
+<integer name="window_translucent_status" package="miui">#00000002</integer>
+</MIUI_Theme_Values>

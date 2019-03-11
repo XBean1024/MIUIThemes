@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<MIUI_Theme_Values>
+    <color name="screenshot_lighttheme_text_color">#ffffffff</color>
+    <color name="expanded_notification_manager_color">#ff999999</color>
+    <color name="status_bar_expanded_weather">#ffffffff</color>
+    <color name="status_bar_expanded_date">#ffffffff</color>
+    <color name="qs_detail_empty_text_color">#ffffffff</color>
+    <color name="qs_detail_connect_item_primary_text_color">#ffffba01</color>
+    <color name="qs_detail_button">#ffffffff</color>
+    <color name="qs_detail_connect_header_color">#ff000000</color>
+    <color name="status_bar_expanded_search">#ffffffff</color>
+    <color name="qs_detail_disconnect_header_color">#ff000000</color>
+    <color name="toggle_lable_color">#ffffffff</color>
+    <color name="toggle_lable_color_p">#ffffffff</color>
+    <color name="mtp_notification_button_text_disable">#ffffffff</color>
+    <bool name="auto_modify_expanded_header_color">false</bool>
+    <color name="qs_detail_connect_item_secondary_text_color">#ffffffff</color>
+    <color name="oldman_status_bar_incall_text_color_rev">#ff999999</color>
+    <color name="mtp_notification_button_text_color_n">#ffffffff</color>
+    <color name="mtp_notification_button_text_color_p">#ffffffff</color>
+    <color name="screenshot_top_msg_bg">#ff000000</color>
+    <color name="task_item_text_shadowColor">#00000000</color>
+    <color name="tab_lable_color_n">#ffffffff</color>
+    <color name="no_notification_tips_text">#80ffffff</color>
+    <color name="screenshot_ui_bg">#ff000000</color>
+    <color name="oldman_status_bar_basic_text_color_rev">#ff666666</color>
+    <color name="tab_lable_color">#ffffffff</color>
+    <color name="status_bar_expanded_weather_publish_time">#ffffffff</color>
+    <color name="toggle_lable_color_n">#ccffffff</color>
+    <color name="screenshot_part_divider_color">#19ffffff</color>
+
+    <color name="qs_tile_icon_bg_enabled_color">#ffffffff</color>
+    <color name="black" package="miui">#ffffffff</color>
+    <color name="notification_default_color" package="android">#ffffffff</color>
+    <color name="micro_text_light" package="android">#ffffffff</color>
+    <color name="statusbar_content" package="android">#ffffffff</color>
+    <color name="notification_panel_background">#ffffffff</color>
+    <color name="notification_setting_button_color">#ffffffff</color>
+    <color name="notification_expanded_children_bg_color">#ff3399ff</color>
+    <color name="notification_overflow_number_color">#ffffffff</color>
+    <color name="qs_tile_label_text_color">#ffffffff</color>
+    <color name="qs_panel_expand_indicator_color">#ffffffff</color>
+    <color name="qs_tile_icon_bg_disabled_color">#aaffffff</color>
+    <color name="status_bar_expanded_content">#ffffffff</color>
+    <color name="notification_expanded_bg_divider_color">#ffffffff</color>
+    <color name="notification_media_action_color">#ffffffff</color>
+    <color name="qs_tile_icon_enabled_color">#ff000000</color>
+    <color name="notification_heads_up_bg_color">#ff330000</color>
+    <color name="qs_divider_color">#ffffffff</color>
+    <color name="notification_expanded_bg_color">#ff000000</color>
+    <color name="notification_guts_bg_color">#ff000000</color>
+    <color name="notification_in_call_caller_info_color">#ff000000</color>
+    <color name="qs_footer_data_usage_text_color">#ffffffff</color>
+</MIUI_Theme_Values>

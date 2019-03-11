@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<MIUI_Theme_Values>
+<color name="statusbar_content">#99ffffff</color>
+<color name="statusbar_content_title">#ccffffff</color>
+<color name="media_notification_app_name_text_color">#66ffffff</color>
+<color name="statusbar_content_info">#99ffffff</color>
+<color name="secondary_text_default_material_light">#8affffff</color>
+<color name="notification_time_color">#40ffffff</color>
+<color name="black">#ffd9d9d9</color>
+<color name="notification_miui_action_text_color_n">#99ffffff</color>
+<color name="notification_miui_action_text_color_p">#4cffffff</color>
+
+</MIUI_Theme_Values>

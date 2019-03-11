@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<MIUI_Theme_Values>
+<color name="button_text_color_dialog_disabled_light">#4cffffff</color>
+<color name="add_fingerprint_title_text_color">#b2ffffff</color>
+<color name="basic_info_item_title_color">#b2ffffff</color>
+<color name="qrcode_pixel_color">#cc000000</color>
+<color name="white">#0cffffff</color>
+<color name="color_not_selected">#7fffffff</color>
+<color name="choose_password_forget_text_color_light">#99ffffff</color>
+<color name="basic_info_item_divider_color">#19ffffff</color>
+<color name="fold_support_text_color">#80ffffff</color>
+<color name="fold_diagram_bg_color">#00ffffff</color>
+<color name="button_text_color_dialog_light">#b2ffffff</color>
+<color name="transparent_40_balck">#99ffffff</color>
+<color name="fold_feedback_link_color">#ff00baff</color>
+<color name="choose_lock_button_text_color">#b2ffffff</color>
+<color name="transparent_60_balck">#99ffffff</color>
+<color name="basic_info_item_summary_color">#7fffffff</color>
+<color name="add_fingerprint_msg_text_color">#7fffffff</color>
+<color name="choose_lock_button_enable_text_color">#4cffffff</color>
+<color name="fold_description_text_color">#8cffffff</color>
+<color name="toggle_color">#004bb8ef</color>
+</MIUI_Theme_Values>

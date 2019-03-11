@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<MIUI_Theme_Values>
+<color name="text_color_message_in">#ffffff33</color>
+<color name="white" package="android">#eed13838</color>
+<color name="action_bar_subtitle_text_light" package="miui">#fff16f0f</color>
+<color name="edit_text_search_color_light" package="miui">#ffffffff</color>
+<color name="text_color_message_in_highlight_pressed">#ff00ffff</color>
+<color name="action_bar_title_text_color_light" package="miui">#fff16f0f</color>
+<color name="dialog_message_text_color_dark" package="miui">#ffd16f0f</color>
+<color name="list_view_item_group_header_text_light" package="miui">#ffffffff</color>
+<color name="text_color_message_in_highlight">#ff00cccc</color>
+<color name="edit_text_search_hint_color_light" package="miui">#88ffffff</color>
+<color name="list_secondary_text_color_normal_light" package="miui">#aaffffff</color>
+<color name="list_text_color_normal_light" package="miui">#fff16f0f</color>
+</MIUI_Theme_Values>

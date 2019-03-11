@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<MIUI_Theme_Values>
+    <color name="disabled_text_light" package="miui">#fff16f0f</color>
+    <color name="indexer_text_highlight">#ffffffff</color>
+    <color name="list_view_item_group_header_text_light" package="miui">#ffFDEA00</color>
+    <color name="editor_label_text_color_n">#fff16f0f</color>
+    <color name="dialer_digits_text_color">#fff16f0f</color>
+    <color name="editor_hint_text_color_n">#fff16f0f</color>
+    <color name="call_button_text">#fff16f0f</color>
+    <color name="edit_text_color_light" package="miui">#ffffffff</color>
+    <color name="dialog_list_text_color_normal_light" package="miui">#ffffffff</color>
+    <color name="dialog_title_text_color" package="miui">#ffffffff</color>
+    <color name="quickcontact_list_item_primary_text_color">#fff16f0f</color>
+    <color name="vector_bg_major_color7">#fffc8551</color>
+    <color name="list_item_bg_normal">#ffd13838</color>
+    <color name="list_divider_stroke">#00000000</color>
+    <color name="editor_button_confirm_color">#ffffffff</color>
+    <color name="vector_bg_major_color3">#fffc8551</color>
+    <color name="vector_bg_major_color4">#fffc8551</color>
+    <color name="header_text_label_color">#ffffffff</color>
+    <color name="vector_bg_major_color5">#fffc8551</color>
+    <color name="list_text_color_pressed_light" package="miui">#ffffffff</color>
+    <color name="vector_bg_major_color0">#fffc8551</color>
+    <color name="list_secondary_text_color_normal_light" package="miui">#ffffffff</color>
+    <color name="vector_bg_major_color1">#fffc8551</color>
+    <color name="vector_bg_major_color2">#fffc8551</color>
+    <color name="editor_button_default_color">#fff16f0f</color>
+    <color name="secondary_text_default_material_light">#ffa06941</color>
+    <color name="dialer_title_text_color">#ffffff00</color>
+    <color name="detail_activity_window_bg_light">#ffff0066</color>
+    <color name="alphabet_indexer_overlay_text_color" package="miui">#fff16f0f</color>
+</MIUI_Theme_Values>

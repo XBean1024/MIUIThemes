@@ -1,0 +1,765 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<MIUI_Theme_Values>
+<color name="set_alarm_label_background">#ffff0033</color>
+<color name="sliding_button_bar_off_light" package="miui">#ffccff33</color>
+<color name="bottom_round_button_pressed_color">#ffff0033</color>
+<color name="dropdown_popup_list_text_color_normal_light" package="miui">#ffccff33</color>
+<color name="notification_action_list_dark" package="android">#ffffff00</color>
+<color name="time_zone_search_item_bg_pressed">#ffff0033</color>
+<color name="text_edit_action_popup_text_normal" package="miui">#ffccff33</color>
+<color name="Red_700" package="android">#ffffff00</color>
+<color name="datepicker_default_circle_background_color_material_light" package="android">#ffffff00</color>
+<color name="datepicker_default_disabled_text_color_material_dark" package="android">#ffffff00</color>
+<color name="tertiary_device_default_settings" package="android">#ffffff00</color>
+<color name="transparent" package="android">#ffffff00</color>
+<color name="spinner_edit_item_label_normal" package="miui">#ffccff33</color>
+<color name="action_bar_subtitle_settings_text_light" package="miui">#ffccff33</color>
+<color name="preference_primary_text_color_pressed_light" package="miui">#ffccff33</color>
+<color name="time_zone_search_input_hint_text_color">#ffff0033</color>
+<color name="hint_foreground_holo_dark" package="android">#ffffff00</color>
+<color name="lock_pattern_view_success_color" package="android">#ffffff00</color>
+<color name="keyboard_preview_text" package="miui">#ffccff33</color>
+<color name="error_color_material" package="android">#ffffff00</color>
+<color name="IME_item_highlight" package="miui">#ffccff33</color>
+<color name="secondary_text_leanback_dark" package="android">#ffffff00</color>
+<color name="Blue_800" package="android">#ffffff00</color>
+<color name="preference_primary_text_color_disable_light" package="miui">#ffccff33</color>
+<color name="statusbar_content_emphasis" package="android">#ffffff00</color>
+<color name="clock_item_thirdary_text_color">#ffff0033</color>
+<color name="button_text_color_light" package="miui">#ffccff33</color>
+<color name="highlighted_text_holo_dark" package="android">#ffffff00</color>
+<color name="sliding_button_slider_off_color">#ffff0033</color>
+<color name="action_mode_title_button_text_color_normal_light" package="miui">#ffccff33</color>
+<color name="holo_control_normal" package="android">#ffffff00</color>
+<color name="primary_device_default_light" package="android">#ffffff00</color>
+<color name="timer_circle_progress_start_color">#ffff0033</color>
+<color name="material_deep_teal_300" package="android">#ffffff00</color>
+<color name="world_clock_resident_city_text_bg_color_dark">#ffff0033</color>
+<color name="action_bar_title_text_color_disabled_light" package="miui">#ffccff33</color>
+<color name="button_bg_color_normal_light" package="miui">#ffccff33</color>
+<color name="datepicker_default_normal_text_color_material_dark" package="android">#ffffff00</color>
+<color name="foreground_material_light" package="android">#ffffff00</color>
+<color name="lockscreen_owner_info" package="android">#ffffff00</color>
+<color name="hint_foreground_light" package="android">#ffffff00</color>
+<color name="dialog_list_text_color_disabled_light" package="miui">#ffccff33</color>
+<color name="status_bar_toggle_on_color" package="miui">#ffccff33</color>
+<color name="immersion_window_background_light" package="miui">#ffccff33</color>
+<color name="blank_page_button_text_color_dark" package="miui">#ffccff33</color>
+<color name="numberpicker_hint_text" package="miui">#ffccff33</color>
+<color name="time_zone_search_dark_item_thirdary_text_color">#ffff0033</color>
+<color name="dialog_list_text_color_pressed_dark">#ffff0033</color>
+<color name="selected_text_light" package="miui">#ffccff33</color>
+<color name="dialog_title_text_color" package="miui">#ffccff33</color>
+<color name="material_grey_600" package="android">#ffffff00</color>
+<color name="notification_material_background_color" package="android">#ffffff00</color>
+<color name="activated_text_dark" package="miui">#ffccff33</color>
+<color name="alphabet_indexer_activated_text_color_dark" package="miui">#ffccff33</color>
+<color name="life_post_wake_up_line_sunny_color">#ffff0033</color>
+<color name="action_button_text_color_selected_light" package="miui">#ffccff33</color>
+<color name="list_text_color_pressed_light" package="miui">#ffccff33</color>
+<color name="background_floating_material_light" package="android">#ffffff00</color>
+<color name="action_button_text_color_normal_light" package="miui">#ffccff33</color>
+<color name="bright_foreground_light" package="miui">#ffccff33</color>
+<color name="hint_edit_text_color_light" package="miui">#ffccff33</color>
+<color name="bright_foreground_light_disabled" package="miui">#ffccff33</color>
+<color name="list_secondary_text_color_pressed_dark" package="miui">#ffccff33</color>
+<color name="button_bg_color_pressed_light" package="miui">#ffccff33</color>
+<color name="sliding_button_mask_dark_color">#ffff0033</color>
+<color name="bright_foreground_inverse_material_light">#ffff0033</color>
+<color name="tooltip_background_dark">#ffff0033</color>
+<color name="bright_foreground_disabled_material_dark">#ffff0033</color>
+<color name="list_menu_bg_color_dark" package="miui">#ffccff33</color>
+<color name="notification_action_text_color" package="android">#ffffff00</color>
+<color name="link_text_dark" package="android">#ffffff00</color>
+<color name="material_deep_teal_500" package="android">#ffffff00</color>
+<color name="alert_later_popup_window_title_color">#ffff0033</color>
+<color name="dim_foreground_dark_inverse_disabled" package="android">#ffffff00</color>
+<color name="material_blue_grey_200" package="android">#ffffff00</color>
+<color name="quaternary_device_default_settings" package="android">#ffffff00</color>
+<color name="button_material_dark">#ffff0033</color>
+<color name="worldclock_city_icon_color">#ffff0033</color>
+<color name="autofilled_highlight" package="android">#ffffff00</color>
+<color name="material_grey_600">#ffff0033</color>
+<color name="primary_material_settings_light" package="android">#ffffff00</color>
+<color name="black_deskclock_bg">#ffff0033</color>
+<color name="material_blue_grey_800">#ffff0033</color>
+<color name="timer_display_text_color_silent">#ffff0033</color>
+<color name="primary_dark_material_light_light_status_bar" package="android">#ffffff00</color>
+<color name="immersion_text_color_pressed_dark" package="miui">#ffccff33</color>
+<color name="action_mode_button_text_color_normal_dark" package="miui">#ffccff33</color>
+<color name="checked_text_light" package="miui">#ffccff33</color>
+<color name="primary_dark_material_dark" package="android">#ffffff00</color>
+<color name="bright_foreground_dark" package="miui">#ffccff33</color>
+<color name="datepicker_default_disabled_text_color_material_light" package="android">#ffffff00</color>
+<color name="dim_foreground_holo_dark" package="android">#ffffff00</color>
+<color name="lighter_gray" package="android">#ffffff00</color>
+<color name="dial_segments_color_light">#ffff0033</color>
+<color name="action_mode_button_text_color_selected_dark" package="miui">#ffccff33</color>
+<color name="primary_color_dark" package="miui">#ffccff33</color>
+<color name="material_grey_850">#ffff0033</color>
+<color name="legacy_light_button_pressed" package="android">#ffffff00</color>
+<color name="set_alarm_list_background">#ffff0033</color>
+<color name="button_bg_color_warn_disabled_light" package="miui">#ffccff33</color>
+<color name="list_item_bg_color_light" package="miui">#ffccff33</color>
+<color name="secondary_text_leanback_light" package="android">#ffffff00</color>
+<color name="notification_action_color_filter">#ffff0033</color>
+<color name="primary_device_default_settings" package="android">#ffffff00</color>
+<color name="edit_text_color_dark_disabled" package="miui">#ffccff33</color>
+<color name="notification_template_ambient_title_color" package="android">#ffffff00</color>
+<color name="primary_dark_device_default_settings" package="android">#ffffff00</color>
+<color name="black_worldclock_primary_text_color">#ffff0033</color>
+<color name="primary_dark_material_light">#ffff0033</color>
+<color name="legacy_selected_highlight" package="android">#ffffff00</color>
+<color name="Teal_800" package="android">#ffffff00</color>
+<color name="immersion_text_color_normal_dark" package="miui">#ffccff33</color>
+<color name="background_material_light" package="android">#ffffff00</color>
+<color name="background_leanback_dark" package="android">#ffffff00</color>
+<color name="timepicker_default_numbers_background_color_material" package="android">#ffffff00</color>
+<color name="float_notification_button_color_n" package="miui">#ffccff33</color>
+<color name="notification_secondary_text_color_dark" package="android">#ffffff00</color>
+<color name="user_icon_6" package="android">#ffffff00</color>
+<color name="action_mode_title_text_color_light" package="miui">#ffccff33</color>
+<color name="darker_gray" package="android">#ffffff00</color>
+<color name="blank_page_text_color_light" package="miui">#ffccff33</color>
+<color name="input_method_navigation_guard" package="android">#ffffff00</color>
+<color name="datepicker_default_header_selector_background_material_light" package="android">#ffffff00</color>
+<color name="holo_primary" package="android">#ffffff00</color>
+<color name="black_time_zone_search_item_text_color_normal">#ffff0033</color>
+<color name="material_grey_800" package="android">#ffffff00</color>
+<color name="primary_material_light">#ffff0033</color>
+<color name="light_timer_type_n_text_color">#ffff0033</color>
+<color name="button_text_color_positive_normal_light" package="miui">#ffccff33</color>
+<color name="guide_popup_paint_dark" package="miui">#ffccff33</color>
+<color name="background_light" package="miui">#ffccff33</color>
+<color name="action_bar_tab_text_color_selected_dark" package="miui">#ffccff33</color>
+<color name="dropdown_popup_list_text_color_disabled_light" package="miui">#ffccff33</color>
+<color name="dialog_list_text_color_normal_light" package="miui">#ffccff33</color>
+<color name="user_icon_3" package="android">#ffffff00</color>
+<color name="life_post_wakeup_item_text_color">#ffff0033</color>
+<color name="numberpicker_highlight_text">#ffff0033</color>
+<color name="pressed_text_light" package="miui">#ffccff33</color>
+<color name="dial_segments_color">#ffff0033</color>
+<color name="button_bg_color_warn_normal_light" package="miui">#ffccff33</color>
+<color name="preference_category_text_color_light" package="miui">#ffccff33</color>
+<color name="life_post_wake_up_data_color">#ffff0033</color>
+<color name="background_material_light">#ffff0033</color>
+<color name="dim_foreground_dark_inverse" package="miui">#ffccff33</color>
+<color name="background_holo_dark" package="android">#ffffff00</color>
+<color name="holo_button_pressed" package="android">#ffffff00</color>
+<color name="link_text_light" package="android">#ffffff00</color>
+<color name="material_grey_200" package="android">#ffffff00</color>
+<color name="alert_later_popup_window_second_title_color">#ffff0033</color>
+<color name="material_deep_teal_700" package="android">#ffffff00</color>
+<color name="resolver_icon_mask" package="miui">#ffccff33</color>
+<color name="white" package="miui">#ffccff33</color>
+<color name="foreground_material_light">#ffff0033</color>
+<color name="switch_dialog_bg" package="miui">#ffccff33</color>
+<color name="bottom_round_button_normal_color">#ffff0033</color>
+<color name="button_text_color_negative_light" package="miui">#ffccff33</color>
+<color name="material_blue_grey_950">#ffff0033</color>
+<color name="button_text_color_guide_disabled_light" package="miui">#ffccff33</color>
+<color name="guide_popup_text_light" package="miui">#ffccff33</color>
+<color name="dismiss_life_post_bg_color">#ffff0033</color>
+<color name="voice_input_dialog" package="miui">#ffccff33</color>
+<color name="background_floating_device_default_light" package="android">#ffffff00</color>
+<color name="legacy_light_control_normal" package="android">#ffffff00</color>
+<color name="bright_foreground_disabled_holo_dark" package="android">#ffffff00</color>
+<color name="edit_text_color_dark" package="miui">#ffccff33</color>
+<color name="list_text_color_disable_light" package="miui">#ffccff33</color>
+<color name="lockscreen_clock_background" package="android">#ffffff00</color>
+<color name="primary_text_leanback_dark" package="android">#ffffff00</color>
+<color name="black_worldclock_third_text_color">#ffff0033</color>
+<color name="bright_foreground_light" package="android">#ffffff00</color>
+<color name="sliding_tab_text_color_shadow" package="android">#ffffff00</color>
+<color name="immersion_text_color_disable_dark" package="miui">#ffccff33</color>
+<color name="time_selected" package="miui">#ffccff33</color>
+<color name="worldclock_twilight_color">#ffff0033</color>
+<color name="background_material_dark" package="android">#ffffff00</color>
+<color name="legacy_pressed_highlight" package="android">#ffffff00</color>
+<color name="suggestion_highlight_text" package="android">#ffffff00</color>
+<color name="bright_foreground_dark_disabled" package="miui">#ffccff33</color>
+<color name="spinner_dropdown_button_text_normal" package="miui">#ffccff33</color>
+<color name="material_blue_grey_900" package="android">#ffffff00</color>
+<color name="action_button_text_color_pressed_dark" package="miui">#ffccff33</color>
+<color name="bright_foreground_inverse_material_dark">#ffff0033</color>
+<color name="action_bar_subtitle_text_dark" package="miui">#ffccff33</color>
+<color name="material_deep_teal_100" package="android">#ffffff00</color>
+<color name="action_bar_tab_text_color_normal_light" package="miui">#ffccff33</color>
+<color name="statusbar_content_title" package="android">#ffffff00</color>
+<color name="dim_foreground_inverse_holo_dark" package="android">#ffffff00</color>
+<color name="main_bg">#ffff0033</color>
+<color name="edit_text_search_bg_color_light" package="miui">#ffccff33</color>
+<color name="numberpicker_highlight_text" package="miui">#ffccff33</color>
+<color name="edit_text_search_bg_color_dark">#ffff0033</color>
+<color name="hint_edit_text_dialog_color_light" package="miui">#ffccff33</color>
+<color name="secondary_device_default_settings" package="android">#ffffff00</color>
+<color name="menu_list_text_color_disabled_dark" package="miui">#ffccff33</color>
+<color name="floating_popup_divider_dark" package="android">#ffffff00</color>
+<color name="notification_secondary_text_color_light" package="android">#ffffff00</color>
+<color name="timer_circle_progress_color">#ffff0033</color>
+<color name="dim_foreground_light" package="miui">#ffccff33</color>
+<color name="numberpicker_hint_text">#ffff0033</color>
+<color name="dim_foreground_holo_light" package="android">#ffffff00</color>
+<color name="toast_text_color" package="android">#ffffff00</color>
+<color name="timepicker_default_text_color_material" package="android">#ffffff00</color>
+<color name="holo_button_normal" package="android">#ffffff00</color>
+<color name="list_secondary_text_color_pressed_light" package="miui">#ffccff33</color>
+<color name="spinner_dropdown_button_text_pressed" package="miui">#ffccff33</color>
+<color name="primary_text_default_material_dark" package="android">#ffffff00</color>
+<color name="clock_item_secondary_text_color">#ffff0033</color>
+<color name="notification_time_color" package="android">#ffffff00</color>
+<color name="abc_search_url_text_normal">#ffff0033</color>
+<color name="switch_thumb_disabled_material_dark">#ffff0033</color>
+<color name="list_menu_bg_color_light" package="miui">#ffccff33</color>
+<color name="accent_device_default_700" package="android">#ffffff00</color>
+<color name="list_item_bg_color_pressed_light">#ffff0033</color>
+<color name="tab_view_text_color_selected">#ffff0033</color>
+<color name="datepicker_default_view_animator_color_material_light" package="android">#ffffff00</color>
+<color name="spinner_list_text_color_disabled_dark" package="miui">#ffccff33</color>
+<color name="primary_dark_material_light" package="android">#ffffff00</color>
+<color name="background_material_dark">#ffff0033</color>
+<color name="material_blue_grey_800" package="android">#ffffff00</color>
+<color name="material_grey_50" package="android">#ffffff00</color>
+<color name="notification_default_color" package="android">#ffffff00</color>
+<color name="black_set_alarm_label_text_color">#ffff0033</color>
+<color name="action_bar_title_text_color_dark" package="miui">#ffccff33</color>
+<color name="action_mode_button_text_color_pressed_light" package="miui">#ffccff33</color>
+<color name="dialog_simple_list_title_color_dark" package="miui">#ffccff33</color>
+<color name="list_item_bg_color_pressed_dark" package="miui">#ffccff33</color>
+<color name="profile_badge_1" package="android">#ffffff00</color>
+<color name="sgement_dial_drawable_start_color">#ffff0033</color>
+<color name="link_text_holo_dark" package="android">#ffffff00</color>
+<color name="notification_action_color_filter" package="android">#ffffff00</color>
+<color name="holo_blue_bright" package="android">#ffffff00</color>
+<color name="primary_device_default_dark" package="android">#ffffff00</color>
+<color name="button_text_color_warning_disabled_light" package="miui">#ffccff33</color>
+<color name="global_action_item_text_color_pressed" package="miui">#ffccff33</color>
+<color name="alert_later_popup_window_stroke_color">#ffff0033</color>
+<color name="package_delete_confirm_title" package="miui">#ffccff33</color>
+<color name="background_holo_light" package="android">#ffffff00</color>
+<color name="material_blue_grey_700" package="android">#ffffff00</color>
+<color name="primary_dark_material_dark">#ffff0033</color>
+<color name="volume_panel_text_color" package="miui">#ffccff33</color>
+<color name="datepicker_default_circle_background_color_material_dark" package="android">#ffffff00</color>
+<color name="statusbar_content_info" package="android">#ffffff00</color>
+<color name="secondary_device_default_settings_light" package="android">#ffffff00</color>
+<color name="sliding_tab_text_color_active" package="android">#ffffff00</color>
+<color name="background_device_default_light" package="android">#ffffff00</color>
+<color name="action_bar_tab_text_color_normal_dark" package="miui">#ffccff33</color>
+<color name="user_icon_5" package="android">#ffffff00</color>
+<color name="action_button_text_color_selected_dark" package="miui">#ffccff33</color>
+<color name="auto_disable_screenbuttons_float_text_color" package="miui">#ffccff33</color>
+<color name="hint_foreground_holo_light" package="android">#ffffff00</color>
+<color name="keyguard_text_color_decline" package="android">#ffffff00</color>
+<color name="clock_item_text_color_normal">#ffff0033</color>
+<color name="notification_header_text_color" package="android">#ffffff00</color>
+<color name="notification_icon_default_color" package="android">#ffffff00</color>
+<color name="secondary_text_disabled_material_light">#ffff0033</color>
+<color name="list_secondary_text_color_disable_light" package="miui">#ffccff33</color>
+<color name="notification_media_primary_color" package="android">#ffffff00</color>
+<color name="action_mode_title_button_text_color_pressed_light" package="miui">#ffccff33</color>
+<color name="dialog_list_text_color_pressed_light" package="miui">#ffccff33</color>
+<color name="action_mode_title_default_button_text_color_disable_dark" package="miui">#ffccff33</color>
+<color name="accent_material_dark">#ffff0033</color>
+<color name="line_white">#ffff0033</color>
+<color name="delete_system_update_cancel" package="miui">#ffccff33</color>
+<color name="sliding_button_bar_on_dark">#ffff0033</color>
+<color name="pressed_text_dark" package="miui">#ffccff33</color>
+<color name="action_bar_tab_text_color_disable_dark" package="miui">#ffccff33</color>
+<color name="action_bar_title_settings_text_color_disabled_light" package="miui">#ffccff33</color>
+<color name="background_dark" package="miui">#ffccff33</color>
+<color name="keyguard_avatar_frame_shadow_color" package="android">#ffffff00</color>
+<color name="legacy_long_pressed_highlight" package="android">#ffffff00</color>
+<color name="button_material_light">#ffff0033</color>
+<color name="floating_popup_divider_light" package="android">#ffffff00</color>
+<color name="button_bg_color_warn_pressed_light" package="miui">#ffccff33</color>
+<color name="dim_foreground_dark_inverse" package="android">#ffffff00</color>
+<color name="life_post_weather_sunny_text_color">#ffff0033</color>
+<color name="secondary_tab_text_color_light" package="miui">#ffccff33</color>
+<color name="numberpicker_label" package="miui">#ffccff33</color>
+<color name="keyguard_text_color_soundoff" package="android">#ffffff00</color>
+<color name="legacy_light_control_activated" package="android">#ffffff00</color>
+<color name="foreground_material_dark">#ffff0033</color>
+<color name="menu_list_text_color_pressed_dark" package="miui">#ffccff33</color>
+<color name="primary_dark_device_default_light" package="android">#ffffff00</color>
+<color name="dim_foreground_light_inverse" package="android">#ffffff00</color>
+<color name="secondary_text_default_material_light" package="android">#ffffff00</color>
+<color name="edit_text_color_light" package="miui">#ffccff33</color>
+<color name="black_init_background_color">#ffff0033</color>
+<color name="settings_wake_up_item_line_color">#ffff0033</color>
+<color name="spinner_dropdown_selector_text_color" package="miui">#ffccff33</color>
+<color name="life_post_info_bg_color">#ffff0033</color>
+<color name="life_post_weather_rain_text_color">#ffff0033</color>
+<color name="secondary_tab_text_color_dark" package="miui">#ffccff33</color>
+<color name="tooltip_background_light" package="android">#ffffff00</color>
+<color name="primary_text_default_material_dark">#ffff0033</color>
+<color name="button_normal_device_default_dark" package="android">#ffffff00</color>
+<color name="keyguard_avatar_nick_color" package="android">#ffffff00</color>
+<color name="dim_foreground_light_inverse_disabled" package="android">#ffffff00</color>
+<color name="legacy_green" package="android">#ffffff00</color>
+<color name="edit_text_dialog_bg_solid_light" package="miui">#ffccff33</color>
+<color name="material_grey_900">#ffff0033</color>
+<color name="datepicker_default_view_animator_color_material_dark" package="android">#ffffff00</color>
+<color name="dialog_simple_list_title_color_light" package="miui">#ffccff33</color>
+<color name="resize_shadow_start_color" package="android">#ffffff00</color>
+<color name="link_text_dark" package="miui">#ffccff33</color>
+<color name="primary_text_leanback_light" package="android">#ffffff00</color>
+<color name="Indigo_700" package="android">#ffffff00</color>
+<color name="switch_thumb_normal_material_dark" package="android">#ffffff00</color>
+<color name="background_leanback_light" package="android">#ffffff00</color>
+<color name="list_item_bg_color_pressed_light" package="miui">#ffccff33</color>
+<color name="highlighted_text_light" package="miui">#ffccff33</color>
+<color name="bright_foreground_dark" package="android">#ffffff00</color>
+<color name="screen_saver_dim_color">#ffff0033</color>
+<color name="kg_multi_user_text_inactive" package="android">#ffffff00</color>
+<color name="checked_text_dark" package="miui">#ffccff33</color>
+<color name="hybrid_provider_light" package="miui">#ffccff33</color>
+<color name="bright_foreground_dark_disabled" package="android">#ffffff00</color>
+<color name="holo_light_primary_dark" package="android">#ffffff00</color>
+<color name="timer_display_text_color_full_screen">#ffff0033</color>
+<color name="preference_secondary_text_color_checked_light" package="miui">#ffccff33</color>
+<color name="holo_light_control_activated" package="android">#ffffff00</color>
+<color name="holo_light_primary" package="android">#ffffff00</color>
+<color name="list_secondary_text_color_normal_dark" package="miui">#ffccff33</color>
+<color name="preference_primary_text_color_light" package="miui">#ffccff33</color>
+<color name="accent_material_light" package="android">#ffffff00</color>
+<color name="switch_thumb_normal_material_dark">#ffff0033</color>
+<color name="holo_green_light" package="android">#ffffff00</color>
+<color name="material_red_A100" package="android">#ffffff00</color>
+<color name="list_item_bg_color_dark" package="miui">#ffccff33</color>
+<color name="menu_list_text_color_disabled_light" package="miui">#ffccff33</color>
+<color name="black_time_zone_search_text_color">#ffff0033</color>
+<color name="background_floating_material_dark">#ffff0033</color>
+<color name="notification_icon_bg_color">#ffff0033</color>
+<color name="primary_text_disabled_material_dark">#ffff0033</color>
+<color name="system_bar_background_semi_transparent" package="android">#ffffff00</color>
+<color name="background_floating_material_dark" package="android">#ffffff00</color>
+<color name="search_url_text_normal" package="android">#ffffff00</color>
+<color name="menu_list_text_color_normal_dark" package="miui">#ffccff33</color>
+<color name="filter_sort_tab_view_text_selected" package="miui">#ffccff33</color>
+<color name="preference_secondary_text_color_light" package="miui">#ffccff33</color>
+<color name="background_device_default_dark" package="android">#ffffff00</color>
+<color name="life_post_weather_api_level_rain_text_color">#ffff0033</color>
+<color name="material_grey_800">#ffff0033</color>
+<color name="progress_percent_color" package="miui">#ffccff33</color>
+<color name="group_button_dialog_focused_holo_dark" package="android">#ffffff00</color>
+<color name="holo_blue_light" package="android">#ffffff00</color>
+<color name="dim_foreground_light_disabled" package="miui">#ffccff33</color>
+<color name="miui_boot_massage_dialog_background_color" package="miui">#ffccff33</color>
+<color name="action_mode_button_text_color_pressed_dark" package="miui">#ffccff33</color>
+<color name="divider_line_light" package="miui">#ffccff33</color>
+<color name="life_post_wake_up_line_rain_color">#ffff0033</color>
+<color name="holo_orange_dark" package="android">#ffffff00</color>
+<color name="dim_foreground_disabled_holo_dark" package="android">#ffffff00</color>
+<color name="material_deep_teal_200">#ffff0033</color>
+<color name="alphabet_indexer_text_color_dark" package="miui">#ffccff33</color>
+<color name="message_view_text_color_light" package="miui">#ffccff33</color>
+<color name="primary_text_default_material_light" package="android">#ffffff00</color>
+<color name="set_alarm_label_text_color">#ffff0033</color>
+<color name="tab_view_text_color_normal">#ffff0033</color>
+<color name="silent_mode_title" package="miui">#ffccff33</color>
+<color name="datepicker_default_pressed_text_color_material_light" package="android">#ffffff00</color>
+<color name="action_button_text_color_normal_dark" package="miui">#ffccff33</color>
+<color name="action_bar_title_text_color_disabled_dark" package="miui">#ffccff33</color>
+<color name="float_notification_button_color_p" package="miui">#ffccff33</color>
+<color name="list_text_color_disable_dark" package="miui">#ffccff33</color>
+<color name="drop_down_popup_window_stroke_color">#ffff0033</color>
+<color name="Indigo_800" package="android">#ffffff00</color>
+<color name="datepicker_default_pressed_text_color_material_dark" package="android">#ffffff00</color>
+<color name="tooltip_background_dark" package="android">#ffffff00</color>
+<color name="clock_round_color">#ffff0033</color>
+<color name="spinner_list_text_color_pressed_dark" package="miui">#ffccff33</color>
+<color name="abc_search_url_text_selected">#ffff0033</color>
+<color name="blank_page_button_text_color_light" package="miui">#ffccff33</color>
+<color name="dim_foreground_material_dark">#ffff0033</color>
+<color name="red" package="android">#ffffff00</color>
+<color name="white" package="android">#ffffff00</color>
+<color name="life_post_wake_up_desc_color">#ffff0033</color>
+<color name="drop_down_popup_window_bg_color">#ffff0033</color>
+<color name="user_icon_4" package="android">#ffffff00</color>
+<color name="abc_input_method_navigation_guard">#ffff0033</color>
+<color name="edit_text_dialog_color_normal_light" package="miui">#ffccff33</color>
+<color name="perms_dangerous_perm_color" package="android">#ffffff00</color>
+<color name="dim_foreground_inverse_holo_light" package="android">#ffffff00</color>
+<color name="material_red_A700" package="android">#ffffff00</color>
+<color name="black_time_zone_search_input_hint_text_color">#ffff0033</color>
+<color name="material_deep_teal_200" package="android">#ffffff00</color>
+<color name="black_stopwatch_item_primary_text_color">#ffff0033</color>
+<color name="life_post_weather_api_level_cloudy_text_color">#ffff0033</color>
+<color name="action_button_text_color_disable_light" package="miui">#ffccff33</color>
+<color name="action_button_text_color_pressed_light" package="miui">#ffccff33</color>
+<color name="edit_text_dialog_color_disabled_light" package="miui">#ffccff33</color>
+<color name="group_button_dialog_pressed_holo_dark" package="android">#ffffff00</color>
+<color name="datepicker_default_header_dayofweek_background_color_material_light" package="android">#ffffff00</color>
+<color name="spinner_list_text_color_disabled_light" package="miui">#ffccff33</color>
+<color name="voice_input_button_stroke" package="miui">#ffccff33</color>
+<color name="realtimeblur_bg" package="miui">#ffccff33</color>
+<color name="error_color_material_light">#ffff0033</color>
+<color name="blank_page_text_color_dark" package="miui">#ffccff33</color>
+<color name="text_edit_action_popup_text_pressed" package="miui">#ffccff33</color>
+<color name="notification_primary_text_color_dark" package="android">#ffffff00</color>
+<color name="Red_800" package="android">#ffffff00</color>
+<color name="highlighted_text_material_dark">#ffff0033</color>
+<color name="word_photo_color" package="miui">#ffccff33</color>
+<color name="background_light" package="android">#ffffff00</color>
+<color name="clock_small_number_color">#ffff0033</color>
+<color name="accent_device_default_dark_60_percent_opacity" package="android">#ffffff00</color>
+<color name="primary_text_disabled_material_light">#ffff0033</color>
+<color name="selected_text_dark" package="miui">#ffccff33</color>
+<color name="hint_foreground_dark" package="miui">#ffccff33</color>
+<color name="tooltip_background_light">#ffff0033</color>
+<color name="shadow" package="android">#ffffff00</color>
+<color name="black_set_alarm_small_text_color">#ffff0033</color>
+<color name="dialog_list_text_color_normal_dark">#ffff0033</color>
+<color name="voice_input_dark_bg" package="miui">#ffccff33</color>
+<color name="immersion_text_color_disable_light" package="miui">#ffccff33</color>
+<color name="primary_device_default_settings_light" package="android">#ffffff00</color>
+<color name="no_network_tip_text_light" package="miui">#ffccff33</color>
+<color name="kg_widget_pager_gradient" package="android">#ffffff00</color>
+<color name="user_icon_1" package="android">#ffffff00</color>
+<color name="guide_popup_text_dark" package="miui">#ffccff33</color>
+<color name="bright_foreground_light_disabled" package="android">#ffffff00</color>
+<color name="immersion_text_color_normal_light" package="miui">#ffccff33</color>
+<color name="content_mask_navigation" package="miui">#ffccff33</color>
+<color name="holo_light_button_normal" package="android">#ffffff00</color>
+<color name="black_time_zone_search_light_item_thirdary_text_color">#ffff0033</color>
+<color name="secondary_tab_text_color_disabled_light" package="miui">#ffccff33</color>
+<color name="primary_text_select_color">#ffff0033</color>
+<color name="hint_edit_text_color_dark" package="miui">#ffccff33</color>
+<color name="secondary_tab_text_color_disabled_dark" package="miui">#ffccff33</color>
+<color name="profile_badge_2" package="android">#ffffff00</color>
+<color name="switch_thumb_disabled_material_light">#ffff0033</color>
+<color name="silent_mode_remaintime_1_color" package="miui">#ffccff33</color>
+<color name="switch_thumb_normal_material_light">#ffff0033</color>
+<color name="action_button_text_color_disable_dark" package="miui">#ffccff33</color>
+<color name="timepicker_default_ampm_selected_background_color_material" package="android">#ffffff00</color>
+<color name="suggestion_highlight_text_light" package="miui">#ffccff33</color>
+<color name="timepicker_default_background_material" package="android">#ffffff00</color>
+<color name="accent_color_dark" package="miui">#ffccff33</color>
+<color name="legacy_light_primary" package="android">#ffffff00</color>
+<color name="spinner_edit_item_label_pressed" package="miui">#ffccff33</color>
+<color name="legacy_button_normal" package="android">#ffffff00</color>
+<color name="key_text_normal" package="miui">#ffccff33</color>
+<color name="checked_disabled_text_light" package="miui">#ffccff33</color>
+<color name="facelock_spotlight_mask" package="android">#ffffff00</color>
+<color name="instant_app_badge" package="android">#ffffff00</color>
+<color name="life_post_weather_text_color">#ffff0033</color>
+<color name="button_text_color_dialog_light" package="miui">#ffccff33</color>
+<color name="dialog_message_text_color_light" package="miui">#ffccff33</color>
+<color name="guide_popup_item_text_dark" package="miui">#ffccff33</color>
+<color name="material_grey_50">#ffff0033</color>
+<color name="action_mode_title_button_text_color_disable_dark" package="miui">#ffccff33</color>
+<color name="bright_foreground_material_dark">#ffff0033</color>
+<color name="life_post_wake_up_line_cloudy_color">#ffff0033</color>
+<color name="material_grey_300" package="android">#ffffff00</color>
+<color name="action_mode_title_default_button_text_color_normal_dark" package="miui">#ffccff33</color>
+<color name="highlighted_text_material_light">#ffff0033</color>
+<color name="dim_foreground_light_inverse" package="miui">#ffccff33</color>
+<color name="Blue_700" package="android">#ffffff00</color>
+<color name="kg_multi_user_text_active" package="android">#ffffff00</color>
+<color name="config_defaultNotificationColor" package="android">#ffffff00</color>
+<color name="dialog_message_text_color_dark" package="miui">#ffccff33</color>
+<color name="bright_foreground_dark_inverse" package="miui">#ffccff33</color>
+<color name="primary_dark_device_default_settings_light" package="android">#ffffff00</color>
+<color name="black_worldclock_secondary_text_color">#ffff0033</color>
+<color name="material_grey_100" package="android">#ffffff00</color>
+<color name="bright_foreground_material_light">#ffff0033</color>
+<color name="drop_down_popup_window_button_bg_p">#ffff0033</color>
+<color name="action_bar_tab_text_color_disable_light" package="miui">#ffccff33</color>
+<color name="timer_banner_title_color">#ffff0033</color>
+<color name="perms_dangerous_grp_color" package="android">#ffffff00</color>
+<color name="black_main_bg">#ffff0033</color>
+<color name="foreground_material_dark" package="android">#ffffff00</color>
+<color name="notification_primary_text_color_light" package="android">#ffffff00</color>
+<color name="realtimeblur_bg_oled" package="miui">#ffccff33</color>
+<color name="accent_material_700" package="android">#ffffff00</color>
+<color name="pattern_lockscreen_paint_error_color" package="miui">#ffccff33</color>
+<color name="bright_foreground_inverse_holo_dark" package="android">#ffffff00</color>
+<color name="datepicker_default_normal_text_color_material_light" package="android">#ffffff00</color>
+<color name="numberpicker_label">#ffff0033</color>
+<color name="highlight_normal_light" package="miui">#ffccff33</color>
+<color name="time_not_selected" package="miui">#ffccff33</color>
+<color name="holo_control_activated" package="android">#ffffff00</color>
+<color name="black_tab_view_text_color_normal">#ffff0033</color>
+<color name="black_timer_type_n_text_color">#ffff0033</color>
+<color name="material_deep_teal_500">#ffff0033</color>
+<color name="action_bar_tab_text_color_pressed_light" package="miui">#ffccff33</color>
+<color name="spinner_list_text_color_normal_dark" package="miui">#ffccff33</color>
+<color name="life_post_news_bg_color">#ffff0033</color>
+<color name="link_text_holo_light" package="android">#ffffff00</color>
+<color name="IME_item" package="miui">#ffccff33</color>
+<color name="lockscreen_clock_am_pm" package="android">#ffffff00</color>
+<color name="timer_type_p_text_color">#ffff0033</color>
+<color name="list_text_color_normal_light" package="miui">#ffccff33</color>
+<color name="legacy_orange" package="android">#ffffff00</color>
+<color name="timer_display_text_color_silent_light">#ffff0033</color>
+<color name="package_delete_confirm_bg" package="miui">#ffccff33</color>
+<color name="holo_red_light" package="android">#ffffff00</color>
+<color name="dim_foreground_light_disabled" package="android">#ffffff00</color>
+<color name="arrow_popup_window_dim_color">#ffff0033</color>
+<color name="time_zone_search_item_text_color_normal">#ffff0033</color>
+<color name="delete_system_update_delete" package="miui">#ffccff33</color>
+<color name="primary_material_light" package="android">#ffffff00</color>
+<color name="sliding_button_bar_off_dark">#ffff0033</color>
+<color name="circle_progress_start_color">#ffff0033</color>
+<color name="holo_gray_bright" package="android">#ffffff00</color>
+<color name="alphabet_indexer_activated_text_color" package="miui">#ffccff33</color>
+<color name="notification_template_ambient_text_color" package="android">#ffffff00</color>
+<color name="deskclock_bg">#ffff0033</color>
+<color name="life_post_wakeup_text_color">#ffff0033</color>
+<color name="content_mask" package="miui">#ffccff33</color>
+<color name="button_text_color_positive_disabled_light" package="miui">#ffccff33</color>
+<color name="primary_material_dark">#ffff0033</color>
+<color name="life_post_weather_dismiss_iv_solid_p_color">#ffff0033</color>
+<color name="action_mode_title_default_button_text_color_disable_light" package="miui">#ffccff33</color>
+<color name="edit_text_search_color_light" package="miui">#ffccff33</color>
+<color name="action_bar_tab_settings_text_color_normal_light" package="miui">#ffccff33</color>
+<color name="set_alarm_small_text_color">#ffff0033</color>
+<color name="highlighted_text_dark" package="miui">#ffccff33</color>
+<color name="life_post_weather_dismiss_iv_stroke_color">#ffff0033</color>
+<color name="button_text_color_dark" package="miui">#ffccff33</color>
+<color name="list_secondary_text_color_normal_light" package="miui">#ffccff33</color>
+<color name="statusbar_content_time" package="android">#ffffff00</color>
+<color name="edit_text_color_light_disabled" package="miui">#ffccff33</color>
+<color name="bright_foreground_holo_dark" package="android">#ffffff00</color>
+<color name="legacy_primary" package="android">#ffffff00</color>
+<color name="life_post_screen_background_mask">#ffff0033</color>
+<color name="time_zone_search_light_item_thirdary_text_color">#ffff0033</color>
+<color name="arrow_popup_window_dim_color" package="miui">#ffccff33</color>
+<color name="preference_secondary_text_color_pressed_light" package="miui">#ffccff33</color>
+<color name="highlighted_text_holo_light" package="android">#ffffff00</color>
+<color name="button_material_dark" package="android">#ffffff00</color>
+<color name="search_url_text_selected" package="android">#ffffff00</color>
+<color name="alphabet_indexer_overlay_text_color" package="miui">#ffccff33</color>
+<color name="dim_foreground_dark" package="android">#ffffff00</color>
+<color name="button_text_color_guide_normal_light" package="miui">#ffccff33</color>
+<color name="action_mode_title_default_button_text_color_pressed_dark" package="miui">#ffccff33</color>
+<color name="bright_foreground_inverse_holo_light" package="android">#ffffff00</color>
+<color name="holo_green_dark" package="android">#ffffff00</color>
+<color name="action_bar_tab_settings_text_color_pressed_light" package="miui">#ffccff33</color>
+<color name="notification_progress_background_color" package="android">#ffffff00</color>
+<color name="drop_down_popup_window_more_setting_color">#ffff0033</color>
+<color name="action_bar_tab_settings_text_color_selected_light" package="miui">#ffccff33</color>
+<color name="clock_item_primary_text_color">#ffff0033</color>
+<color name="secondary_text_disabled_material_dark">#ffff0033</color>
+<color name="edit_text_search_hint_color_dark" package="miui">#ffccff33</color>
+<color name="link_text_light" package="miui">#ffccff33</color>
+<color name="Teal_700" package="android">#ffffff00</color>
+<color name="datepicker_default_selected_text_color_material_light" package="android">#ffffff00</color>
+<color name="black_worldclock_fg_color">#ffff0033</color>
+<color name="checked_text_light">#ffff0033</color>
+<color name="primary_text_leanback_formwizard_default_dark" package="android">#ffffff00</color>
+<color name="pattern_lockscreen_paint_color" package="miui">#ffccff33</color>
+<color name="voice_input_button" package="miui">#ffccff33</color>
+<color name="voice_input_button_text_color" package="miui">#ffccff33</color>
+<color name="action_bar_title_text_color_light" package="miui">#ffccff33</color>
+<color name="edit_text_search_hint_color_light" package="miui">#ffccff33</color>
+<color name="action_mode_title_default_button_text_color_pressed_light" package="miui">#ffccff33</color>
+<color name="status_bar_toggle_off_color" package="miui">#ffccff33</color>
+<color name="chooser_service_row_background_color" package="android">#ffffff00</color>
+<color name="bright_foreground_dark_inverse" package="android">#ffffff00</color>
+<color name="abc_search_url_text_pressed">#ffff0033</color>
+<color name="accent_material_dark" package="android">#ffffff00</color>
+<color name="alert_later_popup_window_text_color_selected">#ffff0033</color>
+<color name="lock_pattern_view_regular_color" package="android">#ffffff00</color>
+<color name="dim_foreground_light" package="android">#ffffff00</color>
+<color name="media_notification_app_name_text_color" package="android">#ffffff00</color>
+<color name="voice_input_button_bg_pressed" package="miui">#ffccff33</color>
+<color name="activated_text_light" package="miui">#ffccff33</color>
+<color name="button_material_light" package="android">#ffffff00</color>
+<color name="legacy_control_activated" package="android">#ffffff00</color>
+<color name="resize_shadow_end_color" package="android">#ffffff00</color>
+<color name="highlight_pressed_light" package="miui">#ffccff33</color>
+<color name="holo_purple" package="android">#ffffff00</color>
+<color name="holo_light_control_normal" package="android">#ffffff00</color>
+<color name="list_text_color_normal_dark" package="miui">#ffccff33</color>
+<color name="list_view_item_group_header_text_light" package="miui">#ffccff33</color>
+<color name="holo_gray_light" package="android">#ffffff00</color>
+<color name="action_mode_title_default_button_text_color_normal_light" package="miui">#ffccff33</color>
+<color name="clock_hand_hour">#ffff0033</color>
+<color name="black_time_zone_search_dark_item_thirdary_text_color">#ffff0033</color>
+<color name="secondary_text_default_material_light">#ffff0033</color>
+<color name="life_post_weather_cloudy_text_color">#ffff0033</color>
+<color name="hint_foreground_light" package="miui">#ffccff33</color>
+<color name="ripple_material_light">#ffff0033</color>
+<color name="black" package="miui">#ffccff33</color>
+<color name="switch_thumb_disabled_material_light" package="android">#ffffff00</color>
+<color name="highlighted_text_light" package="android">#ffffff00</color>
+<color name="black_set_alarm_label_hint_text_color">#ffff0033</color>
+<color name="background_floating_device_default_dark" package="android">#ffffff00</color>
+<color name="accent_material_50" package="android">#ffffff00</color>
+<color name="dim_foreground_material_light">#ffff0033</color>
+<color name="guide_popup_background_light" package="miui">#ffccff33</color>
+<color name="secondary_material_settings_light" package="android">#ffffff00</color>
+<color name="legacy_light_button_normal" package="android">#ffffff00</color>
+<color name="boot_msg_textcolor" package="miui">#ffccff33</color>
+<color name="holo_light_button_pressed" package="android">#ffffff00</color>
+<color name="timepicker_default_selector_color_material" package="android">#ffffff00</color>
+<color name="keyguard_avatar_frame_pressed_color" package="android">#ffffff00</color>
+<color name="primary_material_dark" package="android">#ffffff00</color>
+<color name="primary_text_default_material_light">#ffff0033</color>
+<color name="dim_foreground_inverse_disabled_holo_light" package="android">#ffffff00</color>
+<color name="life_post_weather_api_level_sunny_text_color">#ffff0033</color>
+<color name="material_grey_300">#ffff0033</color>
+<color name="divider_line_dark" package="miui">#ffccff33</color>
+<color name="user_icon_8" package="android">#ffffff00</color>
+<color name="action_bar_tab_settings_text_color_disable_light" package="miui">#ffccff33</color>
+<color name="list_secondary_text_color_disable_dark" package="miui">#ffccff33</color>
+<color name="bottom_round_button_normal_full_screen_color">#ffff0033</color>
+<color name="material_blue_grey_900">#ffff0033</color>
+<color name="dim_foreground_dark" package="miui">#ffccff33</color>
+<color name="filter_sort_tab_view_text_normal" package="miui">#ffccff33</color>
+<color name="switch_thumb_normal_material_light" package="android">#ffffff00</color>
+<color name="sliding_button_slider_on_color">#ffff0033</color>
+<color name="dropdown_popup_list_text_color_pressed_light" package="miui">#ffccff33</color>
+<color name="holo_orange_light" package="android">#ffffff00</color>
+<color name="ripple_material_dark">#ffff0033</color>
+<color name="user_icon_default_gray" package="android">#ffffff00</color>
+<color name="list_text_color_pressed_dark" package="miui">#ffccff33</color>
+<color name="holo_blue_dark" package="android">#ffffff00</color>
+<color name="search_url_text_pressed" package="android">#ffffff00</color>
+<color name="notification_icon_bg_color" package="android">#ffffff00</color>
+<color name="guide_popup_item_text_light" package="miui">#ffccff33</color>
+<color name="disabled_text_light" package="miui">#ffccff33</color>
+<color name="Pink_800" package="android">#ffffff00</color>
+<color name="key_text_pressed" package="miui">#ffccff33</color>
+<color name="menu_list_text_color_pressed_light" package="miui">#ffccff33</color>
+<color name="primary_dark_material_settings_light" package="android">#ffffff00</color>
+<color name="bright_foreground_disabled_holo_light" package="android">#ffffff00</color>
+<color name="action_bar_title_settings_text_color_light" package="miui">#ffccff33</color>
+<color name="action_mode_title_text_color_dark" package="miui">#ffccff33</color>
+<color name="accent_device_default_50" package="android">#ffffff00</color>
+<color name="android_config_defaultNotificationColor" package="miui">#ffccff33</color>
+<color name="black_clock_item_secondary_text_color">#ffff0033</color>
+<color name="material_grey_900" package="android">#ffffff00</color>
+<color name="bg_set_alarm">#ffff0033</color>
+<color name="action_bar_subtitle_text_light" package="miui">#ffccff33</color>
+<color name="button_text_color_warning_normal_light" package="miui">#ffccff33</color>
+<color name="float_notification_button_color_disable" package="miui">#ffccff33</color>
+<color name="preference_category_text_color_dark">#ffff0033</color>
+<color name="action_mode_button_text_color_disable_dark" package="miui">#ffccff33</color>
+<color name="background_dark" package="android">#ffffff00</color>
+<color name="error_color_material_dark">#ffff0033</color>
+<color name="edit_text_dialog_bg_stroke_light" package="miui">#ffccff33</color>
+<color name="edit_text_search_color_dark" package="miui">#ffccff33</color>
+<color name="bottom_round_button_disable_color">#ffff0033</color>
+<color name="primary_color_settings_light" package="miui">#ffccff33</color>
+<color name="sliding_button_bar_on_light" package="miui">#ffccff33</color>
+<color name="quaternary_material_settings" package="android">#ffffff00</color>
+<color name="dim_foreground_disabled_material_light">#ffff0033</color>
+<color name="divider_color" package="miui">#ffccff33</color>
+<color name="datepicker_default_selected_text_color_material_dark" package="android">#ffffff00</color>
+<color name="notification_tombstone_action_text_color" package="android">#ffffff00</color>
+<color name="alphabet_indexer_highlight_text_color" package="miui">#ffccff33</color>
+<color name="numberpicker_highlight_region_bg_color" package="miui">#ffccff33</color>
+<color name="user_icon_2" package="android">#ffffff00</color>
+<color name="tertiary_material_settings" package="android">#ffffff00</color>
+<color name="bright_foreground_holo_light" package="android">#ffffff00</color>
+<color name="primary_text_color_dark">#ffff0033</color>
+<color name="disabled_text_dark" package="miui">#ffccff33</color>
+<color name="alert_later_popup_window_text_color_normal">#ffff0033</color>
+<color name="Purple_700" package="android">#ffffff00</color>
+<color name="transparent" package="miui">#ffccff33</color>
+<color name="legacy_primary_dark" package="android">#ffffff00</color>
+<color name="preference_secondary_text_color_disable_light" package="miui">#ffccff33</color>
+<color name="dim_foreground_dark_disabled" package="miui">#ffccff33</color>
+<color name="time_text_color">#ffff0033</color>
+<color name="list_view_item_group_header_text_dark" package="miui">#ffccff33</color>
+<color name="search_widget_corpus_item_background" package="android">#ffffff00</color>
+<color name="user_icon_default_white" package="android">#ffffff00</color>
+<color name="profile_badge_3" package="android">#ffffff00</color>
+<color name="action_mode_title_button_text_color_normal_dark" package="miui">#ffccff33</color>
+<color name="keyguard_avatar_frame_color" package="android">#ffffff00</color>
+<color name="legacy_button_pressed" package="android">#ffffff00</color>
+<color name="action_mode_title_button_text_color_pressed_dark" package="miui">#ffccff33</color>
+<color name="highlight_disabled_light" package="miui">#ffccff33</color>
+<color name="action_bar_tab_text_color_selected_light" package="miui">#ffccff33</color>
+<color name="switch_thumb_disabled_material_dark" package="android">#ffffff00</color>
+<color name="action_mode_title_button_text_color_disable_light" package="miui">#ffccff33</color>
+<color name="spinner_list_text_color_normal_light" package="miui">#ffccff33</color>
+<color name="primary_material_settings" package="android">#ffffff00</color>
+<color name="black_screen_saver_dim_color">#ffff0033</color>
+<color name="micro_text_light" package="android">#ffffff00</color>
+<color name="dialog_checkbox_text_color_light" package="miui">#ffccff33</color>
+<color name="divider_line_dark">#ffff0033</color>
+<color name="suggestion_highlight_text_dark" package="miui">#ffccff33</color>
+<color name="secondary_text_color_dark">#ffff0033</color>
+<color name="fc_dialog_body_text_color" package="miui">#ffccff33</color>
+<color name="Purple_800" package="android">#ffffff00</color>
+<color name="primary_dark_device_default_dark" package="android">#ffffff00</color>
+<color name="set_alarm_preference_bg">#ffff0033</color>
+<color name="menu_list_text_color_normal_light" package="miui">#ffccff33</color>
+<color name="datepicker_default_header_selector_background_material_dark" package="android">#ffffff00</color>
+<color name="black_clock_item_thirdary_text_color">#ffff0033</color>
+<color name="bright_foreground_light_inverse" package="android">#ffffff00</color>
+<color name="material_grey_850" package="android">#ffffff00</color>
+<color name="action_mode_button_text_color_normal_light" package="miui">#ffccff33</color>
+<color name="life_post_wake_up_line_dirt_color">#ffff0033</color>
+<color name="material_deep_teal_50" package="android">#ffffff00</color>
+<color name="material_grey_100">#ffff0033</color>
+<color name="accent_color_light" package="miui">#ffccff33</color>
+<color name="dim_foreground_dark_disabled" package="android">#ffffff00</color>
+<color name="dim_foreground_inverse_disabled_holo_dark" package="android">#ffffff00</color>
+<color name="spinner_list_text_color_pressed_light" package="miui">#ffccff33</color>
+<color name="legacy_control_normal" package="android">#ffffff00</color>
+<color name="set_alarm_stroke_color">#ffff0033</color>
+<color name="guide_popup_paint_light" package="miui">#ffccff33</color>
+<color name="datepicker_default_header_dayofweek_background_color_material_dark" package="android">#ffffff00</color>
+<color name="holo_red_dark" package="android">#ffffff00</color>
+<color name="notification_media_secondary_color" package="android">#ffffff00</color>
+<color name="black_clock_item_text_color_normal">#ffff0033</color>
+<color name="hint_foreground_dark" package="android">#ffffff00</color>
+<color name="button_text_color_dialog_disabled_light" package="miui">#ffccff33</color>
+<color name="highlighted_text_dark" package="android">#ffffff00</color>
+<color name="secondary_text_default_material_dark" package="android">#ffffff00</color>
+<color name="set_alarm_label_hint_text_color">#ffff0033</color>
+<color name="action_mode_button_text_color_disable_light" package="miui">#ffccff33</color>
+<color name="notification_action_list" package="android">#ffffff00</color>
+<color name="alphabet_indexer_text_color" package="miui">#ffccff33</color>
+<color name="secondary_material_settings" package="android">#ffffff00</color>
+<color name="statusbar_content" package="android">#ffffff00</color>
+<color name="voice_input_button_bg" package="miui">#ffccff33</color>
+<color name="primary_color_light" package="miui">#ffccff33</color>
+<color name="bright_foreground_light_inverse" package="miui">#ffccff33</color>
+<color name="accessibility_focus_highlight" package="android">#ffffff00</color>
+<color name="init_background_color">#ffff0033</color>
+<color name="timepicker_default_ampm_unselected_background_color_material" package="android">#ffffff00</color>
+<color name="black_tab_view_text_color_selected">#ffff0033</color>
+<color name="bright_foreground_disabled_material_light">#ffff0033</color>
+<color name="power_off_dialog_background_cover_color" package="miui">#ffccff33</color>
+<color name="keyguard_text_color_soundon" package="android">#ffffff00</color>
+<color name="black_accent_color_light">#ffff0033</color>
+<color name="black" package="android">#ffffff00</color>
+<color name="accent_material_light">#ffff0033</color>
+<color name="holo_primary_dark" package="android">#ffffff00</color>
+<color name="lockscreen_clock_foreground" package="android">#ffffff00</color>
+<color name="action_bar_tab_text_color_pressed_dark" package="miui">#ffccff33</color>
+<color name="black_clock_large_number_color">#ffff0033</color>
+<color name="keyguard_text_color_unlock" package="android">#ffffff00</color>
+<color name="secondary_text_default_material_dark">#ffff0033</color>
+<color name="safe_mode_text" package="android">#ffffff00</color>
+<color name="accent_device_default_light" package="android">#ffffff00</color>
+<color name="material_blue_grey_950" package="android">#ffffff00</color>
+<color name="group_button_dialog_focused_holo_light" package="android">#ffffff00</color>
+<color name="legacy_light_primary_dark" package="android">#ffffff00</color>
+<color name="divider_line_light">#ffff0033</color>
+<color name="global_action_item_text_color_normal" package="miui">#ffccff33</color>
+<color name="immersion_text_color_pressed_light" package="miui">#ffccff33</color>
+<color name="package_delete_confirm_warning_info" package="miui">#ffccff33</color>
+<color name="black_stopwatch_item_secondary_text_color">#ffff0033</color>
+<color name="primary_dark_material_settings" package="android">#ffffff00</color>
+<color name="dim_foreground_disabled_material_dark">#ffff0033</color>
+<color name="system_notification_accent_color" package="android">#ffffff00</color>
+<color name="background_floating_material_light">#ffff0033</color>
+<color name="preference_first_last_divider_line_light" package="miui">#ffccff33</color>
+<color name="action_mode_button_text_color_selected_light" package="miui">#ffccff33</color>
+<color name="accent_device_default_dark" package="android">#ffffff00</color>
+<color name="keyguard_text_color_normal" package="android">#ffffff00</color>
+<color name="group_button_dialog_pressed_holo_light" package="android">#ffffff00</color>
+<color name="dim_foreground_disabled_holo_light" package="android">#ffffff00</color>
+<color name="alert_screen_background_mask">#ffff0033</color>
+<color name="life_post_weather_dirt_text_color">#ffff0033</color>
+<color name="Pink_700" package="android">#ffffff00</color>
+<color name="life_post_weather_api_level_dirt_text_color">#ffff0033</color>
+<color name="user_icon_7" package="android">#ffffff00</color>
+</MIUI_Theme_Values>

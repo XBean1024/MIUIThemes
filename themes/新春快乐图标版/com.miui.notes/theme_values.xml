@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<MIUI_Theme_Values>
+<color name="theme_color_white_t_color">#ffefa71c</color>
+<dimen name="list_section_radius">5.000000dp</dimen>
+<color name="v8_text_appearance_list_secondary_text_color">#ffffffff</color>
+<color name="audio_panel_color">#ffd13838</color>
+<color name="action_bar_title_text_color">#ffefa71c</color>
+<color name="homepage_primary_color">#ffd13838</color>
+<color name="v8_default_grid_primary_title_color">#ffffffff</color>
+<dimen name="grid_item_shape_radius">20dp</dimen>
+<color name="v8_text_appearance_list_tertiary_text_color">#ffefa71c</color>
+<color name="drop_down_popup_window_background_color">#ffd13838</color>
+<color name="header_info_text_color_light">#ffefa71c</color>
+<color name="v8_default_grid_body_color">#ffefa71c</color>
+<dimen name="menu_popup_color_bar_radius">40dp</dimen>
+<dimen name="list_item_secondary_text_size">10sp</dimen>
+<color name="drop_down_item_highlight_color">#ffefa71c</color>
+<color name="v8_text_appearance_list_primary_text_color">#ffefa71c</color>
+<color name="v8_theme_color_white">#ffd13838</color>
+<color name="v8_text_appearance_grid_tertiary_light_text_color">#ffefa71c</color>
+<color name="action_bar_title_count_color">#ffefa71c</color>
+</MIUI_Theme_Values>

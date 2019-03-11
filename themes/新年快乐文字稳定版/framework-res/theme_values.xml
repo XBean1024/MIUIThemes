@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<MIUI_Theme_Values>
+<color name="statusbar_content_title">#fff16f0f</color>
+<color name="statusbar_content">#ffffffff</color>  
+</MIUI_Theme_Values>

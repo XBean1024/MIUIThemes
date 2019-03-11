@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Clock version="1" type="awesome" frameRate="2" screenWidth="1080"  >
+	<!-- 天气 -->
+    <VariableBinders>
+        <ContentProviderBinder uriFormat="content://weather/weather" uriParas="#time_sys" columns="city_name,temperature,temperature_range,description,weather_type" countName="hasweather">
+		    <Variable name="weather_id" type="int" column="weather_type"/>
+			<Variable name="weather_location" type="string" column="city_name"/>
+			<Variable name="weather_temperature" column="temperature" type="string"/>
+			<Variable name="weather_temperature_range" type="string" column="temperature_range"/>
+			<Variable name="weather_description" type="string" column="description"/>
+			<Variable name="weather_type" type="int" column="weather_type"/>
+		</ContentProviderBinder>
+     </VariableBinders>
+	<!-- 日期时间 -->
+	<Time x="#view_width/2" y="220" align="center" alignV="center" src="time.png"/>
+	<Text x="#view_width/2" y="335" align="center" alignV="center" color="#f16f0f" size="40" format="%s  %s  %s" paras="@weather_location,@weather_description,@weather_temperature_range"/>
+	<DateTime x="#view_width/2" y="400" color="#f16f0f" align="center" alignV="center" size="40" format="yyyy年 MM月dd日  EEEE  NNNN"/>
+</Clock>

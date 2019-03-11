@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<MIUI_Theme_Values>
+    <color name="edit_mode_workspace_thumbnail_border_normal_color">#d9ffffff</color>
+    <color name="icon_title_text_dark">#fff16f0f</color>
+    <color name="uninstall_dialog_title_text">#fff16f0f</color>
+    <color name="uninstall_dialog_button_text">#fff16f0f</color>
+    <color name="uninstall_dialog_message_text">#ffd13838</color>
+    <color name="icon_title_text">#fff16f0f</color>
+    <color name="uninstall_bg_dark">#ffffffff</color>
+    <color name="default_screen_thumbnail_border_selected_color">#ffff7e00</color>
+    <color name="bg_menu">#ffd13838</color>
+    <color name="list_secondary_text_color_normal_light" package="miui">#ff0099ff</color>
+    <color name="preference_primary_text_color_light" package="miui">#ccffffff</color>
+    <color name="dim_foreground_light" package="miui">#ff0099ff</color>
+    <color name="action_bar_title_text_color_light" package="miui">#ff0099ff</color>
+
+</MIUI_Theme_Values>

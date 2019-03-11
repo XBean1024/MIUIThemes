@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Icon screenWidth="1080" frameRate="60" width="182" height="182">
+    <Image src="bg.png"/>
+    <VariableBinders>
+        <ContentProviderBinder name="weather" uri="content://weather/weather"
+                               columns="city_id,city_name,temperature,temperature_range,weather_type,wind,humidity,publish_time,weathernamesfrom,weathernamesto,tmplows,tmphighs,description"
+                               countName="hasweather" dependency="selected_city">
+            <!--城市ID-->
+            <Variable name="city_id" type="string" column="city_id"/>
+            <!--地理位置-->
+            <Variable name="weather_location" type="string" column="city_name"/>
+            <!--温度-->
+            <Variable name="w_tem" type="int" column="temperature"/>
+            <Variable name="w_id" type="int" column="weather_type"/>
+            <Variable name="w_wind" type="string" column="wind"/>
+            <Variable name="w_tpr" type="string" column="temperature_range"/>
+            <Variable name="w_humidity" type="string" column="humidity"/>
+            <Variable name="w_publish_time" type="long" column="publish_time"/>
+            <Variable name="tmp_low0" type="int" column="tmplows" row="0"/>
+            <Variable name="tmp_high0" type="int" column="tmphighs" row="0"/>
+            <Variable name="w_dp0" type="string" column="description" row="0"/>
+            <!--多云-->
+            <Variable name="wf1" type="string" column="weathernamesfrom" row="1"/>
+            <Variable name="wt1" type="string" column="weathernamesto" row="1"/>
+
+            <Variable name="tmp_low1" type="int" column="tmplows" row="1"/>
+            <Variable name="tmp_high1" type="int" column="tmphighs" row="1"/>
+        </ContentProviderBinder>
+        <ContentProviderBinder name="weather_aqi" dependency="weather" uriFormat="content://weatherinfo/aqi/%s"
+                               uriParas="@city_id" columns="aqi,pm25,pm10,so2,no2,pub_time,src,spot"
+                               countName="hasweatherinfo">
+            <Variable name="aqi" type="int" column="aqi"/>
+            <Variable name="pm25" type="int" column="pm25"/>
+            <Variable name="pm10" type="int" column="pm10"/>
+            <Variable name="so2" type="int" column="so2"/>
+            <Variable name="no2" type="int" column="no2"/>
+        </ContentProviderBinder>
+    </VariableBinders>
+    <Var name="air_quality"
+         expression="ifelse(ge(#aqi,0)*lt(#aqi,50),'优',ge(#aqi,50)*lt(#aqi,100),'良',ge(#aqi,100)*lt(#aqi,150),'轻度污染',ge(#aqi,150)*lt(#aqi,200),'中度污染',ge(#aqi,200)*lt(#aqi,300),'重度污染',ge(#aqi,300)*le(#aqi,500),'严重污染','获取信息异常')"
+         type="string"/>
+
+    <!--PM值-->
+    <Text x="90" y="40" size="30" align="center" alignV="center" bold="true" color="#FFFFFF" textExp="'pm:'+#pm25"/>
+    <!--天气 和 温度显示-->
+    <Text x="90" y="80" size="30" align="center" alignV="center" bold="true" color="#FFFFFF"
+          textExp="@w_dp0+'-'+#pm10+'度'"/>
+    <!--地理位置-->
+    <Text x="90" y="120" size="30" align="center" alignV="center" bold="true" color="#FFFFFF"
+          textExp="@weather_location"/>
+
+</Icon>

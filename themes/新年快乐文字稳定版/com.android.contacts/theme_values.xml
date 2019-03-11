@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<MIUI_Theme_Values>
+<color name="disabled_text_light" package="miui">#fff16f0f</color>
+<color name="indexer_text_highlight">#ffffffff</color>
+<bool name="show_default_contact_detail_photo_bg">true</bool>
+<color name="list_view_item_group_header_text_light" package="miui">#ffFDEA00</color>
+<color name="editor_label_text_color_n">#fff16f0f</color>
+<color name="dialer_digits_text_color">#fff16f0f</color>
+<color name="dialer_accent_color">#fff16f0f</color>
+<color name="editor_hint_text_color_n">#fff16f0f</color>
+<color name="call_button_text">#fff16f0f</color>
+<color name="contact_detail_list_item_secondary_text_color">#ffffffff</color>
+<color name="edit_text_color_light" package="miui">#ffffffff</color>
+<color name="dialog_list_text_color_normal_light" package="miui">#ffffffff</color>
+<color name="contact_detail_photo_default_color">#ffd13838</color>
+<color name="word_photo_color" package="miui">#fff16f0f</color>
+<color name="image_placeholder">#ffd13838</color>
+<color name="dialog_title_text_color" package="miui">#ffffffff</color>
+<color name="contacts_accent_color">#fff16f0f</color>
+<color name="quickcontact_list_item_primary_text_color">#fff16f0f</color>
+<color name="vector_bg_major_color7">#ffd13838</color>
+<color name="list_item_bg_normal">#ffd13838</color>
+<color name="list_divider_stroke">#00000000</color>
+<color name="editor_button_confirm_color">#ffffffff</color>
+<color name="vector_bg_major_color3">#ffd13838</color>
+<color name="vector_bg_major_color4">#ffd13838</color>
+<color name="header_text_label_color">#ffffffff</color>
+<color name="vector_bg_major_color5">#ffd13838</color>
+<color name="vector_bg_major_color6">#ffd13838</color>
+<color name="list_text_color_pressed_light" package="miui">#ffffffff</color>
+<color name="vector_bg_major_color0">#ffd13838</color>
+<color name="list_secondary_text_color_normal_light" package="miui">#ffffffff</color>
+<color name="vector_bg_major_color1">#ffd13838</color>
+<color name="vector_bg_major_color2">#ffd13838</color>
+<color name="editor_button_default_color">#fff16f0f</color>
+<color name="contact_photo_view_color0">#ffd13838</color>
+<color name="contact_detail_list_item_primary_text_color">#ffffffff</color>
+<color name="dim_foreground_light" package="miui">#ffffffff</color>
+<color name="secondary_text_default_material_light">#ffa06941</color>
+<color name="dialer_title_text_color">#ffffff00</color>
+<color name="detail_activity_window_bg_light">#ffff0066</color>
+<color name="alphabet_indexer_overlay_text_color" package="miui">#fff16f0f</color>
+</MIUI_Theme_Values>

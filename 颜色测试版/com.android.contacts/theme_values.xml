@@ -1,0 +1,447 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<MIUI_Theme_Values>
+<color name="call_charge">#ff02b9ae</color>
+<color name="hint_edit_text_dialog_color_light" package="miui">#ff000000</color>
+<color name="voice_input_button_bg_pressed" package="miui">#ff000000</color>
+<color name="indexer_text_highlight">#ff000000</color>
+<color name="guide_popup_text_light" package="miui">#ff000000</color>
+<color name="list_divider_solid">#ff000000</color>
+<color name="status_bar_toggle_on_color" package="miui">#ff000000</color>
+<color name="unknown_contact_unfold_all_text_color">#ff000000</color>
+<color name="action_mode_title_text_p">#ff02b9ae</color>
+<color name="action_mode_title_button_text_color_pressed_dark" package="miui">#ff000000</color>
+<color name="navigation_list_text_color_highlight">#ff000000</color>
+<color name="action_mode_title_text_n">#ff02b9ae</color>
+<color name="primary_text_color_shadow">#ff000000</color>
+<color name="button_text_color_light" package="miui">#ff000000</color>
+<color name="word_photo_color" package="miui">#ff000000</color>
+<color name="blank_page_text_color_dark" package="miui">#ff000000</color>
+<color name="textColorIconOverlay">#ff000000</color>
+<color name="divider_line_dark" package="miui">#ff000000</color>
+<color name="edit_text_search_bg_color_light" package="miui">#ff000000</color>
+<color name="action_mode_button_text_color_normal_light" package="miui">#ff000000</color>
+<color name="float_notification_button_color_p" package="miui">#ff000000</color>
+<color name="guide_popup_item_text_dark" package="miui">#ff000000</color>
+<color name="quickcontact_list_item_secondary_text_color">#ff000000</color>
+<color name="quickcontact_tab_indicator">#ff000000</color>
+<color name="dialog_simple_list_title_color_light" package="miui">#ff000000</color>
+<color name="detail_tab_carousel_tab_label_color">#ffffffff</color>
+<color name="selected_text_dark" package="miui">#ff000000</color>
+<color name="contact_detail_list_item_primary_text_color">#ff02b9ae</color>
+<color name="profile_upgrade_notice_title_text_color">#ff000000</color>
+<color name="dim_foreground_light" package="miui">#ff000000</color>
+<color name="list_text_color_pressed_dark" package="miui">#ff000000</color>
+<color name="guide_popup_paint_light" package="miui">#ff000000</color>
+<color name="blank_page_button_text_color_light" package="miui">#ff000000</color>
+<color name="button_text_color_dialog_disabled_light" package="miui">#ff000000</color>
+<color name="volume_panel_text_color" package="miui">#ff000000</color>
+<color name="edit_text_color_light_disabled" package="miui">#ff000000</color>
+<color name="dialog_message_text_color_light" package="miui">#ff000000</color>
+<color name="filter_sort_tab_view_text_normal" package="miui">#ff000000</color>
+<color name="action_button_text_color_selected_dark" package="miui">#ff000000</color>
+<color name="blank_page_text_color_light" package="miui">#ff000000</color>
+<color name="profile_new_request_color">#ff000000</color>
+<color name="list_secondary_text_color_pressed_dark" package="miui">#ff000000</color>
+<color name="action_bar_title_settings_text_color_light" package="miui">#ff000000</color>
+<color name="contact_detail_micard_divider">#ff02b9ae</color>
+<color name="item_selected">#ff000000</color>
+<color name="button_text_color_warning_disabled_light" package="miui">#ff000000</color>
+<color name="nickname_editor_vertical_divider">#ff000000</color>
+<color name="quick_contact_tab_text_color_pressed_dark">#ff000000</color>
+<color name="action_mode_button_text_color_normal_dark" package="miui">#ff000000</color>
+<color name="list_secondary_text_color_pressed_light" package="miui">#ff000000</color>
+<color name="list_item_bg_normal">#ff000000</color>
+<color name="action_bar_subtitle_text_light" package="miui">#ff000000</color>
+<color name="edit_text_search_color_light" package="miui">#ff000000</color>
+<color name="spinner_list_text_color_disabled_dark" package="miui">#ff000000</color>
+<color name="spinner_list_text_color_pressed_light" package="miui">#ff000000</color>
+<color name="quick_contact_tab_text_color_selected_dark">#ff000000</color>
+<color name="fc_dialog_body_text_color" package="miui">#ff000000</color>
+<color name="dim_foreground_light_inverse" package="miui">#ff000000</color>
+<color name="action_mode_title_default_button_text_color_normal_light" package="miui">#ff000000</color>
+<color name="mark_number_highlight_text_color">#ff000000</color>
+<color name="dim_foreground_light_disabled" package="miui">#ff000000</color>
+<color name="contact_detail_micard_title_text_color">#ff02b9ae</color>
+<color name="contact_detail_title_color">#ff02b9ae</color>
+<color name="action_mode_title_default_button_text_color_normal_dark" package="miui">#ff000000</color>
+<color name="photo_load_failed_text_color">#ff000000</color>
+<color name="text_edit_action_popup_text_pressed" package="miui">#ff000000</color>
+<color name="background_social_updates">#ff02b9ae</color>
+<color name="nickname_editor_title">#ff000000</color>
+<color name="dialog_activity_bg_transparent">#ff02b9ae</color>
+<color name="package_delete_confirm_bg" package="miui">#ff000000</color>
+<color name="editor_picker_text_color_p">#ffffffff</color>
+<color name="eighty_percent_white">#ff000000</color>
+<color name="edit_text_dialog_bg_solid_light" package="miui">#ff000000</color>
+<color name="v5_list_text_color_light">#ff000000</color>
+<color name="numberpicker_highlight_text" package="miui">#ff000000</color>
+<color name="preference_primary_text_color_disable_light" package="miui">#ff000000</color>
+<color name="v5_tab_text_color_disable_light">#ff000000</color>
+<color name="divider_color" package="miui">#ff000000</color>
+<color name="quickcontact_window_title_mask_bg_pressed">#ff000000</color>
+<color name="action_mode_title_text_color_dark" package="miui">#ff000000</color>
+<color name="v5_text_color_disable_light">#ff000000</color>
+<color name="editor_button_confirm_color">#ffffffff</color>
+<color name="button_text_color_positive_disabled_light" package="miui">#ff000000</color>
+<color name="v5_tab_text_color_light">#ff000000</color>
+<color name="numberpicker_hint_text" package="miui">#ff000000</color>
+<color name="menu_list_text_color_normal_dark" package="miui">#ff000000</color>
+<color name="preference_secondary_text_color_disable_light" package="miui">#ff000000</color>
+<color name="title_ok_button_enable">#ff000000</color>
+<color name="voice_input_button_bg" package="miui">#ff000000</color>
+<color name="dim_foreground_dark_inverse" package="miui">#ff000000</color>
+<color name="action_bar_tab_settings_text_color_disable_light" package="miui">#ff000000</color>
+<color name="people_app_theme_color">#ff000000</color>
+<color name="editor_button_default_color">#ffffffff</color>
+<color name="spinner_list_text_color_normal_light" package="miui">#ff000000</color>
+<color name="quickcontact_window_bg_shadow">#ff000000</color>
+<color name="quick_dial_item_pos_text">#ff000000</color>
+<color name="silent_mode_remaintime_1_color" package="miui">#ff000000</color>
+<color name="action_bar_tab_text_color_disable_light" package="miui">#ff000000</color>
+<color name="contact_count_text_color">#ff02b9ae</color>
+<color name="notification_icon_bg_color">#ff000000</color>
+<color name="button_bg_color_warn_normal_light" package="miui">#ff000000</color>
+<color name="voice_input_dialog" package="miui">#ff000000</color>
+<color name="contact_list_item_badge_color">#ff02b9ae</color>
+<color name="bright_foreground_light" package="miui">#ff000000</color>
+<color name="suggestion_highlight_text_dark" package="miui">#ff000000</color>
+<color name="data_charge">#ffffffff</color>
+<color name="ripple_material_light">#ff000000</color>
+<color name="action_button_text_color_pressed_light" package="miui">#ff000000</color>
+<color name="dividing_line_color">#ffffffff</color>
+<color name="contact_detail_subtitle_color">#ff02b9ae</color>
+<color name="alphabet_indexer_text_color_dark" package="miui">#ff000000</color>
+<color name="global_action_item_text_color_normal" package="miui">#ff000000</color>
+<color name="secondary_tab_text_color_dark" package="miui">#ff000000</color>
+<color name="button_text_color_warning_normal_light" package="miui">#ff000000</color>
+<color name="immersion_text_color_disable_light" package="miui">#ff000000</color>
+<color name="voice_input_button" package="miui">#ff000000</color>
+<color name="background_dark" package="miui">#ff000000</color>
+<color name="hint_edit_text_color_light" package="miui">#ff000000</color>
+<color name="balance_value_unit">#ff02b9ae</color>
+<color name="secondary_text_default_material_light">#ff000000</color>
+<color name="navigation_service_group_title">#ff000000</color>
+<color name="action_bar_title_text_color_dark" package="miui">#ff000000</color>
+<color name="profile_upgrade_info_header_text_color">#ff000000</color>
+<color name="menu_list_text_color_pressed_dark" package="miui">#ff000000</color>
+<color name="editor_account_name_color">#ffffffff</color>
+<color name="dropdown_popup_list_text_color_pressed_light" package="miui">#ff000000</color>
+<color name="contact_photo_view_color7">#ff02b9ae</color>
+<color name="contact_detail_tab_text_color_pressed_dark">#ff02b9ae</color>
+<color name="contact_photo_view_color8">#ff02b9ae</color>
+<color name="contact_photo_view_color5">#ff02b9ae</color>
+<color name="contact_photo_view_color6">#ff02b9ae</color>
+<color name="quick_dial_item_bg_color">#ff000000</color>
+<color name="dialer_accent_color">#ffffffff</color>
+<color name="delete_system_update_delete" package="miui">#ff000000</color>
+<color name="activated_text_light" package="miui">#ff000000</color>
+<color name="bright_foreground_light_inverse" package="miui">#ff000000</color>
+<color name="action_mode_title_default_button_text_color_disable_dark" package="miui">#ff000000</color>
+<color name="section_header_text_color">#ff000000</color>
+<color name="action_mode_title_default_button_text_color_pressed_light" package="miui">#ff000000</color>
+<color name="realtimeblur_bg" package="miui">#ff000000</color>
+<color name="spinner_dropdown_button_text_pressed" package="miui">#ff000000</color>
+<color name="menu_list_text_color_pressed_light" package="miui">#ff000000</color>
+<color name="preference_category_text_color_light" package="miui">#ff000000</color>
+<color name="quick_dial_setting_hint_text_color">#ff000000</color>
+<color name="alphabet_indexer_text_color" package="miui">#ff000000</color>
+<color name="contact_photo_view_color0">#ff02b9ae</color>
+<color name="guide_popup_paint_dark" package="miui">#ff000000</color>
+<color name="contact_photo_view_color2">#ff02b9ae</color>
+<color name="contact_photo_view_color1">#ff02b9ae</color>
+<color name="contact_photo_view_color4">#ff02b9ae</color>
+<color name="contact_photo_view_color3">#ff02b9ae</color>
+<color name="dialer_title_text_color">#ffffffff</color>
+<color name="dim_foreground_dark" package="miui">#ff000000</color>
+<color name="button_text_color_dialog_light" package="miui">#ff000000</color>
+<color name="list_item_bg_color_pressed_light" package="miui">#ff000000</color>
+<color name="edit_text_dialog_bg_stroke_light" package="miui">#ff000000</color>
+<color name="voicemail_playback_ui_background">#ff000000</color>
+<color name="alphabet_indexer_activated_text_color_dark" package="miui">#ff000000</color>
+<color name="spinner_dropdown_button_text_normal" package="miui">#ff000000</color>
+<color name="action_bar_title_text_color_disabled_light" package="miui">#ff000000</color>
+<color name="action_button_text_color_disable_light" package="miui">#ff000000</color>
+<color name="action_bar_title_settings_text_color_disabled_light" package="miui">#ff000000</color>
+<color name="contact_detail_list_item_secondary_text_color">#ff02b9ae</color>
+<color name="link_text_dark" package="miui">#ff000000</color>
+<color name="quickcontact_window_title_bg_normal">#ff000000</color>
+<color name="contact_detail_photo_default_color">#ff02b9ae</color>
+<color name="highlighted_text_light" package="miui">#ff000000</color>
+<color name="dialog_message_text_color_dark" package="miui">#ff000000</color>
+<color name="sliding_button_bar_on_light" package="miui">#ff000000</color>
+<color name="edit_text_dialog_color_disabled_light" package="miui">#ff000000</color>
+<color name="action_mode_title_button_text_color_disable_dark" package="miui">#ff000000</color>
+<color name="voice_input_button_text_color" package="miui">#ff000000</color>
+<color name="global_action_item_text_color_pressed" package="miui">#ff000000</color>
+<color name="contact_tile_shadow_box_color">#ff02b9ae</color>
+<color name="profile_upgrade_info_divider_color">#ff000000</color>
+<color name="list_text_color_disable_light" package="miui">#ff000000</color>
+<color name="dialer_menu_dialog_divider">#ffffffff</color>
+<color name="action_button_text_color_normal_light" package="miui">#ff000000</color>
+<color name="header_underline_color">#ff000000</color>
+<color name="list_item_bg_color_light" package="miui">#ff000000</color>
+<color name="hint_foreground_light" package="miui">#ff000000</color>
+<color name="dim_foreground_dark_disabled" package="miui">#ff000000</color>
+<color name="hint_foreground_dark" package="miui">#ff000000</color>
+<color name="shortcut_overlay_text_background">#ff000000</color>
+<color name="contact_detail_more_indemnity_text_color">#ff02b9ae</color>
+<color name="suggestion_highlight_text_light" package="miui">#ff000000</color>
+<color name="secondary_tab_text_color_disabled_light" package="miui">#ff000000</color>
+<color name="editor_label_text_color_n">#ffffffff</color>
+<color name="activated_text_dark" package="miui">#ff000000</color>
+<color name="t9_guide_text_fg_color">#ff000000</color>
+<color name="editor_label_text_color_p">#ffffffff</color>
+<color name="quick_dial_item_bg_color_pressed">#ff000000</color>
+<color name="v5_tab_text_color_pressed_light">#ff000000</color>
+<color name="call_button_text">#ff02b9ae</color>
+<color name="pattern_lockscreen_paint_error_color" package="miui">#ff000000</color>
+<color name="dropdown_popup_list_text_color_disabled_light" package="miui">#ff000000</color>
+<color name="guide_popup_background_light" package="miui">#ff000000</color>
+<color name="call_problem_report">#ff02b9ae</color>
+<color name="nickname_editor_editHint">#ff000000</color>
+<color name="hot_word_highlighted_text_color">#ff000000</color>
+<color name="android_config_defaultNotificationColor" package="miui">#ff000000</color>
+<color name="highlight_normal_light" package="miui">#ff000000</color>
+<color name="dialog_message_text_color_light">#ff02b9ae</color>
+<color name="vector_bg_major_color7">#ff000000</color>
+<color name="contact_detail_tab_text_color_normal_dark">#ff02b9ae</color>
+<color name="edit_text_search_bg_color_light">#ffffffff</color>
+<color name="message_view_text_color_light" package="miui">#ff000000</color>
+<color name="vector_bg_major_color3">#ff000000</color>
+<color name="contact_detail_micard_bg">#ff02b9ae</color>
+<color name="vector_bg_major_color4">#ff000000</color>
+<color name="action_mode_button_text_color_pressed_dark" package="miui">#ff000000</color>
+<color name="vector_bg_major_color5">#ff000000</color>
+<color name="secondary_tab_text_color_light" package="miui">#ff000000</color>
+<color name="vector_bg_major_color6">#ff000000</color>
+<color name="action_mode_title_button_text_color_normal_dark" package="miui">#ff000000</color>
+<color name="vector_bg_major_color0">#ff000000</color>
+<color name="vector_bg_major_color1">#ff000000</color>
+<color name="vector_bg_major_color2">#ff000000</color>
+<color name="time_not_selected" package="miui">#ff000000</color>
+<color name="navigation_grid_item_text_color">#ff000000</color>
+<color name="title_ok_button_disable">#ff000000</color>
+<color name="pressed_text_light" package="miui">#ff000000</color>
+<color name="contact_detail_micard_subtitle_text_color">#ff02b9ae</color>
+<color name="balance_title_text">#ff02b9ae</color>
+<color name="list_item_bg_color_pressed_dark" package="miui">#ff000000</color>
+<color name="v5_title_text_color_light">#ff000000</color>
+<color name="button_text_color_guide_disabled_light" package="miui">#ff000000</color>
+<color name="profile_upgrade_notice_button_latter_text_color">#ff000000</color>
+<color name="action_bar_tab_text_color_disable_light">#ffffffff</color>
+<color name="disabled_text_light" package="miui">#ff000000</color>
+<color name="balance_value_text">#ff02b9ae</color>
+<color name="edit_text_color_dark" package="miui">#ff000000</color>
+<color name="profile_upgrade_notice_message_text_color">#ff000000</color>
+<color name="edit_text_color_dark_disabled" package="miui">#ff000000</color>
+<color name="spinner_edit_item_label_normal" package="miui">#ff000000</color>
+<color name="action_bar_tab_text_color_selected_dark" package="miui">#ff000000</color>
+<color name="list_view_item_group_header_text_dark" package="miui">#ff000000</color>
+<color name="secondary_text_default_material_dark">#ff000000</color>
+<color name="action_mode_title_default_button_text_color_disable_light" package="miui">#ff000000</color>
+<color name="action_mode_button_text_color_pressed_light" package="miui">#ff000000</color>
+<color name="action_button_text_color_disable_dark" package="miui">#ff000000</color>
+<color name="t9_guide_text_color">#ff000000</color>
+<color name="no_network_tip_text_light" package="miui">#ff000000</color>
+<color name="navigation_list_text_color_normal">#ff000000</color>
+<color name="float_notification_button_color_disable" package="miui">#ff000000</color>
+<color name="dialog_title_text_color">#ffffffff</color>
+<color name="quickcontact_window_title_mask_bg_normal">#ff000000</color>
+<color name="action_bar_tab_text_color_selected_light" package="miui">#ff000000</color>
+<color name="alphabet_indexer_highlight_text_color" package="miui">#ff000000</color>
+<color name="high_light_text">#ff000000</color>
+<color name="action_mode_button_text_color_disable_dark" package="miui">#ff000000</color>
+<color name="nickname_editor_textView">#ff000000</color>
+<color name="action_bar_tab_text_color_normal_dark" package="miui">#ff000000</color>
+<color name="button_text_color_dark" package="miui">#ff000000</color>
+<color name="action_mode_button_text_color_selected_dark" package="miui">#ff000000</color>
+<color name="switch_dialog_bg" package="miui">#ff000000</color>
+<color name="spinner_list_text_color_normal_dark" package="miui">#ff000000</color>
+<color name="cloud_state_unsynced_text_color">#ff02b9ae</color>
+<color name="primary_text_default_material_dark">#ff000000</color>
+<color name="notification_action_color_filter">#ff000000</color>
+<color name="preference_secondary_text_color_pressed_light" package="miui">#ff000000</color>
+<color name="cloud_recommend_msg_color">#ff02b9ae</color>
+<color name="immersion_window_background_light" package="miui">#ff000000</color>
+<color name="action_bar_tab_text_color_disable_dark" package="miui">#ff000000</color>
+<color name="brand_guide_list_item">#ff02b9ae</color>
+<color name="transparent" package="miui">#ff000000</color>
+<color name="dialtacts_secondary_text_color">#ffffffff</color>
+<color name="edit_text_color_light" package="miui">#ff000000</color>
+<color name="delete_system_update_cancel" package="miui">#ff000000</color>
+<color name="dialog_checkbox_text_color_light" package="miui">#ff000000</color>
+<color name="contact_detail_photo_mask_color">#ff02b9ae</color>
+<color name="quick_contact_tab_text_color_disable_dark">#ff000000</color>
+<color name="primary_color_light" package="miui">#ff000000</color>
+<color name="bright_foreground_light_disabled" package="miui">#ff000000</color>
+<color name="bright_foreground_dark">#ff02b9ae</color>
+<color name="list_secondary_text_color_normal_dark" package="miui">#ff000000</color>
+<color name="button_text_color_guide_normal_light" package="miui">#ff000000</color>
+<color name="list_item_bg_pressed">#ff000000</color>
+<color name="voice_input_button_stroke" package="miui">#ff000000</color>
+<color name="guide_popup_text_dark" package="miui">#ff000000</color>
+<color name="spinner_list_text_color_disabled_light" package="miui">#ff000000</color>
+<color name="immersion_text_color_normal_light" package="miui">#ff000000</color>
+<color name="button_bg_color_pressed_light" package="miui">#ff000000</color>
+<color name="edit_text_search_hint_color_light" package="miui">#ff000000</color>
+<color name="action_bar_tab_settings_text_color_pressed_light" package="miui">#ff000000</color>
+<color name="contact_detail_tab_text_color_selected_dark">#ff02b9ae</color>
+<color name="spinner_list_text_color_pressed_dark" package="miui">#ff000000</color>
+<color name="list_view_item_group_header_text_light" package="miui">#ff000000</color>
+<color name="hot_word_divider_color">#ff000000</color>
+<color name="list_menu_bg_color_light" package="miui">#ff000000</color>
+<color name="sliding_button_bar_off_light" package="miui">#ff000000</color>
+<color name="missed_call_text">#ff000000</color>
+<color name="dialer_digits_location_text_color">#ffffffff</color>
+<color name="dialer_menu_item_bg_press_color">#ffffffff</color>
+<color name="list_secondary_text_color_disable_dark" package="miui">#ff000000</color>
+<color name="menu_list_text_color_disabled_light" package="miui">#ff000000</color>
+<color name="list_secondary_text_color_disable_light" package="miui">#ff000000</color>
+<color name="profile_upgrade_notice_bg">#ff000000</color>
+<color name="action_bar_tab_text_color_pressed_light" package="miui">#ff000000</color>
+<color name="package_delete_confirm_warning_info" package="miui">#ff000000</color>
+<color name="detail_activity_window_bg_light">#ffffffff</color>
+<color name="contact_detail_micard_bg_pressed">#ff02b9ae</color>
+<color name="profile_upgrade_info_photo_text_color">#ff000000</color>
+<color name="preference_secondary_text_color_light" package="miui">#ff000000</color>
+<color name="secondary_tab_text_color_disabled_dark" package="miui">#ff000000</color>
+<color name="t9_list_item_text_highlight">#ff000000</color>
+<color name="stream_item_stripe_color">#ff000000</color>
+<color name="button_bg_color_warn_disabled_light" package="miui">#ff000000</color>
+<color name="image_placeholder">#ff000000</color>
+<color name="hint_edit_text_color_dark" package="miui">#ff000000</color>
+<color name="action_bar_subtitle_settings_text_light" package="miui">#ff000000</color>
+<color name="alphabet_indexer_activated_text_color" package="miui">#ff000000</color>
+<color name="profile_upgrade_notice_header_bg">#ff000000</color>
+<color name="notification_material_background_media_default_color">#ff000000</color>
+<color name="button_bg_color_normal_light" package="miui">#ff000000</color>
+<color name="realtimeblur_bg_oled" package="miui">#ff000000</color>
+<color name="text_edit_action_popup_text_normal" package="miui">#ff000000</color>
+<color name="primary_color_settings_light" package="miui">#ff000000</color>
+<color name="edit_text_search_hint_color_dark" package="miui">#ff000000</color>
+<color name="pattern_lockscreen_paint_color" package="miui">#ff000000</color>
+<color name="quickcontact_window_track_mask_bg">#ff000000</color>
+<color name="preference_first_last_divider_line_light" package="miui">#ff000000</color>
+<color name="quickcontact_window_bg">#ff000000</color>
+<color name="call_button_text_shadow">#ff02b9ae</color>
+<color name="contact_detail_micard_progressbar_bg">#ff02b9ae</color>
+<color name="dropdown_popup_list_text_color_normal_light" package="miui">#ff000000</color>
+<color name="action_bar_tab_settings_text_color_selected_light" package="miui">#ff000000</color>
+<color name="v5_title_text_color_selected_light">#ff000000</color>
+<color name="contact_detail_tab_text_color_disable_dark">#ff02b9ae</color>
+<color name="navigation_city_name_text_color">#ff000000</color>
+<color name="pressed_text_dark" package="miui">#ff000000</color>
+<color name="auto_disable_screenbuttons_float_text_color" package="miui">#ff000000</color>
+<color name="hybrid_provider_light" package="miui">#ff000000</color>
+<color name="dialog_list_text_color_disabled_light" package="miui">#ff000000</color>
+<color name="action_mode_button_text_color_selected_light" package="miui">#ff000000</color>
+<color name="accent_color_dark" package="miui">#ff000000</color>
+<color name="quickcontact_window_title_bg_pressed">#ff000000</color>
+<color name="selected_text_light" package="miui">#ff000000</color>
+<color name="progress_percent_color" package="miui">#ffffffff</color>
+<color name="content_mask" package="miui">#ff000000</color>
+<color name="divider_line_light" package="miui">#ff000000</color>
+<color name="guide_popup_item_text_light" package="miui">#ff000000</color>
+<color name="list_menu_bg_color_dark" package="miui">#ff000000</color>
+<color name="highlighted_text_dark" package="miui">#ff000000</color>
+<color name="checked_text_light" package="miui">#ff000000</color>
+<color name="checked_disabled_text_light" package="miui">#ff000000</color>
+<color name="action_bar_subtitle_text_dark" package="miui">#ff000000</color>
+<color name="keyboard_preview_text" package="miui">#ff000000</color>
+<color name="action_mode_title_button_text_color_disable_light" package="miui">#ff000000</color>
+<color name="dialpad_btn_key_bg_color">#ffffffff</color>
+<color name="dialer_accent_color_pressed">#ff02b9ae</color>
+<color name="action_bar_tab_settings_text_color_normal_light" package="miui">#ff000000</color>
+<color name="quickcontact_window_track_bg">#ff000000</color>
+<color name="bright_foreground_dark" package="miui">#ff000000</color>
+<color name="quick_contact_tab_text_color_normal_dark">#ff000000</color>
+<color name="v5_text_color_pressed_light">#ff000000</color>
+<color name="action_mode_title_button_text_color_normal_light" package="miui">#ff000000</color>
+<color name="time_selected" package="miui">#ff000000</color>
+<color name="dialer_digits_text_color">#ffffffff</color>
+<color name="primary_text_color_inverse">#ff000000</color>
+<color name="quick_dial_item_number_text">#ff000000</color>
+<color name="list_item_bg_color_dark" package="miui">#ff000000</color>
+<color name="detail_update_tab_text_color">#ffffffff</color>
+<color name="button_bg_color_warn_pressed_light" package="miui">#ff000000</color>
+<color name="disabled_text_dark" package="miui">#ff000000</color>
+<color name="preference_secondary_text_color_checked_light" package="miui">#ffffffff</color>
+<color name="call_log_voicemail_highlight_color">#ff02b9ae</color>
+<color name="navigation_list_secondary_text_color">#ff000000</color>
+<color name="link_text_light" package="miui">#ff000000</color>
+<color name="action_bar_tab_text_color_normal_light" package="miui">#ff000000</color>
+<color name="list_divider_stroke">#ff000000</color>
+<color name="spinner_edit_item_label_pressed" package="miui">#ff000000</color>
+<color name="dialpad_divider_color">#ffffffff</color>
+<color name="primary_color_dark" package="miui">#ff000000</color>
+<color name="white" package="miui">#ff000000</color>
+<color name="contact_clear_search_history_divider_color">#ff02b9ae</color>
+<color name="voice_input_dark_bg" package="miui">#ff000000</color>
+<color name="quickcontact_list_background">#ff000000</color>
+<color name="highlight_disabled_light" package="miui">#ff000000</color>
+<color name="action_bar_tab_text_color_pressed_dark" package="miui">#ff000000</color>
+<color name="profile_upgrade_notice_subtitle_text_color">#ff000000</color>
+<color name="action_mode_title_button_text_color_pressed_light" package="miui">#ff000000</color>
+<color name="action_mode_title_default_button_text_color_pressed_dark" package="miui">#ff000000</color>
+<color name="alphabet_indexer_overlay_text_color" package="miui">#ff000000</color>
+<color name="immersion_text_color_pressed_dark" package="miui">#ff000000</color>
+<color name="dialer_buttons_text_color_press">#ffffffff</color>
+<color name="package_delete_confirm_title" package="miui">#ff000000</color>
+<color name="editor_text_color">#ffffffff</color>
+<color name="action_mode_button_text_color_disable_light" package="miui">#ff000000</color>
+<color name="boot_msg_textcolor" package="miui">#ff000000</color>
+<color name="editor_hint_text_color_n">#ff02b9ae</color>
+<color name="dialog_simple_list_title_color_dark" package="miui">#ff000000</color>
+<color name="button_text_color_negative_light" package="miui">#ff000000</color>
+<color name="immersion_text_color_pressed_light" package="miui">#ff000000</color>
+<color name="filter_sort_tab_view_text_selected" package="miui">#ff000000</color>
+<color name="navigation_service_title">#ff000000</color>
+<color name="numberpicker_label" package="miui">#ff000000</color>
+<color name="edit_text_search_color_dark" package="miui">#ff000000</color>
+<color name="profile_upgrade_notice_button_now_text_color">#ff000000</color>
+<color name="accent_color_light" package="miui">#ff000000</color>
+<color name="bright_foreground_dark_inverse" package="miui">#ff000000</color>
+<color name="spinner_dropdown_selector_text_color" package="miui">#ff000000</color>
+<color name="people_contact_tile_status_color">#ff000000</color>
+<color name="voicemail_playback_seek_bar_already_played">#ff000000</color>
+<color name="hot_word_normal_text_color">#ff000000</color>
+<color name="call_log_missed_call_highlight_color">#ff02b9ae</color>
+<color name="list_text_color_disable_dark" package="miui">#ff000000</color>
+<color name="quick_dial_divider_color">#ff000000</color>
+<color name="contacts_accent_color_pressed">#ffffffff</color>
+<color name="numberpicker_highlight_region_bg_color" package="miui">#ff000000</color>
+<color name="content_mask_navigation" package="miui">#ff000000</color>
+<color name="immersion_text_color_normal_dark" package="miui">#ff000000</color>
+<color name="key_text_pressed" package="miui">#ff000000</color>
+<color name="action_button_text_color_normal_dark" package="miui">#ff000000</color>
+<color name="primary_text_holo_light">#ff000000</color>
+<color name="blank_page_button_text_color_dark" package="miui">#ff000000</color>
+<color name="power_off_dialog_background_cover_color" package="miui">#ff000000</color>
+<color name="voicemail_playback_seek_bar_yet_to_play">#ff000000</color>
+<color name="header_text_label_color">#ff000000</color>
+<color name="list_secondary_text_color_normal_light" package="miui">#ff000000</color>
+<color name="checked_text_dark" package="miui">#ff000000</color>
+<color name="cloud_state_view_text_color">#ff02b9ae</color>
+<color name="v5_tab_text_color_selected_light">#ff000000</color>
+<color name="status_bar_toggle_off_color" package="miui">#ff000000</color>
+<color name="action_bar_title_text_color_disabled_dark" package="miui">#ff000000</color>
+<color name="menu_list_text_color_disabled_dark" package="miui">#ff000000</color>
+<color name="highlight_pressed_light" package="miui">#ff000000</color>
+<color name="quick_contact_name_text_color">#ff000000</color>
+<color name="action_button_text_color_selected_light" package="miui">#ff000000</color>
+<color name="menu_list_text_color_normal_light" package="miui">#ff000000</color>
+<color name="contact_editor_group_name_color">#ff02b9ae</color>
+<color name="immersion_text_color_disable_dark" package="miui">#ff000000</color>
+<color name="key_text_normal" package="miui">#ff000000</color>
+<color name="arrow_popup_window_dim_color" package="miui">#ff000000</color>
+<color name="IME_item_highlight" package="miui">#ff000000</color>
+<color name="resolver_icon_mask" package="miui">#ff000000</color>
+<color name="background_primary">#ff02b9ae</color>
+<color name="button_text_color_positive_normal_light" package="miui">#ff000000</color>
+<color name="action_bar_tab_text_color_normal_light">#ffffffff</color>
+<color name="float_notification_button_color_n" package="miui">#ff000000</color>
+<color name="silent_mode_title" package="miui">#ff000000</color>
+<color name="list_text_color_normal_dark" package="miui">#ff000000</color>
+<color name="bright_foreground_dark_disabled" package="miui">#ff000000</color>
+<color name="action_button_text_color_pressed_dark" package="miui">#ff000000</color>
+</MIUI_Theme_Values>

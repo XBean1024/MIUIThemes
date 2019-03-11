@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MIUI_Theme_Values>
+<!--  状态栏是否显示电池 -->
+<bool name=”config_show_status_bar_battery_for_keyguard”>true</bool>
+<!-- 状态栏是否显示运营商  -->
+<bool name=”config_show_status_bar_carrier_for_keyguard”>true</bool>
+<!-- 状态栏是否显示日期 -->
+<bool name=”config_show_status_bar_date_for_keyguard”>true</bool>
+<!-- 状态栏是否显示时间 -->
+<bool name=”config_show_status_bar_time_for_keyguard”>false</bool>
+<!-- 状态栏是否显示通知 -->
+<bool name=”config_show_status_bar_notification_for_keyguard”>false</bool>
+<!-- 状态栏是否显示状态 TODO -->
+<bool name=”config_show_status_bar_status_for_keyguard”>false</bool>
+</MIUI_Theme_Values>

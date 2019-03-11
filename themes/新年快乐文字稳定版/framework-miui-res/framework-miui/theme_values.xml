@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<MIUI_Theme_Values>
+<color name="highlight_normal_light">#ffff9933</color>
+<color name="dialog_list_text_color_pressed_light">#ff66ffcc</color>
+<color name="dialog_message_text_color_light">#ff66ffcc</color>
+<color name="button_text_color_guide_normal_light">#fff79008</color>
+<color name="dialog_checkbox_text_color_light">#ff66ffcc</color>
+<color name="dialog_message_text_color_dark">#ff66ffcc</color>
+<color name="bright_foreground_light">#ff99ff33</color>
+<color name="accent_color_light">#ff990099</color>
+<color name="dialog_title_text_color">#ff66ffcc</color>
+<color name="dialog_list_text_color_disabled_light">#ff66ffcc</color>
+<color name="preference_secondary_text_color_light">#fff79008</color>
+<color name="dialog_list_text_color_normal_light">#ff66ffcc</color>
+<color name="dialog_simple_list_title_color_dark">#ff66ffcc</color>
+<color name="hint_edit_text_color_light">#fff79008</color>
+<color name="list_text_color_normal_light">#ffffff33</color>
+<color name="dialog_simple_list_title_color_light">#ff66ffcc</color>
+<color name="preference_category_text_color_light">#fff79008</color>
+<color name="menu_list_text_color_normal_light">#fff79008</color>
+<color name="immersion_text_color_normal_light">#fff79008</color>
+<color name="dropdown_popup_list_text_color_disabled_light">#ff33ff33</color>
+</MIUI_Theme_Values>
