@@ -1,28 +1,27 @@
 <?xml version='1.0' encoding='utf-8' standalone='yes' ?>
 <MIUI_Theme_Values>
-<color name="background_dark" package="android">#ffd13838</color>
 <color name="transparent" package="android">#ffd13838</color>
+<color name="background_dark" package="android">#ffd13838</color>
 <color name="clock_round_color">#ffffffff</color>
 <color name="black_timer_type_n_text_color">#ffffffff</color>
 <color name="black_tab_view_text_color_selected">#ffffffff</color>
-<color name="transparent" package="miui">#ffd13838</color>
 <color name="background_leanback_dark" package="android">#ffd13838</color>
+<color name="transparent" package="miui">#ffd13838</color>
 <color name="sliding_button_slider_on_color">#fff16f0f</color>
 <color name="bottom_round_button_normal_color">#ffff7043</color>
-<color name="main_bg">#ffd13838</color>
 <color name="numberpicker_hint_text">#fff16f0f</color>
+<color name="main_bg">#ffd13838</color>
 <color name="black_init_background_color">#ffd13838</color>
 <color name="black" package="android">#ffd13838</color>
 <color name="black">#ffd13838</color>
 <color name="black_tab_view_text_color_normal">#ffff6600</color>
 <color name="sliding_button_bar_on_dark">#aaf16f0f</color>
 <color name="black_main_bg">#ffcc0000</color>
-<color name="drop_down_popup_window_bg_color">#fff16f0f</color>
+<color name="drop_down_popup_window_bg_color">#ffFF524E</color>
 <color name="black_deskclock_bg">#ffd13838</color>
 <color name="worldclock_city_icon_color">#fff16f0f</color>
 <color name="init_background_color">#ffd13838</color>
 <color name="divider_line_light">#ffffffff</color>
-<color name="black_clock_item_secondary_text_color">#ffff7043</color>
 <color name="bottom_round_button_pressed_color">#aaf16f0fe</color>
 <color name="numberpicker_label">#fff16f0f</color>
 <color name="background_holo_dark" package="android">#ffd13838</color>
