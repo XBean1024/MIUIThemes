@@ -1,1012 +1,622 @@
-<?xml version='1.0' encoding='utf-8'?>
-<Lockscreen version="1" frameRate="60" displayDesktop="true" screenWidth="1080">
-    <!-- 代码原创，抄袭必究 qq 596928539 -->
-    <!-- 简化变量 -->
-    <Var name="w" expression="#raw_screen_width"/>
-    <Var name="h" expression="#raw_screen_height"/>
-    <Rectangle x="0" y="0" w="#w" h="#h" cornerRadius="0,0" strokeColor="#ff00ff00" fillColor="#ff000000"/>
-    <!--天气   start-->
-    <VariableBinders>
-        <ContentProviderBinder name="weather" uri="content://weather/weather"
-                               columns="city_id,city_name,temperature,temperature_range,weather_type,wind,humidity,publish_time,weathernamesfrom,weathernamesto,tmplows,tmphighs,description"
-                               countName="hasweather" dependency="selected_city">
-            <!--城市ID-->
-            <Variable name="city_id" type="string" column="city_id"/>
-            <!--地理位置-->
-            <Variable name="weather_location" type="string" column="city_name"/>
-            <!--温度-->
-            <Variable name="w_tem" type="int" column="temperature"/>
-            <Variable name="w_id" type="int" column="weather_type"/>
-            <Variable name="w_wind" type="string" column="wind"/>
-            <Variable name="w_tpr" type="string" column="temperature_range"/>
-            <Variable name="w_humidity" type="string" column="humidity"/>
-            <Variable name="w_publish_time" type="long" column="publish_time"/>
-            <Variable name="tmp_low0" type="int" column="tmplows" row="0"/>
-            <Variable name="tmp_high0" type="int" column="tmphighs" row="0"/>
-            <Variable name="w_dp0" type="string" column="description" row="0"/>
-            <!--多云-->
-            <Variable name="wf1" type="string" column="weathernamesfrom" row="1"/>
-            <Variable name="wt1" type="string" column="weathernamesto" row="1"/>
+<?xml version="1.0" encoding="utf-8"?>
 
-            <Variable name="tmp_low1" type="int" column="tmplows" row="1"/>
-            <Variable name="tmp_high1" type="int" column="tmphighs" row="1"/>
-        </ContentProviderBinder>
-        <ContentProviderBinder name="weather_aqi" dependency="weather" uriFormat="content://weatherinfo/aqi/%s"
-                               uriParas="@city_id" columns="aqi,pm25,pm10,so2,no2,pub_time,src,spot"
-                               countName="hasweatherinfo">
-            <Variable name="aqi" type="int" column="aqi"/>
-            <Variable name="pm25" type="int" column="pm25"/>
-            <Variable name="pm10" type="int" column="pm10"/>
-            <Variable name="so2" type="int" column="so2"/>
-            <Variable name="no2" type="int" column="no2"/>
-        </ContentProviderBinder>
-    </VariableBinders>
-    <Var name="air_quality"
-         expression="ifelse(ge(#aqi,0)*lt(#aqi,50),'优',ge(#aqi,50)*lt(#aqi,100),'良',ge(#aqi,100)*lt(#aqi,150),'轻度污染',ge(#aqi,150)*lt(#aqi,200),'中度污染',ge(#aqi,200)*lt(#aqi,300),'重度污染',ge(#aqi,300)*le(#aqi,500),'严重污染','获取信息异常')"
-         type="string"/>
-    <Var name="weather_pos_x" expression="#w/2"/>
-    <Var name="weather_pos_y" expression="#h/2-670"/>
-    <Var name="weather_gap_y" expression="-60"/>
-    <Var name="weather_size" expression="50"/>
-    <!--位置———天气————PM值-->
-    <Text x="#weather_pos_x" y="#weather_pos_y"
-          size="#weather_size" align="center" alignV="center"
-          bold="true" color="#FFFFFF"
-          textExp="'🇨🇳'+@weather_location+'☁️'+@w_dp0+':'+#pm10+'度'+'🌬️'+'pm:'+#pm25"/>
-    <!--天气   end-->
-    <!-- 显示日期 -->
-    <DateTime x="540" y="#h/2-570" align="center" size="100" value="#time_sys" format="yyyy-MM-d H:mm:ss"
-              color="#ffffffff"/>
+<Lockscreen displayDesktop="true" frameRate="60" screenWidth="1080" version="1">
+  <Wallpaper/>
+  <!-- 代码原创，抄袭必究 qq 596928539 -->
+  <!-- 简化变量 -->
 
-    <!-- 日历部分 -->
-    <!-- 日历布局 -->
+  <Var expression="#raw_screen_width" name="w"/>
+  <Var expression="#raw_screen_height" name="h"/>
+  <Rectangle cornerRadius="0,0" fillColor="#ff000000" h="#h" strokeColor="#ff00ff00" w="#w" x="0" y="0"/>
+  <!--天气   start-->
 
-    <!-- 当前日期显示的行坐标 福字下 110个像素 -->
-    <Var name="int_date_start_y_offset_fu" expression="#h/2-400"/>
-    <!-- 日期的行间距 -->
-    <Var name="int_date_diff_view_line_gap" expression="50"/>
-    <!-- 格式化显示日期所在行 2019 02 01-->
-    <Var name="some_date_start_pos_y" expression="#int_date_start_y_offset_fu+#int_date_diff_view_line_gap"/>
-    <!-- 星期 所在行的起始纵坐标 -->
-    <Var name="week_start_pos_y" expression="#some_date_start_pos_y+#int_date_diff_view_line_gap"/>
-    <!-- 月视图 首行所在行的起始纵坐标 -->
-    <Var name="month_start_pos_y" expression="#week_start_pos_y+#int_date_diff_view_line_gap+50"/>
-    <!-- 行间距 -->
-    <Var name="gap_line" expression="120"/>
-    <!-- 列间距 -->
-    <Var name="gap_column" expression="120"/>
-    <!-- 初始化给日历赋值 -->
+  <VariableBinders>
+    <ContentProviderBinder columns="city_id,city_name,temperature,temperature_range,weather_type,wind,humidity,publish_time,weathernamesfrom,weathernamesto,tmplows,tmphighs,description" countName="hasweather" dependency="selected_city" name="weather" uri="content://weather/weather">
+      <!--城市ID-->
 
-    <Var name="page_total_nums" expression="42"/>
-    <!-- 年、月、日、星期初始化赋值 -->
-    <Var name="current_page_year" expression="#year" const="true"/>
-    <Var name="current_page_month" expression="#month+1" const="true"/>
-    <!--当月——实际生活中的月份——该值不随着日历页无关-->
-    <Var name="current_month" expression="#month+1" const="true"/>
-    <Var name="current_day" expression="#date" const="true"/>
-    <Var name="current_page_week" expression="#day_of_week" const="true"/>
-    <!-- 存放当前日历页的所有天数，每页日历的大小： 6x7 = 42 天, array_days_42 -->
-    <Var name="array_days_42" type="string[]" size="42" const="true"/>
-    <!-- 农历日 初三 -->
-    <Var name="array_lunar_days_42" type="string[]" size="42" const="true"/>
-    <!-- 公历月 不加 0  一页最多有三个月份 存放每一天对应的公历月份-->
-    <Var name="array_each_day_belong_months_42" type="string[]" size="42" const="true"/>
-    <!-- 农历月 -->
-    <Var name="array_each_day_belong_months_lunar_42" type="string[]" size="42" const="true"/>
-    <!-- 特殊意义的日期 -->
-    <Var name="array_lunar_days_42_temp" type="string[]" size="42" const="true"/>
-    <!-- 每月前几天，空出的天数 用来计算每月第一天从哪开始-->
-    <Var name="current_month_offset" expression="0" const="true"/>
-    <!-- 当页月的天数 -->
-    <Var name="current_month_day_nums" expression="0" const="true"/>
-    <!-- 当上个月月的天数 -->
-    <Var name="last_page_month_day_nums" expression="0" const="true"/>
-    <!-- 一天中的毫秒数 -->
-    <Var name="one_day_all_seconds" expression="86400000"/>
-    <!-- 下一月 --><!-- 下个月的1号偏移量 -->
-    <Var name="next_month_offset_temp" expression="0" const="true"/>
-    <Var name="last_month_offset_temp" expression="0" const="true"/>
-    <!-- 下一页 第一天的毫秒时间 -->
-    <Var name="next_page_array42_index0_sys_time_temp" expression="0" const="true"/>
-    <!-- 上一页 第一天的毫秒级 -->
-    <Var name="last_page_array42_index0_sys_time_temp" expression="0" const="true"/>
-    <!-- 当前系统的第一天的偏移量 -->
-    <Var name="current_page_array42_index0_sys_time" expression="0" const="true"/>
-    <Var name="refresh" expression="3" const="true"/>
-    <!-- 上一个月还是下一个月的标志量  默认是1，代表下一个月，上一个月用0表示-->
-    <Var name="last_month_tag" expression="0"/>
-    <Var name="next_month_tag" expression="1"/>
-    <Var name="lastOrNext" expression="#next_month_tag" const="true"/>
-    <Var name="last_tail_line_nums" expression="1" const="true"/>
-    <Var name="current_sys_time" expression="#time_sys" const="true"/>
-    <Var name="one" expression="1"/>
-    <ExternalCommands>
-        <Trigger action="init">
+      <Variable column="city_id" name="city_id" type="string"/>
+      <!--地理位置-->
 
-            <!-- 初始化日历数据 -->
-            <!-- 判断是否闰年 要取得当页日历所在的年份-->
-            <VariableCommand
-                    name="if_leap_year"
-                    expression="
-					#current_page_year%4==0*
-					(#current_page_year%100!=0||#current_page_year%400==0)
-				"
-            />
+      <Variable column="city_name" name="weather_location" type="string"/>
+      <!--温度-->
 
-            <!-- 初始化当页月的天数 -->
-            <VariableCommand
-                    name="current_month_day_nums"
-                    expression="
-						ifelse(
-						#current_page_month==1||
-						#current_page_month==3||
-						#current_page_month==5||
-						#current_page_month==7||
-						#current_page_month==8||
-						#current_page_month==10||
-						#current_page_month==12,
-						31,
+      <Variable column="temperature" name="w_tem" type="int"/>
+      <Variable column="weather_type" name="w_id" type="int"/>
+      <Variable column="wind" name="w_wind" type="string"/>
+      <Variable column="temperature_range" name="w_tpr" type="string"/>
+      <Variable column="humidity" name="w_humidity" type="string"/>
+      <Variable column="publish_time" name="w_publish_time" type="long"/>
+      <Variable column="tmplows" name="tmp_low0" row="0" type="int"/>
+      <Variable column="tmphighs" name="tmp_high0" row="0" type="int"/>
+      <Variable column="description" name="w_dp0" row="0" type="string"/>
+      <!--多云-->
 
-						#current_page_month==4||
-						#current_page_month==6||
-						#current_page_month==9||
-						#current_page_month==11,
-						30,
+      <Variable column="weathernamesfrom" name="wf1" row="1" type="string"/>
+      <Variable column="weathernamesto" name="wt1" row="1" type="string"/>
+      <Variable column="tmplows" name="tmp_low1" row="1" type="int"/>
+      <Variable column="tmphighs" name="tmp_high1" row="1" type="int"/>
+    </ContentProviderBinder>
+    <ContentProviderBinder columns="aqi,pm25,pm10,so2,no2,pub_time,src,spot" countName="hasweatherinfo" dependency="weather" name="weather_aqi" uriFormat="content://weatherinfo/aqi/%s" uriParas="@city_id">
+      <Variable column="aqi" name="aqi" type="int"/>
+      <Variable column="pm25" name="pm25" type="int"/>
+      <Variable column="pm10" name="pm10" type="int"/>
+      <Variable column="so2" name="so2" type="int"/>
+      <Variable column="no2" name="no2" type="int"/>
+    </ContentProviderBinder>
+  </VariableBinders>
+  <Var expression="ifelse(ge(#aqi,0)*lt(#aqi,50),&apos;优&apos;,ge(#aqi,50)*lt(#aqi,100),&apos;良&apos;,ge(#aqi,100)*lt(#aqi,150),&apos;轻度污染&apos;,ge(#aqi,150)*lt(#aqi,200),&apos;中度污染&apos;,ge(#aqi,200)*lt(#aqi,300),&apos;重度污染&apos;,ge(#aqi,300)*le(#aqi,500),&apos;严重污染&apos;,&apos;获取信息异常&apos;)" name="air_quality" type="string"/>
+  <Var expression="#w/2" name="weather_pos_x"/>
+  <Var expression="#h/2-670" name="weather_pos_y"/>
+  <Var expression="-60" name="weather_gap_y"/>
+  <Var expression="50" name="weather_size"/>
+  <!--位置———天气————PM值-->
 
-						(#current_page_month==2)*#if_leap_year,
-						29,
+  <Text align="center" alignV="center" bold="true" color="#FFFFFF" size="#weather_size" textExp="&apos;🇨🇳&apos;+@weather_location+&apos;☁️&apos;+@w_dp0+&apos;:&apos;+#pm10+&apos;度&apos;+&apos;🌬️&apos;+&apos;pm:&apos;+#pm25" x="#weather_pos_x" y="#weather_pos_y"/>
+  <!--天气   end-->
+  <!-- 显示日期 -->
 
-						28
-					)
-				"
-            />
+  <DateTime align="center" color="#ffffffff" format="yyyy-MM-d H:mm:ss" size="100" value="#time_sys" x="540" y="#h/2-570"/>
+  <!-- 日历部分 -->
+  <!-- 日历布局 -->
+  <!-- 当前日期显示的行坐标 福字下 110个像素 -->
 
-            <!-- 初始化上月天数 -->
-            <VariableCommand
-                    name="last_page_month_day_nums"
-                    expression="
-					ifelse(
-						#current_page_month==1||
-						#current_page_month==2||
-						#current_page_month==4||
-						#current_page_month==6||
-						#current_page_month==8||
-						#current_page_month==9||
-						#current_page_month==11,
-						31,
+  <Var expression="#h/2-400" name="int_date_start_y_offset_fu"/>
+  <!-- 日期的行间距 -->
 
-						#current_page_month==5||
-						#current_page_month==7||
-						#current_page_month==10||
-						#current_page_month==12,
-						30,
-						(#current_page_month==3)*#if_leap_year,
-						29,28)
-				"
-            />
-            <!-- 初始化当页月初偏移量 -->
-            <VariableCommand
-                    name="current_month_offset"
-                    expression="
-					ifelse(
-						7-(#date+7-#day_of_week)%7==0,
-						7,
-						7-(#date+7-#day_of_week)%7)
-					"
-            />
-            <!-- 下个月的1号的偏移量 -->
-            <VariableCommand
-                    name="next_month_offset_temp"
-                    expression="ifelse(
-					(7-(42-#current_month_day_nums-#current_month_offset)%7)==7,0,
-					7-(42-#current_month_day_nums-#current_month_offset)%7
-				)"
-            />
+  <Var expression="50" name="int_date_diff_view_line_gap"/>
+  <!-- 格式化显示日期所在行 2019 02 01-->
 
-            <!--  上个月的1号的偏移量 -->
-            <VariableCommand
-                    name="last_month_offset_temp"
-                    expression="
-					(
-						42-
-						#last_page_month_day_nums-
-						(7-#current_month_offset)
-					)
-					%7"
-            />
-            <!-- 当前页的日历，第一天所代表的毫秒级时间，即在数组里的索引0对应的毫秒值-->
-            <VariableCommand
-                    name="current_page_array42_index0_sys_time"
-                    expression="
-					#time_sys-
-					(#date+(#current_month_offset-1))*
-					#one_day_all_seconds"
-            />
-            <!-- 下一页日历，第一天所代表的毫秒级时间 -->
-            <VariableCommand
-                    name="next_page_array42_index0_sys_time_temp"
-                    expression="
-					#current_page_array42_index0_sys_time+
-					(#current_month_day_nums-#next_month_offset_temp+#current_month_offset)
-					*#one_day_all_seconds"
-            />
+  <Var expression="#int_date_start_y_offset_fu+#int_date_diff_view_line_gap" name="some_date_start_pos_y"/>
+  <!-- 星期 所在行的起始纵坐标 -->
 
-            <!-- 上一页日历，第一天所代表的毫秒级时间-->
-            <!-- 根据当页数据 计算出 上一页日历，第一天所代表的毫秒级时间
+  <Var expression="#some_date_start_pos_y+#int_date_diff_view_line_gap" name="week_start_pos_y"/>
+  <!-- 月视图 首行所在行的起始纵坐标 -->
+
+  <Var expression="#week_start_pos_y+#int_date_diff_view_line_gap+50" name="month_start_pos_y"/>
+  <!-- 行间距 -->
+
+  <Var expression="120" name="gap_line"/>
+  <!-- 列间距 -->
+
+  <Var expression="120" name="gap_column"/>
+  <!-- 初始化给日历赋值 -->
+
+  <Var expression="42" name="page_total_nums"/>
+  <!-- 年、月、日、星期初始化赋值 -->
+
+  <Var const="true" expression="#year" name="current_page_year"/>
+  <Var const="true" expression="#month+1" name="current_page_month"/>
+  <!--当月——实际生活中的月份——该值不随着日历页无关-->
+
+  <Var const="true" expression="#month+1" name="current_month"/>
+  <Var const="true" expression="#date" name="current_day"/>
+  <Var const="true" expression="#day_of_week" name="current_page_week"/>
+  <!-- 存放当前日历页的所有天数，每页日历的大小： 6x7 = 42 天, array_days_42 -->
+
+  <Var const="true" name="array_days_42" size="42" type="string[]"/>
+  <!-- 农历日 初三 -->
+
+  <Var const="true" name="array_lunar_days_42" size="42" type="string[]"/>
+  <!-- 公历月 不加 0  一页最多有三个月份 存放每一天对应的公历月份-->
+
+  <Var const="true" name="array_each_day_belong_months_42" size="42" type="string[]"/>
+  <!-- 农历月 -->
+
+  <Var const="true" name="array_each_day_belong_months_lunar_42" size="42" type="string[]"/>
+  <!-- 特殊意义的日期 -->
+
+  <Var const="true" name="array_lunar_days_42_temp" size="42" type="string[]"/>
+  <!-- 每月前几天，空出的天数 用来计算每月第一天从哪开始-->
+
+  <Var const="true" expression="0" name="current_month_offset"/>
+  <!-- 当页月的天数 -->
+
+  <Var const="true" expression="0" name="current_month_day_nums"/>
+  <!-- 当上个月月的天数 -->
+
+  <Var const="true" expression="0" name="last_page_month_day_nums"/>
+  <!-- 一天中的毫秒数 -->
+
+  <Var expression="86400000" name="one_day_all_seconds"/>
+  <!-- 下一月 -->
+  <!-- 下个月的1号偏移量 -->
+
+  <Var const="true" expression="0" name="next_month_offset_temp"/>
+  <Var const="true" expression="0" name="last_month_offset_temp"/>
+  <!-- 下一页 第一天的毫秒时间 -->
+
+  <Var const="true" expression="0" name="next_page_array42_index0_sys_time_temp"/>
+  <!-- 上一页 第一天的毫秒级 -->
+
+  <Var const="true" expression="0" name="last_page_array42_index0_sys_time_temp"/>
+  <!-- 当前系统的第一天的偏移量 -->
+
+  <Var const="true" expression="0" name="current_page_array42_index0_sys_time"/>
+  <Var const="true" expression="3" name="refresh"/>
+  <!-- 上一个月还是下一个月的标志量  默认是1，代表下一个月，上一个月用0表示-->
+
+  <Var expression="0" name="last_month_tag"/>
+  <Var expression="1" name="next_month_tag"/>
+  <Var const="true" expression="#next_month_tag" name="lastOrNext"/>
+  <Var const="true" expression="1" name="last_tail_line_nums"/>
+  <Var const="true" expression="#time_sys" name="current_sys_time"/>
+  <Var expression="1" name="one"/>
+  <ExternalCommands>
+    <Trigger action="init">
+      <!-- 初始化日历数据 -->
+      <!-- 判断是否闰年 要取得当页日历所在的年份-->
+
+      <VariableCommand expression="      #current_page_year%4==0*      (#current_page_year%100!=0||#current_page_year%400==0)     " name="if_leap_year"/>
+      <!-- 初始化当页月的天数 -->
+
+      <VariableCommand expression="       ifelse(       #current_page_month==1||       #current_page_month==3||       #current_page_month==5||       #current_page_month==7||       #current_page_month==8||       #current_page_month==10||       #current_page_month==12,       31,        #current_page_month==4||       #current_page_month==6||       #current_page_month==9||       #current_page_month==11,       30,        (#current_page_month==2)*#if_leap_year,       29,        28      )     " name="current_month_day_nums"/>
+      <!-- 初始化上月天数 -->
+
+      <VariableCommand expression="      ifelse(       #current_page_month==1||       #current_page_month==2||       #current_page_month==4||       #current_page_month==6||       #current_page_month==8||       #current_page_month==9||       #current_page_month==11,       31,        #current_page_month==5||       #current_page_month==7||       #current_page_month==10||       #current_page_month==12,       30,       (#current_page_month==3)*#if_leap_year,       29,28)     " name="last_page_month_day_nums"/>
+      <!-- 初始化当页月初偏移量 -->
+
+      <VariableCommand expression="      ifelse(       7-(#date+7-#day_of_week)%7==0,       7,       7-(#date+7-#day_of_week)%7)      " name="current_month_offset"/>
+      <!-- 下个月的1号的偏移量 -->
+
+      <VariableCommand expression="ifelse(      (7-(42-#current_month_day_nums-#current_month_offset)%7)==7,0,      7-(42-#current_month_day_nums-#current_month_offset)%7     )" name="next_month_offset_temp"/>
+      <!--  上个月的1号的偏移量 -->
+
+      <VariableCommand expression="      (       42-       #last_page_month_day_nums-       (7-#current_month_offset)      )      %7" name="last_month_offset_temp"/>
+      <!-- 当前页的日历，第一天所代表的毫秒级时间，即在数组里的索引0对应的毫秒值-->
+
+      <VariableCommand expression="      #time_sys-      (#date+(#current_month_offset-1))*      #one_day_all_seconds" name="current_page_array42_index0_sys_time"/>
+      <!-- 下一页日历，第一天所代表的毫秒级时间 -->
+
+      <VariableCommand expression="      #current_page_array42_index0_sys_time+      (#current_month_day_nums-#next_month_offset_temp+#current_month_offset)      *#one_day_all_seconds" name="next_page_array42_index0_sys_time_temp"/>
+      <!-- 上一页日历，第一天所代表的毫秒级时间-->
+      <!-- 根据当页数据 计算出 上一页日历，第一天所代表的毫秒级时间
                  last_page_array42_index0_sys_time_temp -->
+      <!-- 灰色尾部所占的行数 -->
+      <!-- 上一月 月底的索引值 -->
 
-            <!-- 灰色尾部所占的行数 -->
-            <!-- 上一月 月底的索引值 -->
-            <VariableCommand
-                    name="last_page_array42_index0_sys_time_temp"
-                    expression="
-					#current_page_array42_index0_sys_time-
-					(#last_page_month_day_nums-#current_month_offset+#last_month_offset_temp)*
-					#one_day_all_seconds"
-            />
-            <!-- 初始化当页日历数据 -->
-            <LoopCommand count="42" indexName="i">
-                <!-- 相对于第一天的时间偏移量 最核心的变量-->
-                <VariableCommand
-                        name="relative_sys_time"
-                        expression="#current_page_array42_index0_sys_time+#i*#one_day_all_seconds"/>
-                <!-- 格式化 当月天数 公历-->
-                <VariableCommand name="array_days_42" type="string[]" index="#i"
-                                 expression="formatDate('d',#relative_sys_time)"/>
-                <!-- <VariableCommand name="array_days_42" type="string[]" index="#i"
+      <VariableCommand expression="      #current_page_array42_index0_sys_time-      (#last_page_month_day_nums-#current_month_offset+#last_month_offset_temp)*      #one_day_all_seconds" name="last_page_array42_index0_sys_time_temp"/>
+      <!-- 初始化当页日历数据 -->
+
+      <LoopCommand count="42" indexName="i">
+        <!-- 相对于第一天的时间偏移量 最核心的变量-->
+
+        <VariableCommand expression="#current_page_array42_index0_sys_time+#i*#one_day_all_seconds" name="relative_sys_time"/>
+        <!-- 格式化 当月天数 公历-->
+
+        <VariableCommand expression="formatDate(&apos;d&apos;,#relative_sys_time)" index="#i" name="array_days_42" type="string[]"/>
+        <!-- <VariableCommand name="array_days_42" type="string[]" index="#i"
                     expression="#i+1" /> -->
-                <!-- 格式化 当月天数 农历 -->
-                <VariableCommand name="array_lunar_days_42" type="string[]" index="#i"
-                                 expression="formatDate('e',#relative_sys_time)"/>
-                <VariableCommand name="array_each_day_belong_months_42" type="string[]" index="#i"
-                                 expression="formatDate('M',#relative_sys_time)"
-                />
-                <VariableCommand name="array_each_day_belong_months_lunar_42" type="string[]" index="#i"
-                                 expression="formatDate('N',#relative_sys_time)"
-                />
-                <!--
+        <!-- 格式化 当月天数 农历 -->
+
+        <VariableCommand expression="formatDate(&apos;e&apos;,#relative_sys_time)" index="#i" name="array_lunar_days_42" type="string[]"/>
+        <VariableCommand expression="formatDate(&apos;M&apos;,#relative_sys_time)" index="#i" name="array_each_day_belong_months_42" type="string[]"/>
+        <VariableCommand expression="formatDate(&apos;N&apos;,#relative_sys_time)" index="#i" name="array_each_day_belong_months_lunar_42" type="string[]"/>
+        <!--
                     缓存特殊意义的日期
                 -->
 
-                <VariableCommand name="array_lunar_days_42_temp" type="string[]" index="#i"
-                                 expression="
-				ifelse(
-					eqs(@array_each_day_belong_months_42[#i],'1')**eqs(@array_days_42[#i],'1'),'元旦节',
+        <VariableCommand expression="     ifelse(      eqs(@array_each_day_belong_months_42[#i],&apos;1&apos;)**eqs(@array_days_42[#i],&apos;1&apos;),&apos;元旦节&apos;,       eqs(@array_each_day_belong_months_42[#i],&apos;2&apos;)*eqs(@array_days_42[#i],&apos;14&apos;),&apos;情人节&apos;,       eqs(@array_each_day_belong_months_42[#i],&apos;3&apos;)*eqs(@array_days_42[#i],&apos;8&apos;),&apos;妇女节&apos;,       eqs(@array_each_day_belong_months_42[#i],&apos;3&apos;)*eqs(@array_days_42[#i],&apos;12&apos;),&apos;植树节&apos;,       eqs(@array_each_day_belong_months_42[#i],&apos;4&apos;)*eqs(@array_days_42[#i],&apos;1&apos;),&apos;英雄王伟&apos;,       eqs(@array_each_day_belong_months_42[#i],&apos;5&apos;)*eqs(@array_days_42[#i],&apos;1&apos;),&apos;劳动节&apos;,       eqs(@array_each_day_belong_months_42[#i],&apos;5&apos;)*eqs(@array_days_42[#i],&apos;4&apos;),&apos;青年节&apos;,       eqs(@array_each_day_belong_months_42[#i],&apos;6&apos;)*eqs(@array_days_42[#i],&apos;1&apos;),&apos;儿童节&apos;,       eqs(@array_each_day_belong_months_42[#i],&apos;7&apos;)*eqs(@array_days_42[#i],&apos;1&apos;),&apos;建党节&apos;,       eqs(@array_each_day_belong_months_42[#i],&apos;8&apos;)*eqs(@array_days_42[#i],&apos;1&apos;),&apos;建军节&apos;,       eqs(@array_each_day_belong_months_42[#i],&apos;9&apos;)*eqs(@array_days_42[#i],&apos;10&apos;),&apos;教师节&apos;,       eqs(@array_each_day_belong_months_42[#i],&apos;10&apos;)*eqs(@array_days_42[#i],&apos;1&apos;),&apos;国庆节&apos;,       eqs(@array_each_day_belong_months_42[#i],&apos;11&apos;)*eqs(@array_days_42[#i],&apos;11&apos;),&apos;光棍节&apos;,       eqs(@array_each_day_belong_months_42[#i],&apos;10&apos;)*eqs(@array_days_42[#i],&apos;31&apos;),&apos;王阳明&apos;,       eqs(@array_each_day_belong_months_42[#i],&apos;12&apos;)*eqs(@array_days_42[#i],&apos;24&apos;),&apos;平安夜&apos;,       eqs(@array_each_day_belong_months_42[#i],&apos;12&apos;)*eqs(@array_days_42[#i],&apos;25&apos;),&apos;圣诞节&apos;,       eqs(@array_each_day_belong_months_lunar_42[#i],&apos;正&apos;)*eqs(@array_lunar_days_42[#i],&apos;初一&apos;),&apos;春节&apos;,       eqs(@array_each_day_belong_months_lunar_42[#i],&apos;正&apos;)*eqs(@array_lunar_days_42[#i],&apos;十五&apos;),&apos;元宵节&apos;,       eqs(@array_each_day_belong_months_lunar_42[#i],&apos;二&apos;)*eqs(@array_lunar_days_42[#i],&apos;初二&apos;),&apos;龙抬头&apos;,       eqs(@array_each_day_belong_months_lunar_42[#i],&apos;五&apos;)*eqs(@array_lunar_days_42[#i],&apos;初五&apos;),&apos;端午节&apos;,       eqs(@array_each_day_belong_months_lunar_42[#i],&apos;七&apos;)*eqs(@array_lunar_days_42[#i],&apos;初七&apos;),&apos;七夕节&apos;,       eqs(@array_each_day_belong_months_lunar_42[#i],&apos;七&apos;)*eqs(@array_lunar_days_42[#i],&apos;十五&apos;),&apos;中元节&apos;,       eqs(@array_each_day_belong_months_lunar_42[#i],&apos;八&apos;)*eqs(@array_lunar_days_42[#i],&apos;十五&apos;),&apos;中秋节&apos;,       eqs(@array_each_day_belong_months_lunar_42[#i],&apos;九&apos;)*eqs(@array_lunar_days_42[#i],&apos;初九&apos;),&apos;重阳节&apos;,       eqs(@array_each_day_belong_months_lunar_42[#i],&apos;腊&apos;)*eqs(@array_lunar_days_42[#i],&apos;初八&apos;),&apos;腊八节&apos;,       eqs(@array_each_day_belong_months_lunar_42[#i],&apos;腊&apos;)*eqs(@array_lunar_days_42[#i],&apos;廿三&apos;),&apos;小年&apos;,       eqs(@array_each_day_belong_months_lunar_42[#i],&apos;腊&apos;)*eqs(@array_lunar_days_42[#i],&apos;三十&apos;),&apos;除夕&apos;,&apos;&apos;     )" index="#i" name="array_lunar_days_42_temp" type="string[]"/>
+      </LoopCommand>
+    </Trigger>
+  </ExternalCommands>
+  <DateTime align="center" alignV="center" color="#ffd647" format="yyyy年M月" size="35" value="#current_sys_time" x="#w/2" y="#some_date_start_pos_y"/>
+  <Var expression="40" name="time_size"/>
+  <Text align="center" alignV="center" alpha="0" bold="true" color="#00000000" name="lm" size="#time_size" textExp="&apos;上个月&apos;" x="#w/2-200" y="#some_date_start_pos_y"/>
+  <Var expression="#w/2-#lm.text_width-100" name="time_w"/>
+  <Var expression="#w/2-#lm.text_height" name="time_h"/>
+  <Var expression="1" name="left_btn_up"/>
+  <Var expression="1" name="right_btn_up"/>
+  <!-- 上一页 -->
+  <!--<Button name="last_month" x="0" y="#week_start_pos_y" w="#w/2" h="800" interceptTouch="true">-->
+  <!--&lt;!&ndash; 事件绑定 &ndash;&gt;-->
+  <!--<Triggers>-->
+  <!--<Trigger action="double">-->
+  <!--<VariableCommand name="lastOrNext" expression="#last_month_tag"/>-->
+  <!--&lt;!&ndash; 年份有条件递减 &ndash;&gt;-->
+  <!--<VariableCommand name="current_page_year"-->
+  <!--expression="-->
+  <!--ifelse(-->
+  <!--eqs(#current_page_month,1),-->
+  <!--#current_page_year-1,-->
+  <!--#current_page_year)-->
+  <!--"/>-->
+  <!--&lt;!&ndash; 月份有条件递减 &ndash;&gt;-->
+  <!--<VariableCommand name="current_page_month"-->
+  <!--expression="-->
+  <!--ifelse(-->
+  <!--eqs(#current_page_month,1),-->
+  <!--12,-->
+  <!--#current_page_month-1-->
+  <!--)"/>-->
+  <!--<VariableCommand name="refresh" expression="#refresh+1"/>-->
+  <!--</Trigger>-->
+  <!--</Triggers>-->
+  <!--</Button>-->
+  <!-- 下一个页 -->
+  <!--<Button name="next_month" x="#w/2" y="#week_start_pos_y" w="#w/2" h="800" interceptTouch="true">-->
+  <!--&lt;!&ndash; 事件绑定 &ndash;&gt;-->
+  <!--<Triggers>-->
+  <!--<Trigger action="double">-->
+  <!--<VariableCommand name="lastOrNext" expression="#next_month_tag"/>-->
+  <!--&lt;!&ndash; 年份有条件递增 &ndash;&gt;-->
+  <!--<VariableCommand name="current_page_year"-->
+  <!--expression="-->
+  <!--ifelse(-->
+  <!--eqs(#current_page_month,12),-->
+  <!--#current_page_year+1,-->
+  <!--#current_page_year)-->
+  <!--"/>-->
+  <!--&lt;!&ndash; 月份有条件递增 &ndash;&gt;-->
+  <!--<VariableCommand name="current_page_month"-->
+  <!--expression="-->
+  <!--ifelse(-->
+  <!--eqs(#current_page_month,12),-->
+  <!--1,-->
+  <!--#current_page_month+1-->
+  <!--)"/>-->
+  <!--<VariableCommand name="refresh" expression="#refresh+1"/>-->
+  <!--</Trigger>-->
+  <!--</Triggers>-->
+  <!--</Button>-->
 
-					eqs(@array_each_day_belong_months_42[#i],'2')*eqs(@array_days_42[#i],'14'),'情人节',
+  <Var expression="#refresh" name="refresh" threshold="1">
+    <Trigger>
+      <!-- 判断是否闰年 要取得当页日历所在的年份-->
 
-					eqs(@array_each_day_belong_months_42[#i],'3')*eqs(@array_days_42[#i],'8'),'妇女节',
+      <VariableCommand expression="#current_page_year%4==0*(#current_page_year%100!=0||#current_page_year%400==0)" name="if_leap_year"/>
+      <!-- 当页    判断当页月的天数 -->
 
-					eqs(@array_each_day_belong_months_42[#i],'3')*eqs(@array_days_42[#i],'12'),'植树节',
+      <VariableCommand expression="      ifelse(      #current_page_month==1||      #current_page_month==3||      #current_page_month==5||      #current_page_month==7||      #current_page_month==8||      #current_page_month==10||      #current_page_month==12,      31,       #current_page_month==4||      #current_page_month==6||      #current_page_month==9||      #current_page_month==11,      30,       (#current_page_month==2)*#if_leap_year,      29,       28       )" name="current_month_day_nums"/>
+      <!-- 上月天数 -->
 
-					eqs(@array_each_day_belong_months_42[#i],'4')*eqs(@array_days_42[#i],'1'),'英雄王伟',
+      <VariableCommand expression="      ifelse(       #current_page_month==1||       #current_page_month==2||       #current_page_month==4||       #current_page_month==6||       #current_page_month==8||       #current_page_month==9||       #current_page_month==11,       31,        #current_page_month==5||       #current_page_month==7||       #current_page_month==10||       #current_page_month==12,       30,       (#current_page_month==3)*#if_leap_year,       29,28)     " name="last_page_month_day_nums"/>
+      <!-- 当页    第一天在当页的偏移量-->
 
-					eqs(@array_each_day_belong_months_42[#i],'5')*eqs(@array_days_42[#i],'1'),'劳动节',
+      <VariableCommand expression="      ifelse(       eqs(#lastOrNext,1),       #next_month_offset_temp,       #last_month_offset_temp      )     " name="current_month_offset"/>
+      <!-- 根据当页数据 计算出 下一页 月初的偏移量 7-(42-#current_month_day_nums-#current_month_offset)%7-->
 
-					eqs(@array_each_day_belong_months_42[#i],'5')*eqs(@array_days_42[#i],'4'),'青年节',
+      <VariableCommand expression="ifelse(       (7-(42-#current_month_day_nums-#current_month_offset)%7)==7,0       ,7-(42-#current_month_day_nums-#current_month_offset)%7      )     " name="next_month_offset_temp"/>
+      <!--  上个月的1 号的偏移量 -->
 
-					eqs(@array_each_day_belong_months_42[#i],'6')*eqs(@array_days_42[#i],'1'),'儿童节',
-
-					eqs(@array_each_day_belong_months_42[#i],'7')*eqs(@array_days_42[#i],'1'),'建党节',
-
-					eqs(@array_each_day_belong_months_42[#i],'8')*eqs(@array_days_42[#i],'1'),'建军节',
-
-					eqs(@array_each_day_belong_months_42[#i],'9')*eqs(@array_days_42[#i],'10'),'教师节',
-
-					eqs(@array_each_day_belong_months_42[#i],'10')*eqs(@array_days_42[#i],'1'),'国庆节',
-
-					eqs(@array_each_day_belong_months_42[#i],'11')*eqs(@array_days_42[#i],'11'),'光棍节',
-
-					eqs(@array_each_day_belong_months_42[#i],'10')*eqs(@array_days_42[#i],'31'),'王阳明',
-
-					eqs(@array_each_day_belong_months_42[#i],'12')*eqs(@array_days_42[#i],'24'),'平安夜',
-
-					eqs(@array_each_day_belong_months_42[#i],'12')*eqs(@array_days_42[#i],'25'),'圣诞节',
-
-					eqs(@array_each_day_belong_months_lunar_42[#i],'正')*eqs(@array_lunar_days_42[#i],'初一'),'春节',
-
-					eqs(@array_each_day_belong_months_lunar_42[#i],'正')*eqs(@array_lunar_days_42[#i],'十五'),'元宵节',
-
-					eqs(@array_each_day_belong_months_lunar_42[#i],'二')*eqs(@array_lunar_days_42[#i],'初二'),'龙抬头',
-
-					eqs(@array_each_day_belong_months_lunar_42[#i],'五')*eqs(@array_lunar_days_42[#i],'初五'),'端午节',
-
-					eqs(@array_each_day_belong_months_lunar_42[#i],'七')*eqs(@array_lunar_days_42[#i],'初七'),'七夕节',
-
-					eqs(@array_each_day_belong_months_lunar_42[#i],'七')*eqs(@array_lunar_days_42[#i],'十五'),'中元节',
-
-					eqs(@array_each_day_belong_months_lunar_42[#i],'八')*eqs(@array_lunar_days_42[#i],'十五'),'中秋节',
-
-					eqs(@array_each_day_belong_months_lunar_42[#i],'九')*eqs(@array_lunar_days_42[#i],'初九'),'重阳节',
-
-					eqs(@array_each_day_belong_months_lunar_42[#i],'腊')*eqs(@array_lunar_days_42[#i],'初八'),'腊八节',
-
-					eqs(@array_each_day_belong_months_lunar_42[#i],'腊')*eqs(@array_lunar_days_42[#i],'廿三'),'小年',
-
-					eqs(@array_each_day_belong_months_lunar_42[#i],'腊')*eqs(@array_lunar_days_42[#i],'三十'),'除夕',''
-				)"
-                />
-            </LoopCommand>
-        </Trigger>
-    </ExternalCommands>
-    <DateTime x="#w/2" y="#some_date_start_pos_y" align="center" alignV="center" color="#ffd647" size="35"
-              format="yyyy年M月" value="#current_sys_time"/>
-    <Var name="time_size" expression="40"/>
-    <Text
-            name="lm"
-            x="#w/2-200" y="#some_date_start_pos_y"
-            align="center" alignV="center" size="#time_size" color="#00000000"
-            alpha="0"
-            bold="true"
-            textExp="'上个月'"
-    />
-    <Var name="time_w" expression="#w/2-#lm.text_width-100"/>
-    <Var name="time_h" expression="#w/2-#lm.text_height"/>
-
-    <Var name="left_btn_up" expression="1"/>
-    <Var name="right_btn_up" expression="1"/>
-    <!-- 上一页 -->
-    <!--<Button name="last_month" x="0" y="#week_start_pos_y" w="#w/2" h="800" interceptTouch="true">-->
-    <!--&lt;!&ndash; 事件绑定 &ndash;&gt;-->
-    <!--<Triggers>-->
-    <!--<Trigger action="double">-->
-    <!--<VariableCommand name="lastOrNext" expression="#last_month_tag"/>-->
-    <!--&lt;!&ndash; 年份有条件递减 &ndash;&gt;-->
-    <!--<VariableCommand name="current_page_year"-->
-    <!--expression="-->
-    <!--ifelse(-->
-    <!--eqs(#current_page_month,1),-->
-    <!--#current_page_year-1,-->
-    <!--#current_page_year)-->
-    <!--"/>-->
-    <!--&lt;!&ndash; 月份有条件递减 &ndash;&gt;-->
-    <!--<VariableCommand name="current_page_month"-->
-    <!--expression="-->
-    <!--ifelse(-->
-    <!--eqs(#current_page_month,1),-->
-    <!--12,-->
-    <!--#current_page_month-1-->
-    <!--)"/>-->
-    <!--<VariableCommand name="refresh" expression="#refresh+1"/>-->
-    <!--</Trigger>-->
-    <!--</Triggers>-->
-    <!--</Button>-->
-    <!-- 下一个页 -->
-    <!--<Button name="next_month" x="#w/2" y="#week_start_pos_y" w="#w/2" h="800" interceptTouch="true">-->
-    <!--&lt;!&ndash; 事件绑定 &ndash;&gt;-->
-    <!--<Triggers>-->
-    <!--<Trigger action="double">-->
-    <!--<VariableCommand name="lastOrNext" expression="#next_month_tag"/>-->
-
-    <!--&lt;!&ndash; 年份有条件递增 &ndash;&gt;-->
-
-    <!--<VariableCommand name="current_page_year"-->
-    <!--expression="-->
-    <!--ifelse(-->
-    <!--eqs(#current_page_month,12),-->
-    <!--#current_page_year+1,-->
-    <!--#current_page_year)-->
-    <!--"/>-->
-    <!--&lt;!&ndash; 月份有条件递增 &ndash;&gt;-->
-    <!--<VariableCommand name="current_page_month"-->
-    <!--expression="-->
-    <!--ifelse(-->
-    <!--eqs(#current_page_month,12),-->
-    <!--1,-->
-    <!--#current_page_month+1-->
-    <!--)"/>-->
-    <!--<VariableCommand name="refresh" expression="#refresh+1"/>-->
-    <!--</Trigger>-->
-    <!--</Triggers>-->
-    <!--</Button>-->
-    <Var name="refresh" expression="#refresh" threshold="1">
-        <Trigger>
-
-            <!-- 判断是否闰年 要取得当页日历所在的年份-->
-            <VariableCommand name="if_leap_year"
-                             expression="#current_page_year%4==0*(#current_page_year%100!=0||#current_page_year%400==0)"/>
-
-            <!-- 当页    判断当页月的天数 -->
-            <VariableCommand name="current_month_day_nums"
-                             expression="
-					ifelse(
-					#current_page_month==1||
-					#current_page_month==3||
-					#current_page_month==5||
-					#current_page_month==7||
-					#current_page_month==8||
-					#current_page_month==10||
-					#current_page_month==12,
-					31,
-
-					#current_page_month==4||
-					#current_page_month==6||
-					#current_page_month==9||
-					#current_page_month==11,
-					30,
-
-					(#current_page_month==2)*#if_leap_year,
-					29,
-
-					28
-
-					)"/>
-            <!-- 上月天数 -->
-            <VariableCommand
-                    name="last_page_month_day_nums"
-                    expression="
-					ifelse(
-						#current_page_month==1||
-						#current_page_month==2||
-						#current_page_month==4||
-						#current_page_month==6||
-						#current_page_month==8||
-						#current_page_month==9||
-						#current_page_month==11,
-						31,
-
-						#current_page_month==5||
-						#current_page_month==7||
-						#current_page_month==10||
-						#current_page_month==12,
-						30,
-						(#current_page_month==3)*#if_leap_year,
-						29,28)
-				"
-            />
-            <!-- 当页    第一天在当页的偏移量-->
-            <VariableCommand name="current_month_offset"
-                             expression="
-					ifelse(
-						eqs(#lastOrNext,1),
-						#next_month_offset_temp,
-						#last_month_offset_temp
-					)
-				"
-            />
-            <!-- 根据当页数据 计算出 下一页 月初的偏移量 7-(42-#current_month_day_nums-#current_month_offset)%7-->
-            <VariableCommand name="next_month_offset_temp"
-                             expression="ifelse(
-						(7-(42-#current_month_day_nums-#current_month_offset)%7)==7,0
-						,7-(42-#current_month_day_nums-#current_month_offset)%7
-					)
-				"
-            />
-
-            <!--  上个月的1 号的偏移量 -->
-            <VariableCommand name="last_month_offset_temp"
-                             expression="(42-#last_page_month_day_nums-(7-#current_month_offset))%7"/>
-
-            <!-- 当前页的日历，第一天所代表的毫秒级时间
+      <VariableCommand expression="(42-#last_page_month_day_nums-(7-#current_month_offset))%7" name="last_month_offset_temp"/>
+      <!-- 当前页的日历，第一天所代表的毫秒级时间
 
             这个地方要判断 当前页是 来自上一页 还是下一页
 
             -->
-            <VariableCommand name="current_page_array42_index0_sys_time"
-                             expression="
-					ifelse(eqs(#lastOrNext,1),
-					#next_page_array42_index0_sys_time_temp,
-					#last_page_array42_index0_sys_time_temp)
-				"/>
 
+      <VariableCommand expression="      ifelse(eqs(#lastOrNext,1),      #next_page_array42_index0_sys_time_temp,      #last_page_array42_index0_sys_time_temp)     " name="current_page_array42_index0_sys_time"/>
+      <!-- 根据当页数据   缓存下一页日历，第一天所代表的毫秒级时间 -->
 
-            <!-- 根据当页数据   缓存下一页日历，第一天所代表的毫秒级时间 -->
-            <VariableCommand name="next_page_array42_index0_sys_time_temp"
-                             expression="
-					#current_page_array42_index0_sys_time+
-					(#current_month_day_nums+#current_month_offset-#next_month_offset_temp)
-					*#one_day_all_seconds
-				"/>
-            <!-- 根据当页数据 缓存 上一页日历，第一天所代表的毫秒级时间 -->
-            <VariableCommand name="last_page_array42_index0_sys_time_temp"
-                             expression="
-					#current_page_array42_index0_sys_time-
-					(#last_page_month_day_nums-#current_month_offset+#last_month_offset_temp)*
-					#one_day_all_seconds"
-            />
-            <VariableCommand
-                    name="current_sys_time"
-                    expression="#current_page_array42_index0_sys_time+21*#one_day_all_seconds"/>
-            <LoopCommand count="42" indexName="i">
-                <!-- 相对于第一天的时间偏移量 -->
-                <VariableCommand name="relative_sys_time"
-                                 expression="
-						#current_page_array42_index0_sys_time+#i*#one_day_all_seconds
-					"/>
-                <!-- 格式化 当月天数 公历-->
-                <VariableCommand name="array_days_42" type="string[]" index="#i"
-                                 expression="formatDate('d',#relative_sys_time)"/>
-                <!-- 格式化 当月天数 农历 -->
-                <VariableCommand name="array_lunar_days_42" type="string[]" index="#i"
-                                 expression="formatDate('e',#relative_sys_time)"/>
-                <!-- 每一天属于哪一个月 -->
-                <VariableCommand name="array_each_day_belong_months_42" type="string[]" index="#i"
-                                 expression="formatDate('M',#relative_sys_time)"
-                />
-                <VariableCommand name="array_each_day_belong_months_lunar_42" type="string[]" index="#i"
-                                 expression="formatDate('N',#relative_sys_time)"
-                />
-                <!--
+      <VariableCommand expression="      #current_page_array42_index0_sys_time+      (#current_month_day_nums+#current_month_offset-#next_month_offset_temp)      *#one_day_all_seconds     " name="next_page_array42_index0_sys_time_temp"/>
+      <!-- 根据当页数据 缓存 上一页日历，第一天所代表的毫秒级时间 -->
+
+      <VariableCommand expression="      #current_page_array42_index0_sys_time-      (#last_page_month_day_nums-#current_month_offset+#last_month_offset_temp)*      #one_day_all_seconds" name="last_page_array42_index0_sys_time_temp"/>
+      <VariableCommand expression="#current_page_array42_index0_sys_time+21*#one_day_all_seconds" name="current_sys_time"/>
+      <LoopCommand count="42" indexName="i">
+        <!-- 相对于第一天的时间偏移量 -->
+
+        <VariableCommand expression="       #current_page_array42_index0_sys_time+#i*#one_day_all_seconds      " name="relative_sys_time"/>
+        <!-- 格式化 当月天数 公历-->
+
+        <VariableCommand expression="formatDate(&apos;d&apos;,#relative_sys_time)" index="#i" name="array_days_42" type="string[]"/>
+        <!-- 格式化 当月天数 农历 -->
+
+        <VariableCommand expression="formatDate(&apos;e&apos;,#relative_sys_time)" index="#i" name="array_lunar_days_42" type="string[]"/>
+        <!-- 每一天属于哪一个月 -->
+
+        <VariableCommand expression="formatDate(&apos;M&apos;,#relative_sys_time)" index="#i" name="array_each_day_belong_months_42" type="string[]"/>
+        <VariableCommand expression="formatDate(&apos;N&apos;,#relative_sys_time)" index="#i" name="array_each_day_belong_months_lunar_42" type="string[]"/>
+        <!--
                     缓存特殊意义的日期
                 -->
 
-                <VariableCommand name="array_lunar_days_42_temp" type="string[]" index="#i"
-                                 expression="
-				ifelse(
-					eqs(@array_each_day_belong_months_42[#i],'1')**eqs(@array_days_42[#i],'1'),'元旦节',
+        <VariableCommand expression="     ifelse(      eqs(@array_each_day_belong_months_42[#i],&apos;1&apos;)**eqs(@array_days_42[#i],&apos;1&apos;),&apos;元旦节&apos;,       eqs(@array_each_day_belong_months_42[#i],&apos;2&apos;)*eqs(@array_days_42[#i],&apos;14&apos;),&apos;情人节&apos;,       eqs(@array_each_day_belong_months_42[#i],&apos;3&apos;)*eqs(@array_days_42[#i],&apos;8&apos;),&apos;妇女节&apos;,       eqs(@array_each_day_belong_months_42[#i],&apos;3&apos;)*eqs(@array_days_42[#i],&apos;12&apos;),&apos;植树节&apos;,       eqs(@array_each_day_belong_months_42[#i],&apos;4&apos;)*eqs(@array_days_42[#i],&apos;1&apos;),&apos;英雄王伟&apos;,       eqs(@array_each_day_belong_months_42[#i],&apos;5&apos;)*eqs(@array_days_42[#i],&apos;1&apos;),&apos;劳动节&apos;,       eqs(@array_each_day_belong_months_42[#i],&apos;5&apos;)*eqs(@array_days_42[#i],&apos;4&apos;),&apos;青年节&apos;,       eqs(@array_each_day_belong_months_42[#i],&apos;6&apos;)*eqs(@array_days_42[#i],&apos;1&apos;),&apos;儿童节&apos;,       eqs(@array_each_day_belong_months_42[#i],&apos;7&apos;)*eqs(@array_days_42[#i],&apos;1&apos;),&apos;建党节&apos;,       eqs(@array_each_day_belong_months_42[#i],&apos;8&apos;)*eqs(@array_days_42[#i],&apos;1&apos;),&apos;建军节&apos;,       eqs(@array_each_day_belong_months_42[#i],&apos;9&apos;)*eqs(@array_days_42[#i],&apos;10&apos;),&apos;教师节&apos;,       eqs(@array_each_day_belong_months_42[#i],&apos;10&apos;)*eqs(@array_days_42[#i],&apos;1&apos;),&apos;国庆节&apos;,       eqs(@array_each_day_belong_months_42[#i],&apos;11&apos;)*eqs(@array_days_42[#i],&apos;11&apos;),&apos;光棍节&apos;,       eqs(@array_each_day_belong_months_42[#i],&apos;10&apos;)*eqs(@array_days_42[#i],&apos;31&apos;),&apos;王阳明&apos;,       eqs(@array_each_day_belong_months_42[#i],&apos;12&apos;)*eqs(@array_days_42[#i],&apos;24&apos;),&apos;平安夜&apos;,       eqs(@array_each_day_belong_months_42[#i],&apos;12&apos;)*eqs(@array_days_42[#i],&apos;25&apos;),&apos;圣诞节&apos;,       eqs(@array_each_day_belong_months_lunar_42[#i],&apos;正&apos;)*eqs(@array_lunar_days_42[#i],&apos;初一&apos;),&apos;春节&apos;,       eqs(@array_each_day_belong_months_lunar_42[#i],&apos;正&apos;)*eqs(@array_lunar_days_42[#i],&apos;十五&apos;),&apos;元宵节&apos;,       eqs(@array_each_day_belong_months_lunar_42[#i],&apos;二&apos;)*eqs(@array_lunar_days_42[#i],&apos;初二&apos;),&apos;龙抬头&apos;,       eqs(@array_each_day_belong_months_lunar_42[#i],&apos;五&apos;)*eqs(@array_lunar_days_42[#i],&apos;初五&apos;),&apos;端午节&apos;,       eqs(@array_each_day_belong_months_lunar_42[#i],&apos;七&apos;)*eqs(@array_lunar_days_42[#i],&apos;初七&apos;),&apos;七夕节&apos;,       eqs(@array_each_day_belong_months_lunar_42[#i],&apos;七&apos;)*eqs(@array_lunar_days_42[#i],&apos;十五&apos;),&apos;中元节&apos;,       eqs(@array_each_day_belong_months_lunar_42[#i],&apos;八&apos;)*eqs(@array_lunar_days_42[#i],&apos;十五&apos;),&apos;中秋节&apos;,       eqs(@array_each_day_belong_months_lunar_42[#i],&apos;九&apos;)*eqs(@array_lunar_days_42[#i],&apos;初九&apos;),&apos;重阳节&apos;,       eqs(@array_each_day_belong_months_lunar_42[#i],&apos;腊&apos;)*eqs(@array_lunar_days_42[#i],&apos;初八&apos;),&apos;腊八节&apos;,       eqs(@array_each_day_belong_months_lunar_42[#i],&apos;腊&apos;)*eqs(@array_lunar_days_42[#i],&apos;廿三&apos;),&apos;小年&apos;,       eqs(@array_each_day_belong_months_lunar_42[#i],&apos;腊&apos;)*eqs(@array_lunar_days_42[#i],&apos;三十&apos;),&apos;除夕&apos;,&apos;&apos;     )" index="#i" name="array_lunar_days_42_temp" type="string[]"/>
+      </LoopCommand>
+    </Trigger>
+  </Var>
+  <Array count="7" indexName="i" x="#w/2-#gap_line*3" y="#week_start_pos_y">
+    <Text align="center" color="#ffd647" size="36" textExp="substr(&apos;日一二三四五六&apos;,#i,1)" x="#i*#gap_line"/>
+  </Array>
+  <Var expression="28" name="date_cr"/>
+  <Var expression="&apos;#ffffff&apos;" name="color_light_normal" type="string"/>
+  <Var expression="&apos;#ff0000&apos;" name="color_dark_choosen" type="string"/>
+  <Array count="42" indexName="i" x="#w/2-#gap_line*3" y="#month_start_pos_y">
+    <!--修复bug,之前的版本用的月份不对-->
 
-					eqs(@array_each_day_belong_months_42[#i],'2')*eqs(@array_days_42[#i],'14'),'情人节',
+    <Circle alpha="200" fillColor="@color_dark_choosen" r="40" strokeColor="@color_dark_choosen" visibility="eq(#current_page_year,#year)*                     eq(int(@array_each_day_belong_months_42[#i]),#current_month)*                     eq(int(@array_days_42[#i]),#current_day)" x="(#i)%7*#gap_line" y="int(#i/7)*#gap_column"/>
+    <Circle alpha="200" r="40" strokeColor="@color_light_normal" visibility="not(eq(#current_page_year,#year)*                     eq(int(@array_each_day_belong_months_42[#i]),#current_month)*                     eq(int(@array_days_42[#i]),#current_day))" x="(#i)%7*#gap_line" y="int(#i/7)*#gap_column"/>
+    <!-- 日期排列 -->
 
-					eqs(@array_each_day_belong_months_42[#i],'3')*eqs(@array_days_42[#i],'8'),'妇女节',
+    <Text align="center" alignV="center" alpha="     ifelse(      (#i}=#current_month_offset)      *(#i{#current_month_day_nums+#current_month_offset),      255,      100     )" bold="true" color="#ffffff" name="cm" size="40" textExp="@array_days_42[#i]" x="(#i)%7*#gap_line" y="int(#i/7)*#gap_column"/>
+    <!--alpha="ifelse(eqs(#current_page_year,#year)*eqs(#current_page_month,#current_month)*eqs(int(@array_days_42[#i]),#current_day),220,150)"-->
+    <!-- 农历 -->
 
-					eqs(@array_each_day_belong_months_42[#i],'3')*eqs(@array_days_42[#i],'12'),'植树节',
+    <Text align="center" alignV="center" alpha="     ifelse(      (#i}=#current_month_offset)      *(#i{#current_month_day_nums+#current_month_offset),      255,      100     )" bold="true" color="#ffffff" size="20" textExp="ifelse(     strIsEmpty(     @array_lunar_days_42_temp[#i]),     @array_lunar_days_42[#i],     @array_lunar_days_42_temp[#i]     )" x="(#i)%7*#gap_line" y="int(#i/7)*#gap_column+60"/>
+  </Array>
+  <!-- 锁屏通知部分 -->
 
-					eqs(@array_each_day_belong_months_42[#i],'4')*eqs(@array_days_42[#i],'1'),'英雄王伟',
+  <VariableBinders>
+    <!-- 未接来电 -->
 
-					eqs(@array_each_day_belong_months_42[#i],'5')*eqs(@array_days_42[#i],'1'),'劳动节',
-
-					eqs(@array_each_day_belong_months_42[#i],'5')*eqs(@array_days_42[#i],'4'),'青年节',
-
-					eqs(@array_each_day_belong_months_42[#i],'6')*eqs(@array_days_42[#i],'1'),'儿童节',
-
-					eqs(@array_each_day_belong_months_42[#i],'7')*eqs(@array_days_42[#i],'1'),'建党节',
-
-					eqs(@array_each_day_belong_months_42[#i],'8')*eqs(@array_days_42[#i],'1'),'建军节',
-
-					eqs(@array_each_day_belong_months_42[#i],'9')*eqs(@array_days_42[#i],'10'),'教师节',
-
-					eqs(@array_each_day_belong_months_42[#i],'10')*eqs(@array_days_42[#i],'1'),'国庆节',
-
-					eqs(@array_each_day_belong_months_42[#i],'11')*eqs(@array_days_42[#i],'11'),'光棍节',
-
-					eqs(@array_each_day_belong_months_42[#i],'10')*eqs(@array_days_42[#i],'31'),'王阳明',
-
-					eqs(@array_each_day_belong_months_42[#i],'12')*eqs(@array_days_42[#i],'24'),'平安夜',
-
-					eqs(@array_each_day_belong_months_42[#i],'12')*eqs(@array_days_42[#i],'25'),'圣诞节',
-
-					eqs(@array_each_day_belong_months_lunar_42[#i],'正')*eqs(@array_lunar_days_42[#i],'初一'),'春节',
-
-					eqs(@array_each_day_belong_months_lunar_42[#i],'正')*eqs(@array_lunar_days_42[#i],'十五'),'元宵节',
-
-					eqs(@array_each_day_belong_months_lunar_42[#i],'二')*eqs(@array_lunar_days_42[#i],'初二'),'龙抬头',
-
-					eqs(@array_each_day_belong_months_lunar_42[#i],'五')*eqs(@array_lunar_days_42[#i],'初五'),'端午节',
-
-					eqs(@array_each_day_belong_months_lunar_42[#i],'七')*eqs(@array_lunar_days_42[#i],'初七'),'七夕节',
-
-					eqs(@array_each_day_belong_months_lunar_42[#i],'七')*eqs(@array_lunar_days_42[#i],'十五'),'中元节',
-
-					eqs(@array_each_day_belong_months_lunar_42[#i],'八')*eqs(@array_lunar_days_42[#i],'十五'),'中秋节',
-
-					eqs(@array_each_day_belong_months_lunar_42[#i],'九')*eqs(@array_lunar_days_42[#i],'初九'),'重阳节',
-
-					eqs(@array_each_day_belong_months_lunar_42[#i],'腊')*eqs(@array_lunar_days_42[#i],'初八'),'腊八节',
-
-					eqs(@array_each_day_belong_months_lunar_42[#i],'腊')*eqs(@array_lunar_days_42[#i],'廿三'),'小年',
-
-					eqs(@array_each_day_belong_months_lunar_42[#i],'腊')*eqs(@array_lunar_days_42[#i],'三十'),'除夕',''
-				)"
-                />
-            </LoopCommand>
-        </Trigger>
-    </Var>
-    <Array count="7" indexName="i" x="#w/2-#gap_line*3" y="#week_start_pos_y">
-        <Text textExp="substr('日一二三四五六',#i,1)" size="36" x="#i*#gap_line" color="#ffd647" align="center"/>
-    </Array>
-    <Var name="date_cr" expression="28"/>
-    <Var name="color_light_normal" type="string" expression="'#ffffff'"/>
-    <Var name="color_dark_choosen" type="string" expression="'#ff0000'"/>
-    <Array count="42" indexName="i" x="#w/2-#gap_line*3" y="#month_start_pos_y">
-        <!--修复bug,之前的版本用的月份不对-->
-        <Circle
-                x="(#i)%7*#gap_line" y="int(#i/7)*#gap_column" r="40"
-                strokeColor="@color_dark_choosen"
-                fillColor="@color_dark_choosen"
-                alpha="200"
-                visibility="eq(#current_page_year,#year)*
-                    eq(int(@array_each_day_belong_months_42[#i]),#current_month)*
-                    eq(int(@array_days_42[#i]),#current_day)"/>
-        <Circle
-                x="(#i)%7*#gap_line" y="int(#i/7)*#gap_column" r="40"
-                strokeColor="@color_light_normal"
-                alpha="200"
-                visibility="not(eq(#current_page_year,#year)*
-                    eq(int(@array_each_day_belong_months_42[#i]),#current_month)*
-                    eq(int(@array_days_42[#i]),#current_day))"/>
-        <!-- 日期排列 -->
-        <Text
-                name="cm"
-                x="(#i)%7*#gap_line" y="int(#i/7)*#gap_column"
-                align="center" alignV="center" size="40"
-                color="#ffffff"
-                alpha="
-				ifelse(
-					(#i}=#current_month_offset)
-					*(#i{#current_month_day_nums+#current_month_offset),
-					255,
-					100
-				)"
-                bold="true"
-                textExp="@array_days_42[#i]"
-        />
-
-        <!--alpha="ifelse(eqs(#current_page_year,#year)*eqs(#current_page_month,#current_month)*eqs(int(@array_days_42[#i]),#current_day),220,150)"-->
-        <!-- 农历 -->
-        <Text
-                x="(#i)%7*#gap_line" y="int(#i/7)*#gap_column+60"
-
-                align="center" alignV="center" size="20" color="#ffffff"
-
-                alpha="
-				ifelse(
-					(#i}=#current_month_offset)
-					*(#i{#current_month_day_nums+#current_month_offset),
-					255,
-					100
-				)"
-                bold="true"
-                textExp="ifelse(
-				strIsEmpty(
-				@array_lunar_days_42_temp[#i]),
-				@array_lunar_days_42[#i],
-				@array_lunar_days_42_temp[#i]
-				)"
-        />
-
-    </Array>
-    <!-- 锁屏通知部分 -->
-    <VariableBinders>
-        <!-- 未接来电 -->
-        <ContentProviderBinder name="missed_calls" uri="content://call_log/calls"
-                               columns="date,number,name,type,duration" order="date DESC" countName="call_count">
-            <Variable name="call_name1" type="string" column="name" row="0"/>
-            <Variable name="call_number1" type="string" column="number" row="0"/>
-            <Variable name="duration_time1" type="long" column="duration" row="0"/>
-            <Variable name="call_date1" type="long" column="date" row="0"/>
-            <Variable name="call_type1" type="integer" column="type" row="0"/>
-
-            <Variable name="call_name2" type="string" column="name" row="1"/>
-            <Variable name="call_number2" type="string" column="number" row="1"/>
-            <Variable name="duration_time2" type="long" column="duration" row="1"/>
-            <Variable name="call_date2" type="long" column="date" row="1"/>
-            <Variable name="call_type2" type="integer" column="type" row="1"/>
-
-            <Variable name="call_name3" type="string" column="name" row="2"/>
-            <Variable name="call_number3" type="string" column="number" row="2"/>
-            <Variable name="duration_time3" type="long" column="duration" row="2"/>
-            <Variable name="call_date3" type="long" column="date" row="2"/>
-            <Variable name="call_type3" type="integer" column="type" row="2"/>
-        </ContentProviderBinder>
-
-        <ContentProviderBinder dependency="missed_calls" uriFormat="content://datahub/call_log/location/%s"
-                               uriParas="@call_number1" columns="location">
-            <Variable name="call_location1" type="string" column="location" row="0"/>
-        </ContentProviderBinder>
-        <ContentProviderBinder dependency="missed_calls" uriFormat="content://datahub/call_log/location/%s"
-                               uriParas="@call_number2" columns="location">
-            <Variable name="call_location2" type="string" column="location" row="0"/>
-        </ContentProviderBinder>
-        <ContentProviderBinder dependency="missed_calls" uriFormat="content://datahub/call_log/location/%s"
-                               uriParas="@call_number3" columns="location">
-            <Variable name="call_location3" type="string" column="location" row="0"/>
-        </ContentProviderBinder>
-
-        <ContentProviderBinder dependency="missed_calls" uri="content://com.android.contacts/data"
-                               columns="display_name,raw_contact_id" whereFormat="PHONE_NUMBERS_EQUAL(data1,'%s')"
-                               whereParas="@call_number1" countName="call_hasName1">
-            <Variable name="call_name1" type="string" column="display_name" row="0"/>
-            <Variable name="call_id1" type="string" column="raw_contact_id" row="0"/>
-        </ContentProviderBinder>
-        <ContentProviderBinder dependency="missed_calls" uri="content://com.android.contacts/data"
-                               columns="display_name,raw_contact_id" whereFormat="PHONE_NUMBERS_EQUAL(data1,'%s')"
-                               whereParas="@call_number2" countName="call_hasName2">
-            <Variable name="call_name2" type="string" column="display_name" row="0"/>
-            <Variable name="call_id2" type="string" column="raw_contact_id" row="0"/>
-        </ContentProviderBinder>
-        <ContentProviderBinder dependency="missed_calls" uri="content://com.android.contacts/data"
-                               columns="display_name,raw_contact_id" whereFormat="PHONE_NUMBERS_EQUAL(data1,'%s')"
-                               whereParas="@call_number3" countName="call_hasName3">
-            <Variable name="call_name3" type="string" column="display_name" row="0"/>
-            <Variable name="call_id3" type="string" column="raw_contact_id" row="0"/>
-        </ContentProviderBinder>
-
-        <ContentProviderBinder name="sms_table" uri="content://sms/inbox" columns="_id,address,date,body,person"
-                               order="date DESC" countName="sms_count">
-            <Variable name="sms_date1" type="long" column="date" row="0"/>
-            <Variable name="sms_body1" type="string" column="body" row="0"/>
-            <Variable name="sms_num1" type="string" column="address" row="0"/>
-
-            <Variable name="sms_date2" type="long" column="date" row="1"/>
-            <Variable name="sms_body2" type="string" column="body" row="1"/>
-            <Variable name="sms_num2" type="string" column="address" row="1"/>
-
-            <Variable name="sms_date3" type="long" column="date" row="2"/>
-            <Variable name="sms_body3" type="string" column="body" row="2"/>
-            <Variable name="sms_num3" type="string" column="address" row="2"/>
-        </ContentProviderBinder>
-        <ContentProviderBinder dependency="sms_table" uriFormat="content://datahub/call_log/location/%s"
-                               uriParas="@sms_num1" columns="location">
-            <Variable name="sms1_location" type="string" column="location" row="0"/>
-        </ContentProviderBinder>
-        <ContentProviderBinder dependency="sms_table" uriFormat="content://datahub/call_log/location/%s"
-                               uriParas="@sms_num2" columns="location">
-            <Variable name="sms2_location" type="string" column="location" row="0"/>
-        </ContentProviderBinder>
-        <ContentProviderBinder dependency="sms_table" uriFormat="content://datahub/call_log/location/%s"
-                               uriParas="@sms_num3" columns="location">
-            <Variable name="sms3_location" type="string" column="location" row="0"/>
-        </ContentProviderBinder>
-
-        <ContentProviderBinder dependency="sms_table" uri="content://com.android.contacts/data" columns="display_name"
-                               whereFormat="PHONE_NUMBERS_EQUAL(data1,'%s')" whereParas="@sms_num1"
-                               countName="hasName1">
-            <Variable name="sms_name1" type="string" column="display_name" row="0"/>
-        </ContentProviderBinder>
-
-        <ContentProviderBinder dependency="sms_table" uri="content://com.android.contacts/data" columns="display_name"
-                               whereFormat="PHONE_NUMBERS_EQUAL(data1,'%s')" whereParas="@sms_num2"
-                               countName="hasName2">
-            <Variable name="sms_name2" type="string" column="display_name" row="0"/>
-        </ContentProviderBinder>
-
-        <ContentProviderBinder dependency="sms_table" uri="content://com.android.contacts/data" columns="display_name"
-                               whereFormat="PHONE_NUMBERS_EQUAL(data1,'%s')" whereParas="@sms_num3"
-                               countName="hasName3">
-            <Variable name="sms_name3" type="string" column="display_name" row="0"/>
-        </ContentProviderBinder>
-        <ContentProviderBinder name="weather" uri="content://weather/weather" columns="city_id">
-            <Variable name="city_id" type="string" column="city_id"/>
-        </ContentProviderBinder>
-        <ContentProviderBinder name="data" uri="content://keyguard.notification/notifications"
-                               columns="icon,title,content,time,info,subtext,key" countName="hasnotifications">
-            <Variable name="notification_icon" type="blob.bitmap" column="icon" row="0"/>
-            <Variable name="notification_title" type="string" column="title" row="0"/>
-            <Variable name="notification_content" type="string" column="content" row="0"/>
-            <Variable name="notification_time" type="string" column="time" row="0"/>
-            <Variable name="notification_info" type="string" column="info" row="0"/>
-            <Variable name="notification_subtext" type="string" column="subtext" row="0"/>
-            <Variable name="notification_key" type="int" column="key" row="0"/>
-            <List name="notification_list"/>
-        </ContentProviderBinder>
-        <ContentProviderBinder dependency="weather" uriFormat="content://weather/daily_weather/%s" uriParas="@city_id"
-                               columns="city_name,publish_time,tmplows,temperature,temperature_range,description,wind,humidity,weather_type,weathernamesfrom,weathernamesto"
-                               countName="hasweather">
-            <Variable name="weather_location" type="string" column="city_name"/>
-            <Variable name="weather_id" type="int" column="weather_type"/>
-            <Variable name="tem_low_0" type="int" column="tmplows" row="0"/>
-            <Variable name="weatherfrom_0" type="string" column="weathernamesfrom" row="0"/>
-            <Variable name="weatherto_0" type="string" column="weathernamesto" row="0"/>
-            <Variable name="weatherfrom_1" type="string" column="weathernamesfrom" row="1"/>
-            <Variable name="weatherto_1" type="string" column="weathernamesto" row="1"/>
-            <Variable name="weatherfrom_2" type="string" column="weathernamesfrom" row="2"/>
-            <Variable name="weatherto_2" type="string" column="weathernamesto" row="2"/>
-            <Variable name="weatherfrom_3" type="string" column="weathernamesfrom" row="3"/>
-            <Variable name="weatherto_3" type="string" column="weathernamesto" row="3"/>
-            <Var name="tomorrow_weather_description"
-                 expression="ifelse(eqs(@weatherfrom_1,@weatherto_1),@weatherfrom_1,@weatherfrom_1+'~'+@weatherto_1)"
-                 type="string"/>
-            <Var name="day_after_tomorrow_weather_description"
-                 expression="ifelse(eqs(@weatherfrom_2,@weatherto_2),@weatherfrom_2,@weatherfrom_2+'~'+@weatherto_2)"
-                 type="string"/>
-            <Var name="day_after_day_after_tomorrow_weather_description"
-                 expression="ifelse(eqs(@weatherfrom_3,@weatherto_3),@weatherfrom_3,@weatherfrom_3+'~'+@weatherto_3)"
-                 type="string"/>
-            <Variable name="wd0" type="string" column="description"/>
-            <Variable name="weather_description" type="string" column="description"/>
-            <Variable name="weather_temperature" type="int" column="temperature"/>
-            <Variable name="weather_temperature_string" type="string" column="temperature"/>
-            <Variable name="weather_wind" type="string" column="wind"/>
-            <Variable name="weather_humidity" type="string" column="humidity"/>
-            <Variable name="wt0" type="int" column="temperature_range" row="0"/>
-            <Variable name="wt1" type="int" column="temperature_range" row="1"/>
-            <Variable name="wt2" type="int" column="temperature_range" row="2"/>
-            <Variable name="wt3" type="int" column="temperature_range" row="3"/>
-        </ContentProviderBinder>
-        <ContentProviderBinder name="weather_aqi" dependency="weather" uriFormat="content://weatherinfo/aqi/%s"
-                               uriParas="@city_id" columns="aqi,pm25,pm10,so2,no2,pub_time,src,spot"
-                               countName="hasweatherinfo">
-            <Variable name="aqi" type="int" column="aqi"/>
-        </ContentProviderBinder>
-        <SensorBinder name="gravity_m" type="gravity" rate="500">
-            <Variable name="gx" index="0"/>
-            <Variable name="gy" index="1"/>
-        </SensorBinder>
-        <BroadcastBinder action="broadcast_set">
-            <Variable name="word1" type="string" extra="extra_word1"/>
-            <Variable name="word2" type="string" extra="extra_word2"/>
-        </BroadcastBinder>
-    </VariableBinders>
-    <List name="notification_list" x="0" y="#h/8" w="#w" maxHeight="230*4"
-          data="icon:bitmap,title:string,content:string,time:string,info:string,subtext:string,key:int"
-          visibility="#hasnotifications">
-        <Item w="#w" h="230">
-            <Button x="#w/2" y="100" w="#w" h="200" align="center" alignV="center">
-                <Normal>
-                    <!--<Image x="80" y="0" src="notification/nbgn.png"/>-->
-                </Normal>
-                <Pressed>
-                    <Image x="80" y="0" src="notification/nbgp.png"/>
-                </Pressed>
-                <Image name="notification_icon" x="180" y="100" align="center" alignV="center" w="162" h="162"/>
-                <Text name="notification_title" x="290" y="72" alignV="center" size="40" color="#b2000000" w="490"
-                      marqueeSpeed="30" fontFamily="miui-light"/>
-                <Text name="notification_content" x="290" y="129" alignV="center" size="36" color="#b2000000" w="680"
-                      h="42" fontFamily="miui-light" marqueeSpeed="30"/>
-                <Text name="notification_time" x="#w-115" y="72" align="right" alignV="center" size="36"
-                      color="#b2000000" w="160" h="54" fontFamily="miui-light" marqueeSpeed="30"/>
-                <Triggers>
-                    <Trigger action="up">
-                        <IntentCommand action="com.miui.app.ExtraStatusBarManager.action_remove_keyguard_notification"
-                                       broadcast="true">
-                            <Extra name="com.miui.app.ExtraStatusBarManager.extra_notification_key" type="int"
-                                   expression="#notification_key"/>
-                            <Extra name="com.miui.app.ExtraStatusBarManager.extra_notification_click" type="int"
-                                   expression="1"/>
-                        </IntentCommand>
-                    </Trigger>
-                </Triggers>
-            </Button>
-        </Item>
-        <AttrDataBinders>
-            <AttrDataBinder target="notification_icon" attr="bitmap" data="icon"/>
-            <AttrDataBinder target="notification_title" attr="text" data="title"/>
-            <AttrDataBinder target="notification_content" attr="text" data="content"/>
-            <AttrDataBinder target="notification_time" attr="text" data="time"/>
-        </AttrDataBinders>
-    </List>
-    <!-- 底部快捷方式 -->
-    <!--快捷图标的宽度-->
-    <Var name="bottom_icon_w" expression="170"/>
-    <!--快捷图标的高度-->
-    <Var name="bottom_icon_h" expression="130"/>
-    <!--左右边距-->
-    <Var name="bottom_icon_padding" expression="60"/>
-    <!--左侧快捷方式的x坐标-->
-    <Var name="bottom_left_icon_x" expression="#bottom_icon_padding"/>
-    <!--右侧快捷方式的x坐标-->
-    <Var name="bottom_right_icon_x" expression="#w-#bottom_icon_padding-#bottom_icon_w"/>
-    <!--快捷方式的y坐标-->
-    <Var name="bottom_icon_y" expression="#h-150"/>
-
-    <Text x="#bottom_left_icon_x+#bottom_icon_w/2" y="#bottom_icon_y+#bottom_icon_h/2" align="center" alignV="center"
-          color="#ddd5d5"
-          size="60" textExp="'闹钟'" alpha="180"/>
-    <!--<Image src="camera.png" x="#bottom_right_icon_x" y="#bottom_icon_y"/>-->
-    <Text x="#bottom_right_icon_x+#bottom_icon_w/2" y="#bottom_icon_y+#bottom_icon_h/2" align="center" alignV="center"
-          color="#ddd5d5"
-          size="60" textExp="'相机'" alpha="180"/>
-    <Button x="#bottom_left_icon_x" y="#bottom_icon_y" w="#bottom_icon_w" h="#bottom_icon_h">
+    <ContentProviderBinder columns="date,number,name,type,duration" countName="call_count" name="missed_calls" order="date DESC" uri="content://call_log/calls">
+      <Variable column="name" name="call_name1" row="0" type="string"/>
+      <Variable column="number" name="call_number1" row="0" type="string"/>
+      <Variable column="duration" name="duration_time1" row="0" type="long"/>
+      <Variable column="date" name="call_date1" row="0" type="long"/>
+      <Variable column="type" name="call_type1" row="0" type="integer"/>
+      <Variable column="name" name="call_name2" row="1" type="string"/>
+      <Variable column="number" name="call_number2" row="1" type="string"/>
+      <Variable column="duration" name="duration_time2" row="1" type="long"/>
+      <Variable column="date" name="call_date2" row="1" type="long"/>
+      <Variable column="type" name="call_type2" row="1" type="integer"/>
+      <Variable column="name" name="call_name3" row="2" type="string"/>
+      <Variable column="number" name="call_number3" row="2" type="string"/>
+      <Variable column="duration" name="duration_time3" row="2" type="long"/>
+      <Variable column="date" name="call_date3" row="2" type="long"/>
+      <Variable column="type" name="call_type3" row="2" type="integer"/>
+    </ContentProviderBinder>
+    <ContentProviderBinder columns="location" dependency="missed_calls" uriFormat="content://datahub/call_log/location/%s" uriParas="@call_number1">
+      <Variable column="location" name="call_location1" row="0" type="string"/>
+    </ContentProviderBinder>
+    <ContentProviderBinder columns="location" dependency="missed_calls" uriFormat="content://datahub/call_log/location/%s" uriParas="@call_number2">
+      <Variable column="location" name="call_location2" row="0" type="string"/>
+    </ContentProviderBinder>
+    <ContentProviderBinder columns="location" dependency="missed_calls" uriFormat="content://datahub/call_log/location/%s" uriParas="@call_number3">
+      <Variable column="location" name="call_location3" row="0" type="string"/>
+    </ContentProviderBinder>
+    <ContentProviderBinder columns="display_name,raw_contact_id" countName="call_hasName1" dependency="missed_calls" uri="content://com.android.contacts/data" whereFormat="PHONE_NUMBERS_EQUAL(data1,&apos;%s&apos;)" whereParas="@call_number1">
+      <Variable column="display_name" name="call_name1" row="0" type="string"/>
+      <Variable column="raw_contact_id" name="call_id1" row="0" type="string"/>
+    </ContentProviderBinder>
+    <ContentProviderBinder columns="display_name,raw_contact_id" countName="call_hasName2" dependency="missed_calls" uri="content://com.android.contacts/data" whereFormat="PHONE_NUMBERS_EQUAL(data1,&apos;%s&apos;)" whereParas="@call_number2">
+      <Variable column="display_name" name="call_name2" row="0" type="string"/>
+      <Variable column="raw_contact_id" name="call_id2" row="0" type="string"/>
+    </ContentProviderBinder>
+    <ContentProviderBinder columns="display_name,raw_contact_id" countName="call_hasName3" dependency="missed_calls" uri="content://com.android.contacts/data" whereFormat="PHONE_NUMBERS_EQUAL(data1,&apos;%s&apos;)" whereParas="@call_number3">
+      <Variable column="display_name" name="call_name3" row="0" type="string"/>
+      <Variable column="raw_contact_id" name="call_id3" row="0" type="string"/>
+    </ContentProviderBinder>
+    <ContentProviderBinder columns="_id,address,date,body,person" countName="sms_count" name="sms_table" order="date DESC" uri="content://sms/inbox">
+      <Variable column="date" name="sms_date1" row="0" type="long"/>
+      <Variable column="body" name="sms_body1" row="0" type="string"/>
+      <Variable column="address" name="sms_num1" row="0" type="string"/>
+      <Variable column="date" name="sms_date2" row="1" type="long"/>
+      <Variable column="body" name="sms_body2" row="1" type="string"/>
+      <Variable column="address" name="sms_num2" row="1" type="string"/>
+      <Variable column="date" name="sms_date3" row="2" type="long"/>
+      <Variable column="body" name="sms_body3" row="2" type="string"/>
+      <Variable column="address" name="sms_num3" row="2" type="string"/>
+    </ContentProviderBinder>
+    <ContentProviderBinder columns="location" dependency="sms_table" uriFormat="content://datahub/call_log/location/%s" uriParas="@sms_num1">
+      <Variable column="location" name="sms1_location" row="0" type="string"/>
+    </ContentProviderBinder>
+    <ContentProviderBinder columns="location" dependency="sms_table" uriFormat="content://datahub/call_log/location/%s" uriParas="@sms_num2">
+      <Variable column="location" name="sms2_location" row="0" type="string"/>
+    </ContentProviderBinder>
+    <ContentProviderBinder columns="location" dependency="sms_table" uriFormat="content://datahub/call_log/location/%s" uriParas="@sms_num3">
+      <Variable column="location" name="sms3_location" row="0" type="string"/>
+    </ContentProviderBinder>
+    <ContentProviderBinder columns="display_name" countName="hasName1" dependency="sms_table" uri="content://com.android.contacts/data" whereFormat="PHONE_NUMBERS_EQUAL(data1,&apos;%s&apos;)" whereParas="@sms_num1">
+      <Variable column="display_name" name="sms_name1" row="0" type="string"/>
+    </ContentProviderBinder>
+    <ContentProviderBinder columns="display_name" countName="hasName2" dependency="sms_table" uri="content://com.android.contacts/data" whereFormat="PHONE_NUMBERS_EQUAL(data1,&apos;%s&apos;)" whereParas="@sms_num2">
+      <Variable column="display_name" name="sms_name2" row="0" type="string"/>
+    </ContentProviderBinder>
+    <ContentProviderBinder columns="display_name" countName="hasName3" dependency="sms_table" uri="content://com.android.contacts/data" whereFormat="PHONE_NUMBERS_EQUAL(data1,&apos;%s&apos;)" whereParas="@sms_num3">
+      <Variable column="display_name" name="sms_name3" row="0" type="string"/>
+    </ContentProviderBinder>
+    <ContentProviderBinder columns="city_id" name="weather" uri="content://weather/weather">
+      <Variable column="city_id" name="city_id" type="string"/>
+    </ContentProviderBinder>
+    <ContentProviderBinder columns="icon,title,content,time,info,subtext,key" countName="hasnotifications" name="data" uri="content://keyguard.notification/notifications">
+      <Variable column="icon" name="notification_icon" row="0" type="blob.bitmap"/>
+      <Variable column="title" name="notification_title" row="0" type="string"/>
+      <Variable column="content" name="notification_content" row="0" type="string"/>
+      <Variable column="time" name="notification_time" row="0" type="string"/>
+      <Variable column="info" name="notification_info" row="0" type="string"/>
+      <Variable column="subtext" name="notification_subtext" row="0" type="string"/>
+      <Variable column="key" name="notification_key" row="0" type="int"/>
+      <List name="notification_list"/>
+    </ContentProviderBinder>
+    <ContentProviderBinder columns="city_name,publish_time,tmplows,temperature,temperature_range,description,wind,humidity,weather_type,weathernamesfrom,weathernamesto" countName="hasweather" dependency="weather" uriFormat="content://weather/daily_weather/%s" uriParas="@city_id">
+      <Variable column="city_name" name="weather_location" type="string"/>
+      <Variable column="weather_type" name="weather_id" type="int"/>
+      <Variable column="tmplows" name="tem_low_0" row="0" type="int"/>
+      <Variable column="weathernamesfrom" name="weatherfrom_0" row="0" type="string"/>
+      <Variable column="weathernamesto" name="weatherto_0" row="0" type="string"/>
+      <Variable column="weathernamesfrom" name="weatherfrom_1" row="1" type="string"/>
+      <Variable column="weathernamesto" name="weatherto_1" row="1" type="string"/>
+      <Variable column="weathernamesfrom" name="weatherfrom_2" row="2" type="string"/>
+      <Variable column="weathernamesto" name="weatherto_2" row="2" type="string"/>
+      <Variable column="weathernamesfrom" name="weatherfrom_3" row="3" type="string"/>
+      <Variable column="weathernamesto" name="weatherto_3" row="3" type="string"/>
+      <Var expression="ifelse(eqs(@weatherfrom_1,@weatherto_1),@weatherfrom_1,@weatherfrom_1+&apos;~&apos;+@weatherto_1)" name="tomorrow_weather_description" type="string"/>
+      <Var expression="ifelse(eqs(@weatherfrom_2,@weatherto_2),@weatherfrom_2,@weatherfrom_2+&apos;~&apos;+@weatherto_2)" name="day_after_tomorrow_weather_description" type="string"/>
+      <Var expression="ifelse(eqs(@weatherfrom_3,@weatherto_3),@weatherfrom_3,@weatherfrom_3+&apos;~&apos;+@weatherto_3)" name="day_after_day_after_tomorrow_weather_description" type="string"/>
+      <Variable column="description" name="wd0" type="string"/>
+      <Variable column="description" name="weather_description" type="string"/>
+      <Variable column="temperature" name="weather_temperature" type="int"/>
+      <Variable column="temperature" name="weather_temperature_string" type="string"/>
+      <Variable column="wind" name="weather_wind" type="string"/>
+      <Variable column="humidity" name="weather_humidity" type="string"/>
+      <Variable column="temperature_range" name="wt0" row="0" type="int"/>
+      <Variable column="temperature_range" name="wt1" row="1" type="int"/>
+      <Variable column="temperature_range" name="wt2" row="2" type="int"/>
+      <Variable column="temperature_range" name="wt3" row="3" type="int"/>
+    </ContentProviderBinder>
+    <ContentProviderBinder columns="aqi,pm25,pm10,so2,no2,pub_time,src,spot" countName="hasweatherinfo" dependency="weather" name="weather_aqi" uriFormat="content://weatherinfo/aqi/%s" uriParas="@city_id">
+      <Variable column="aqi" name="aqi" type="int"/>
+    </ContentProviderBinder>
+    <SensorBinder name="gravity_m" rate="500" type="gravity">
+      <Variable index="0" name="gx"/>
+      <Variable index="1" name="gy"/>
+    </SensorBinder>
+    <BroadcastBinder action="broadcast_set">
+      <Variable extra="extra_word1" name="word1" type="string"/>
+      <Variable extra="extra_word2" name="word2" type="string"/>
+    </BroadcastBinder>
+  </VariableBinders>
+  <List data="icon:bitmap,title:string,content:string,time:string,info:string,subtext:string,key:int" maxHeight="230*4" name="notification_list" visibility="#hasnotifications" w="#w" x="0" y="#h/8">
+    <Item h="230" w="#w">
+      <Button align="center" alignV="center" h="200" w="#w" x="#w/2" y="100">
+        <Normal>
+        <!--<Image x="80" y="0" src="notification/nbgn.png"/>-->
+</Normal>
+        <Pressed>
+          <Image src="notification/nbgp.png" x="80" y="0"/>
+        </Pressed>
+        <Image align="center" alignV="center" h="162" name="notification_icon" w="162" x="180" y="100"/>
+        <Text alignV="center" color="#b2000000" fontFamily="miui-light" marqueeSpeed="30" name="notification_title" size="40" w="490" x="290" y="72"/>
+        <Text alignV="center" color="#b2000000" fontFamily="miui-light" h="42" marqueeSpeed="30" name="notification_content" size="36" w="680" x="290" y="129"/>
+        <Text align="right" alignV="center" color="#b2000000" fontFamily="miui-light" h="54" marqueeSpeed="30" name="notification_time" size="36" w="160" x="#w-115" y="72"/>
         <Triggers>
-            <Trigger action="double">
-                <IntentCommand action="android.intent.action.MAIN" package="com.android.deskclock"
-                               class="com.android.deskclock.DeskClockTabActivity">
-                    <Extra name="StartActivityWhenLocked" type="boolean" expression="1"/>
-                </IntentCommand>
-            </Trigger>
+          <Trigger action="up">
+            <IntentCommand action="com.miui.app.ExtraStatusBarManager.action_remove_keyguard_notification" broadcast="true">
+              <Extra expression="#notification_key" name="com.miui.app.ExtraStatusBarManager.extra_notification_key" type="int"/>
+              <Extra expression="1" name="com.miui.app.ExtraStatusBarManager.extra_notification_click" type="int"/>
+            </IntentCommand>
+          </Trigger>
         </Triggers>
-    </Button>
-    <!--<Rectangle x="#bottom_left_icon_x" y="#bottom_icon_y" w="#bottom_icon_w" h="#bottom_icon_h" cornerRadius="5,10"-->
-    <!--strokeColor="#ff00ff00" fillColor="#00000000"-->
-    <!--/>-->
-    <Button x="#bottom_right_icon_x" y="#bottom_icon_y" w="#bottom_icon_w" h="#bottom_icon_h">
-        <Triggers>
-            <Trigger action="double">
-                <IntentCommand action="android.intent.action.MAIN" package="com.android.camera"
-                               class="com.android.camera.Camera">
-                    <Extra name="ShowCameraWhenLocked" type="boolean" expression="1"/>
-                    <Extra name="StartActivityWhenLocked" type="boolean" expression="1"/>
-                </IntentCommand>
-            </Trigger>
-        </Triggers>
-    </Button>
+      </Button>
+    </Item>
+    <AttrDataBinders>
+      <AttrDataBinder attr="bitmap" data="icon" target="notification_icon"/>
+      <AttrDataBinder attr="text" data="title" target="notification_title"/>
+      <AttrDataBinder attr="text" data="content" target="notification_content"/>
+      <AttrDataBinder attr="text" data="time" target="notification_time"/>
+    </AttrDataBinders>
+  </List>
+  <!-- 底部快捷方式 -->
+  <!--快捷图标的宽度-->
 
-    <Text x="#w/2" y="#bottom_icon_y+#bottom_icon_h/2-25+#unlocker.move_y" text="向上滑动解锁" alpha="120"
-          align="center"
-          size="30"
-          color="#ffffff"/>
-    <!--修改解锁部分基于屏幕高度-->
-    <Unlocker name="unlocker" bounceInitSpeed="10" bounceAcceleration="1500">
-        <StartPoint x="0" y="0" w="#w" h="#h">
+  <Var expression="170" name="bottom_icon_w"/>
+  <!--快捷图标的高度-->
 
-        </StartPoint>
-        <EndPoint x="0" y="-#h" w="#w" h="#h-100">
-            <Path tolerance="2500">
-                <Position x="0" y="0"/>
-                <Position x="0" y="-500"/>
-            </Path>
-        </EndPoint>
-    </Unlocker>
+  <Var expression="130" name="bottom_icon_h"/>
+  <!--左右边距-->
 
-    <!-- <DefaultLockScreen wallpaper="0"/> -->
-    <!-- 音乐 -->
-    <MusicControl x="0" y="0" name="music" defAlbumCover="" enableLyric="true" updateLyricInterval="100">
-        <Group>
-            <!-- 音乐控制按钮的纵坐标 -->
+  <Var expression="60" name="bottom_icon_padding"/>
+  <!--左侧快捷方式的x坐标-->
 
-            <Var name="music_btn_pos_y" expression="#h-250"/>
-            <Var name="music_btn_gap" expression="200"/>
-            <Var name="music_prev_pos_x" expression="#w/2-200"/>
+  <Var expression="#bottom_icon_padding" name="bottom_left_icon_x"/>
+  <!--右侧快捷方式的x坐标-->
 
-            <Var name="music_play_pause_pos_x" expression="#music_prev_pos_x+#music_btn_gap"/>
+  <Var expression="#w-#bottom_icon_padding-#bottom_icon_w" name="bottom_right_icon_x"/>
+  <!--快捷方式的y坐标-->
 
-            <Var name="music_next_pos_x" expression="#music_play_pause_pos_x+#music_btn_gap"/>
+  <Var expression="#h-150" name="bottom_icon_y"/>
+  <Text align="center" alignV="center" alpha="180" color="#ddd5d5" size="60" textExp="&apos;闹钟&apos;" x="#bottom_left_icon_x+#bottom_icon_w/2" y="#bottom_icon_y+#bottom_icon_h/2"/>
+  <!--<Image src="camera.png" x="#bottom_right_icon_x" y="#bottom_icon_y"/>-->
 
-            <Var name="music_display_pos_x" expression="#w/2"/>
-            <Var name="text_size" expression="30"/>
-            <Var name="text_size_35" expression="35"/>
-            <!--播放时的歌名-->
-            <!--起始位置-->
-            <Var name="music_title_pos_y" expression="120"/>
-            <!--间距-->
-            <Var name="song_gap" expression="60"/>
-            <Text
-                    x="#music_display_pos_x" y="#music_title_pos_y"
-                    align="center" color="#d76980" size="#text_size_35"
-                    textExp="ifelse(isnull(@music.title),'歌名未知',@music.title)+'---'+ifelse(isnull(@music.artist),'歌手未知',@music.artist)"
-                    visibility="(#music.music_state)"/>
-            <!-- 暂停时的显示  歌手 -->
-            <Text x="#music_display_pos_x" y="#music_title_pos_y"
-                  align="center" w="400*1.5" marqueeSpeed="30"
-                  size="#text_size_35" color="#d76980"
-                  text="此处显示歌词"
-                  visibility="not(#music.music_state)"/>，
-            <!-- 歌词 纵坐标 -->
-            <Var name="lyric_pos_y" expression="#song_gap+#music_title_pos_y"/>
-            <Var name="lyric_pos_x" expression="#w/2"/>
+  <Text align="center" alignV="center" alpha="180" color="#ddd5d5" size="60" textExp="&apos;相机&apos;" x="#bottom_right_icon_x+#bottom_icon_w/2" y="#bottom_icon_y+#bottom_icon_h/2"/>
+  <Button h="#bottom_icon_h" w="#bottom_icon_w" x="#bottom_left_icon_x" y="#bottom_icon_y">
+    <Triggers>
+      <Trigger action="double">
+        <IntentCommand action="android.intent.action.MAIN" class="com.android.deskclock.DeskClockTabActivity" package="com.android.deskclock">
+          <Extra expression="1" name="StartActivityWhenLocked" type="boolean"/>
+        </IntentCommand>
+      </Trigger>
+    </Triggers>
+  </Button>
+  <!--<Rectangle x="#bottom_left_icon_x" y="#bottom_icon_y" w="#bottom_icon_w" h="#bottom_icon_h" cornerRadius="5,10"-->
+  <!--strokeColor="#ff00ff00" fillColor="#00000000"-->
+  <!--/>-->
 
-            <Text name="cur_lyric" x="#lyric_pos_x" y="#lyric_pos_y"
-                  w="640" align="center" multiLine="true" color="#FFFFFFFF"
-                  size="28" text="@music.lyric_current"
-                  bold="true" spacingMult="1.2"/>
+  <Button h="#bottom_icon_h" w="#bottom_icon_w" x="#bottom_right_icon_x" y="#bottom_icon_y">
+    <Triggers>
+      <Trigger action="double">
+        <IntentCommand action="android.intent.action.MAIN" class="com.android.camera.Camera" package="com.android.camera">
+          <Extra expression="1" name="ShowCameraWhenLocked" type="boolean"/>
+          <Extra expression="1" name="StartActivityWhenLocked" type="boolean"/>
+        </IntentCommand>
+      </Trigger>
+    </Triggers>
+  </Button>
+  <Text align="center" alpha="120" color="#ffffff" size="30" text="向上滑动解锁" x="#w/2" y="#bottom_icon_y+#bottom_icon_h/2-25+#unlocker.move_y"/>
+  <!--修改解锁部分基于屏幕高度-->
 
-            <Text x="#lyric_pos_x-#cur_lyric.text_width/2" y="#lyric_pos_y"
-                  w="#cur_lyric.text_width*#music.lyric_current_line_progress"
-                  color="#FFFE9D01" size="28" text="@music.lyric_current" bold="true"/>
+  <Unlocker bounceAcceleration="1500" bounceInitSpeed="10" name="unlocker">
+    <StartPoint h="#h" w="#w" x="0" y="0"/>
+    <EndPoint h="#h-100" w="#w" x="0" y="-#h">
+      <Path tolerance="2500">
+        <Position x="0" y="0"/>
+        <Position x="0" y="-500"/>
+      </Path>
+    </EndPoint>
+  </Unlocker>
+  <!-- <DefaultLockScreen wallpaper="0"/> -->
+  <!-- 音乐 -->
 
+  <MusicControl defAlbumCover="" enableLyric="true" name="music" updateLyricInterval="100" x="0" y="0">
+    <Group>
+      <!-- 音乐控制按钮的纵坐标 -->
 
-            <!-- 上一曲 -->
+      <Var expression="#h-250" name="music_btn_pos_y"/>
+      <Var expression="200" name="music_btn_gap"/>
+      <Var expression="#w/2-200" name="music_prev_pos_x"/>
+      <Var expression="#music_prev_pos_x+#music_btn_gap" name="music_play_pause_pos_x"/>
+      <Var expression="#music_play_pause_pos_x+#music_btn_gap" name="music_next_pos_x"/>
+      <Var expression="#w/2" name="music_display_pos_x"/>
+      <Var expression="30" name="text_size"/>
+      <Var expression="35" name="text_size_35"/>
+      <!--播放时的歌名-->
+      <!--起始位置-->
 
-            <Button name="music_prev" x="#music_prev_pos_x" y="#music_btn_pos_y" w="120" h="120">
-                <Normal>
-                    <Image x="#music_prev_pos_x" y="#music_btn_pos_y" align="center" src="music/prev.png" alpha="255"/>
-                </Normal>
-                <Pressed>
-                    <Image x="#music_prev_pos_x" y="#music_btn_pos_y" align="center" src="music/prev.png" alpha="120"/>
-                </Pressed>
-            </Button>
-            <!-- 播放 -->
+      <Var expression="120" name="music_title_pos_y"/>
+      <!--间距-->
 
-            <Button name="music_play" x="#music_play_pause_pos_x-50" y="#music_btn_pos_y" w="120" h="120">
-                <Normal>
-                    <Image x="#music_play_pause_pos_x" y="#music_btn_pos_y" align="center" src="music/play.png"
-                           alpha="255"/>
-                </Normal>
-                <Pressed>
-                    <Image x="#music_play_pause_pos_x" y="#music_btn_pos_y" align="center" src="music/play.png"
-                           alpha="120"/>
-                </Pressed>
-            </Button>
-            <!-- 暂停 -->
-            <Button name="music_pause" x="#music_play_pause_pos_x-50" y="#music_btn_pos_y" w="120" h="120">
-                <Normal>
-                    <Image x="#music_play_pause_pos_x" y="#music_btn_pos_y" align="center" src="music/pause.png"
-                           alpha="255"/>
-                </Normal>
-                <Pressed>
-                    <Image x="#music_play_pause_pos_x" y="#music_btn_pos_y" align="center" src="music/pause.png"
-                           alpha="120"/>
-                </Pressed>
-            </Button>
-            <!-- 下一曲 -->
-            <Button name="music_next" x="#music_next_pos_x-50" y="#music_btn_pos_y" w="120" h="120">
-                <Normal>
-                    <Image x="#music_next_pos_x" y="#music_btn_pos_y" align="center" src="music/next.png" alpha="255"/>
-                </Normal>
-                <Pressed>
-                    <Image x="#music_next_pos_x" y="#music_btn_pos_y" align="center" src="music/next.png" alpha="120"/>
-                </Pressed>
-            </Button>
-        </Group>
-    </MusicControl>
+      <Var expression="60" name="song_gap"/>
+      <Text align="center" color="#d76980" size="#text_size_35" textExp="ifelse(isnull(@music.title),&apos;歌名未知&apos;,@music.title)+&apos;---&apos;+ifelse(isnull(@music.artist),&apos;歌手未知&apos;,@music.artist)" visibility="(#music.music_state)" x="#music_display_pos_x" y="#music_title_pos_y"/>
+      <!-- 暂停时的显示  歌手 -->
+
+      <Text align="center" color="#d76980" marqueeSpeed="30" size="#text_size_35" text="此处显示歌词" visibility="not(#music.music_state)" w="400*1.5" x="#music_display_pos_x" y="#music_title_pos_y"/>，
+      <!-- 歌词 纵坐标 -->
+
+      <Var expression="#song_gap+#music_title_pos_y" name="lyric_pos_y"/>
+      <Var expression="#w/2" name="lyric_pos_x"/>
+      <Text align="center" bold="true" color="#FFFFFFFF" multiLine="true" name="cur_lyric" size="28" spacingMult="1.2" text="@music.lyric_current" w="640" x="#lyric_pos_x" y="#lyric_pos_y"/>
+      <Text bold="true" color="#FFFE9D01" size="28" text="@music.lyric_current" w="#cur_lyric.text_width*#music.lyric_current_line_progress" x="#lyric_pos_x-#cur_lyric.text_width/2" y="#lyric_pos_y"/>
+      <!-- 上一曲 -->
+
+      <Button h="120" name="music_prev" w="120" x="#music_prev_pos_x" y="#music_btn_pos_y">
+        <Normal>
+          <Image align="center" alpha="255" src="music/prev.png" x="#music_prev_pos_x" y="#music_btn_pos_y"/>
+        </Normal>
+        <Pressed>
+          <Image align="center" alpha="120" src="music/prev.png" x="#music_prev_pos_x" y="#music_btn_pos_y"/>
+        </Pressed>
+      </Button>
+      <!-- 播放 -->
+
+      <Button h="120" name="music_play" w="120" x="#music_play_pause_pos_x-50" y="#music_btn_pos_y">
+        <Normal>
+          <Image align="center" alpha="255" src="music/play.png" x="#music_play_pause_pos_x" y="#music_btn_pos_y"/>
+        </Normal>
+        <Pressed>
+          <Image align="center" alpha="120" src="music/play.png" x="#music_play_pause_pos_x" y="#music_btn_pos_y"/>
+        </Pressed>
+      </Button>
+      <!-- 暂停 -->
+
+      <Button h="120" name="music_pause" w="120" x="#music_play_pause_pos_x-50" y="#music_btn_pos_y">
+        <Normal>
+          <Image align="center" alpha="255" src="music/pause.png" x="#music_play_pause_pos_x" y="#music_btn_pos_y"/>
+        </Normal>
+        <Pressed>
+          <Image align="center" alpha="120" src="music/pause.png" x="#music_play_pause_pos_x" y="#music_btn_pos_y"/>
+        </Pressed>
+      </Button>
+      <!-- 下一曲 -->
+
+      <Button h="120" name="music_next" w="120" x="#music_next_pos_x-50" y="#music_btn_pos_y">
+        <Normal>
+          <Image align="center" alpha="255" src="music/next.png" x="#music_next_pos_x" y="#music_btn_pos_y"/>
+        </Normal>
+        <Pressed>
+          <Image align="center" alpha="120" src="music/next.png" x="#music_next_pos_x" y="#music_btn_pos_y"/>
+        </Pressed>
+      </Button>
+    </Group>
+  </MusicControl>
 </Lockscreen>

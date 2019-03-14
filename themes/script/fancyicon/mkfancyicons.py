@@ -58,7 +58,7 @@ if __name__ == '__main__':
     # 百变主题的根目录
     dir_fancy_icons = "fancy_icons/"
     # 百变主题背景icon所在路径
-    dir_icon_background = "bg.png"
+    dir_icon_background = "transparent.png"
     app_map = {'浏览器': 'com.android.browser',
                '日历': 'com.android.calendar',
                '相机': 'com.android.camera',
@@ -248,7 +248,7 @@ if __name__ == '__main__':
         2   判断背景图标是否存在，不存在则拷贝过去
         """
         icon_bg_path = os.path.join(icon_pkg_name_folder_path, "bg.png")
-        # print(icon_bg_path)
+        print(icon_bg_path)
         if not os.path.exists(icon_bg_path):
             shutil.copyfile(dir_icon_background, icon_pkg_name_folder_path + "/bg.png")
         # print("背景图标存在")

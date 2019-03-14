@@ -21,12 +21,12 @@
     <color name="screenshot_top_msg_bg">#ff000000</color>
     <color name="task_item_text_shadowColor">#00000000</color>
     <color name="tab_lable_color_n">#ffffffff</color>
-    <color name="no_notification_tips_text">#80ffffff</color>
+    <color name="no_notification_tips_text">#ffffffff</color>
     <color name="screenshot_ui_bg">#ff000000</color>
     <color name="oldman_status_bar_basic_text_color_rev">#ff666666</color>
     <color name="tab_lable_color">#ffffffff</color>
     <color name="status_bar_expanded_weather_publish_time">#ffffffff</color>
-    <color name="toggle_lable_color_n">#ccffffff</color>
+    <color name="toggle_lable_color_n">#ffffffff</color>
     <color name="screenshot_part_divider_color">#19ffffff</color>
 
     <color name="qs_tile_icon_bg_enabled_color">#ffffffff</color>
