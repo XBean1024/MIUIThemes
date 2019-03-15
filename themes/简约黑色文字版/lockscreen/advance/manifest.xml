@@ -51,11 +51,11 @@
   <Var expression="50" name="weather_size"/>
   <!--位置———天气————PM值-->
 
-  <Text align="center" alignV="center" bold="true" color="#FFFFFF" size="#weather_size" textExp="&apos;🇨🇳&apos;+@weather_location+&apos;☁️&apos;+@w_dp0+&apos;:&apos;+#pm10+&apos;度&apos;+&apos;🌬️&apos;+&apos;pm:&apos;+#pm25" x="#weather_pos_x" y="#weather_pos_y"/>
+  <Text align="center" alignV="center" bold="true" color="#FFFFFF" size="#weather_size" textExp="&apos;🇨🇳&apos;+@weather_location+&apos;☁️&apos;" x="#weather_pos_x" y="#weather_pos_y"/>
   <!--天气   end-->
   <!-- 显示日期 -->
 
-  <DateTime align="center" color="#ffffffff" format="yyyy-MM-d H:mm:ss" size="100" value="#time_sys" x="540" y="#h/2-570"/>
+  <DateTime align="center" color="#ffffffff" format="EEEE H:mm:ss" size="100" value="#time_sys" x="540" y="#h/2-570"/>
   <!-- 日历部分 -->
   <!-- 日历布局 -->
   <!-- 当前日期显示的行坐标 福字下 110个像素 -->
